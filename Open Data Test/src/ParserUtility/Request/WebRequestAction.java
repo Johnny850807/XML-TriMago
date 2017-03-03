@@ -1,4 +1,4 @@
-package WebParserUtility.Request;
+package ParserUtility.Request;
 
 import java.io.BufferedReader;
 import java.io.Closeable;
@@ -8,8 +8,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.ProtocolException;
 
-public abstract class WebRequestAction extends RequestAction{
-	private BufferedReader reader;
+public class WebRequestAction extends RequestAction{
 	private HttpURLConnection connection;
 	public static final String GET = "GET";
 	public static final String POST = "POST";
@@ -33,13 +32,9 @@ public abstract class WebRequestAction extends RequestAction{
 
 	@Override
 	protected void readerInitiate(BufferedReader reader) throws IOException {
-		if (reader != null)
-			reader.close();
 		reader = new BufferedReader(
 		        new InputStreamReader(connection.getInputStream()));
 	}
-	
-	
-	
+
 	
 }
