@@ -6,6 +6,7 @@ import ParserUtility.Request.WebRequestAction;
 import WebParserUtility.DataParsers.DtoParsers.DTOParser;
 
 public abstract class FileDataHandler extends DataHandler{
+	private FileRequestAction fileAction;
 
 	public FileDataHandler(String url) throws Exception {
 		super(url);
@@ -16,14 +17,12 @@ public abstract class FileDataHandler extends DataHandler{
 
 	@Override
 	protected RequestAction createRequestAction() {
-		return new FileRequestAction(url);
+		fileAction = new FileRequestAction(url);
+		return fileAction;
 	}
-
-
+	
 	@Override
-	public void close() throws Exception {
-		// TODO Auto-generated method stub
-		
-	}
+	public void close() throws Exception {}
 
+	
 }

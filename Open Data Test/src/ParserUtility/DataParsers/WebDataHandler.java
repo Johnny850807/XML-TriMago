@@ -16,6 +16,7 @@ import ParserUtility.Request.WebRequestAction;
 
 public abstract class WebDataHandler<T> extends DataHandler{
 	protected HttpURLConnection connection;
+	
 	public WebDataHandler(String url) throws Exception{
 		super(url);
 	}
