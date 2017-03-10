@@ -10,8 +10,7 @@
 <!ATTLIST restaurant longitude CDATA #REQUIRED>
 <!ATTLIST restaurant rate CDATA "3">
 
-<!ELEMENT comment EMPTY>
-<!ATTLIST comment name CDATA #REQUIRED>
-<!ATTLIST comment date CDATA #REQUIRED>
-<!ATTLIST comment content CDATA #REQUIRED>
-
+<!ELEMENT comment (name+,data+,content+)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT data (#PCDATA)>
+<!ELEMENT content (#PCDATA)>

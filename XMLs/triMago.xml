@@ -7,15 +7,16 @@
 	infoAmount="0"
 	siteRate="5">
 	<Wateball:restaurant
-		id="0"
+		id="r0"
 		name="源一"
 		latitude="121.31153" 
 		longitude="24.992440"
 		rate="4">
-		<Wateball:comment
-			name="水球"
-			date="2017/3/10"
-			content="還不錯啊，便宜好吃，人很多而已，第三節來才安靜。"/>	
+		<Wateball:comment>
+			<Wateball:name>水球</Wateball:name>
+			<Wateball:data>2017/3/10</Wateball:date>
+			<Wateball:content>還不錯啊，便宜好吃，人很多而已，第三節來才安靜。</Wateball:content>
+		</WaterBall:comment>
 	</Wateball:restaurant>
 	
 </Wateball:WebSite>
