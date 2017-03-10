@@ -8,6 +8,7 @@
 <!ATTLIST restaurant name CDATA #REQUIRED>
 <!ATTLIST restaurant latitude CDATA #REQUIRED>
 <!ATTLIST restaurant longitude CDATA #REQUIRED>
+<!ATTLIST restaurant address CDATA #REQUIRED>
 <!ATTLIST restaurant rate CDATA "3">
 
 <!ELEMENT comment (name+,data+,content+)>

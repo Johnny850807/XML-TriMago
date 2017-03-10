@@ -11,6 +11,7 @@
 		name="源一"
 		latitude="121.31153" 
 		longitude="24.992440"
+		address="銘傳大學"
 		rate="4">
 		<Wateball:comment>
 			<Wateball:name>水球</Wateball:name>

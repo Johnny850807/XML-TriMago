@@ -22,7 +22,7 @@ public abstract class WebDataHandler<T> extends DataHandler{
 	}
 
 	@Override
-	protected void openUrl() throws Exception{
+	protected void openUrl() throws IOException {
 		URL url = new URL(super.url);
 		connection = (HttpURLConnection) url.openConnection();
 	}

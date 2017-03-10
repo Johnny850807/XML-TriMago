@@ -22,18 +22,34 @@ import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
 public abstract class XmlDtoParser<T> extends DTOParser{
-	
+	private DocumentBuilderFactory dbFactory;
+	private DocumentBuilder dBuilder;
 	@Override
-	public void close() throws IOException {}
+	public void close() throws IOException {
+		
+	}
 
 	@Override
 	protected List<T> createParsedData(String document) throws SAXException, IOException, ParserConfigurationException  {
-		DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-		DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+		dbFactory = initFactory();
+		dBuilder = initBuilder();
 		dBuilder.parse(new ByteArrayInputStream(document.getBytes()));
 		return getParsedXmlData(dBuilder);
 	}
 	
+	private DocumentBuilderFactory initFactory(){
+		dbFactory = DocumentBuilderFactory.newInstance();
+		dbFactory.setValidating(true);
+		return dbFactory;
+	}
+	
+	private DocumentBuilder initBuilder(){
+		dBuilder = dbFactory.newDocumentBuilder();
+		dBuilder.setErrorHandler(eh);
+		return dBuilder;
+	}
+	
 	protected abstract List<T> getParsedXmlData(DocumentBuilder dBuilder);
+	
 
 }

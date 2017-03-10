@@ -12,7 +12,7 @@ import ParserUtility.Request.RequestAction;
 import ParserUtility.Request.WebRequestAction;
 import WebParserUtility.DataParsers.DtoParsers.DTOParser;
 
-/*DataHandler take all processes about retrieving data-set 
+/*DataHandler takes all processes to retrieve data-set 
  * from resources and parsing them to a specific collection
  * , finally return the demanding data collection.
  */
@@ -22,25 +22,24 @@ public abstract class DataHandler<T> {
 	protected DTOParser<T> dtoParser;
 	protected RequestAction requestAction;
 	
-	public DataHandler(String url) throws Exception{
+	public DataHandler(String url) throws IOException {
 		setUrl(url);
 		requestAction = createRequestAction();
 	}
+	protected abstract RequestAction createRequestAction();
 	
 	public void setDtoParser(DTOParser parser){
 		this.dtoParser = parser;
 	}
 	
-	public void setUrl(String url) throws Exception{
+	public void setUrl(String url) throws IOException {
 		this.url = url;
 		openUrl();
 	}
-	
 	// to connect to resource by the given URL
-	protected abstract void openUrl() throws Exception;
+	protected abstract void openUrl() throws MalformedURLException, IOException;
 	
-	protected abstract RequestAction createRequestAction();
-	protected abstract DTOParser<T> createDTOParser();
+
 	
 	public String getURLString(){
 		return url;
@@ -55,7 +54,7 @@ public abstract class DataHandler<T> {
 	}
 	
 	private String getDataOnRequest(RequestAction request) throws Exception {
-		return request.parseString();
+		return request.parseStringFromResource();
 	}
 
 	public abstract void close() throws Exception;

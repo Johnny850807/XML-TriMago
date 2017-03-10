@@ -25,9 +25,8 @@ public class FileRequestAction extends RequestAction{
 	}
 
 	@Override
-	protected void printLog() throws Exception {}
-
-	
-
+	protected void printLog() throws Exception {
+		System.out.println("Resource : " + file.getPath());
+	}
 
 }

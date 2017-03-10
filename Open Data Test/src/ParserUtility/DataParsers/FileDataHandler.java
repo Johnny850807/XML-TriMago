@@ -13,7 +13,7 @@ public abstract class FileDataHandler extends DataHandler{
 	}
 
 	@Override
-	protected void openUrl() throws Exception {}
+	protected void openUrl() {}
 
 	@Override
 	protected RequestAction createRequestAction() {
