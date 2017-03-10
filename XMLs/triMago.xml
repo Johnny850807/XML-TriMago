@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!DOCTYPE WebSite SYSTEM "triMago.dtd">
+<!DOCTYPE Wateball:WebSite SYSTEM "triMago.dtd">
 
 <Wateball:WebSite 
 	xmlns:Wateball="http://g9.xml.csie.mcu.edu.tw" 
@@ -14,9 +14,9 @@
 		rate="4">
 		<Wateball:comment>
 			<Wateball:name>水球</Wateball:name>
-			<Wateball:data>2017/3/10</Wateball:date>
+			<Wateball:date>2017/3/10</Wateball:date>
 			<Wateball:content>還不錯啊，便宜好吃，人很多而已，第三節來才安靜。</Wateball:content>
-		</WaterBall:comment>
+		</Wateball:comment>
 	</Wateball:restaurant>
 	
 </Wateball:WebSite>
