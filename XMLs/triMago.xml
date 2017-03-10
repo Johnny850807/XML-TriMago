@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<Wateball:XML_Head 
+<!DOCTYPE WebSite SYSTEM "triMago.dtd">
+
+<Wateball:WebSite 
 	xmlns:Wateball="http://g9.xml.csie.mcu.edu.tw" 
 	infoAmount="0"
 	siteRate="5">
@@ -16,4 +18,4 @@
 			content="還不錯啊，便宜好吃，人很多而已，第三節來才安靜。"/>	
 	</Wateball:restaurant>
 	
-</Wateball:XML_Head>
+</Wateball:WebSite>
