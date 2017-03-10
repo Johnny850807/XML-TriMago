@@ -1,15 +1,10 @@
 package ParserUtility.DataParsers;
 
 import java.io.IOException;
-import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
-import java.net.ProtocolException;
-import java.net.URL;
-import java.util.Collection;
 import java.util.List;
 
 import ParserUtility.Request.RequestAction;
-import ParserUtility.Request.WebRequestAction;
 import WebParserUtility.DataParsers.DtoParsers.DTOParser;
 
 /*DataHandler takes all processes to retrieve data-set 

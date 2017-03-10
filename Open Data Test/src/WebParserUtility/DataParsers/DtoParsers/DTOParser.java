@@ -2,7 +2,6 @@ package WebParserUtility.DataParsers.DtoParsers;
 
 import java.io.Closeable;
 import java.io.IOException;
-import java.util.Collection;
 import java.util.List;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -23,5 +22,5 @@ public abstract class DTOParser<T> implements Closeable{
 	/* Override this method to create own tailored object collection 
 	 * via a data string corresponding the way you define in the method.
 	 */
-	protected abstract List<T> createParsedData(String document) throws SAXException, IOException, ParserConfigurationException ;
+	protected abstract List<T> createParsedData(String ...document) throws SAXException, IOException, ParserConfigurationException ;
 }

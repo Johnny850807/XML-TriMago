@@ -2,8 +2,6 @@ package ParserUtility.DataParsers;
 
 import ParserUtility.Request.FileRequestAction;
 import ParserUtility.Request.RequestAction;
-import ParserUtility.Request.WebRequestAction;
-import WebParserUtility.DataParsers.DtoParsers.DTOParser;
 
 public abstract class FileDataHandler extends DataHandler{
 	private FileRequestAction fileAction;

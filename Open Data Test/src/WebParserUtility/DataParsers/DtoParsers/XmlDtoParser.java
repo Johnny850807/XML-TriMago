@@ -2,38 +2,38 @@ package WebParserUtility.DataParsers.DtoParsers;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.StringBufferInputStream;
-import java.net.URL;
-import java.util.Collection;
 import java.util.List;
-import java.util.Scanner;
-import java.util.Stack;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.parsers.SAXParser;
-import javax.xml.parsers.SAXParserFactory;
-import javax.xml.validation.Schema;
-import javax.xml.validation.SchemaFactory;
 
+import org.xml.sax.ErrorHandler;
 import org.xml.sax.SAXException;
-import org.xml.sax.helpers.DefaultHandler;
+import org.xml.sax.SAXParseException;
 
 public abstract class XmlDtoParser<T> extends DTOParser{
+	private String url;
+	private String document;
 	private DocumentBuilderFactory dbFactory;
 	private DocumentBuilder dBuilder;
-	@Override
-	public void close() throws IOException {
-		
+	private boolean parseFromUrl;
+	
+	public XmlDtoParser(){
+		parseFromUrl = false;
 	}
-
+	
+	public XmlDtoParser(String url){
+		super();
+		this.url = url;
+		parseFromUrl = true;
+	}
 	@Override
-	protected List<T> createParsedData(String document) throws SAXException, IOException, ParserConfigurationException  {
+	protected List<T> createParsedData(String ...document) throws SAXException, IOException, ParserConfigurationException  {
+		if (document.length > 0)
+			this.document = document[0];
 		dbFactory = initFactory();
 		dBuilder = initBuilder();
-		dBuilder.parse(new ByteArrayInputStream(document.getBytes()));
 		return getParsedXmlData(dBuilder);
 	}
 	
@@ -43,13 +43,37 @@ public abstract class XmlDtoParser<T> extends DTOParser{
 		return dbFactory;
 	}
 	
-	private DocumentBuilder initBuilder(){
+	private DocumentBuilder initBuilder() throws ParserConfigurationException, SAXException, IOException{
 		dBuilder = dbFactory.newDocumentBuilder();
-		dBuilder.setErrorHandler(eh);
+		dBuilder.setErrorHandler(new MyXmlErrorHandler());
+		
+		if (parseFromUrl)
+			dBuilder.parse(url);
+		else
+			dBuilder.parse(new ByteArrayInputStream(document.getBytes()));
 		return dBuilder;
 	}
 	
+	@Override
+	public void close() throws IOException {}
+	
 	protected abstract List<T> getParsedXmlData(DocumentBuilder dBuilder);
 	
-
+	class MyXmlErrorHandler implements ErrorHandler{
+		@Override
+		public void warning(SAXParseException exception) throws SAXException {
+			System.out.println("Warning : " +exception.getMessage() );
+		}
+		@Override
+		public void error(SAXParseException exception) throws SAXException {
+			throw exception;
+		}
+		@Override
+		public void fatalError(SAXParseException exception) throws SAXException {
+			throw exception;
+		}
+	}
+	
+	
+	
 }
