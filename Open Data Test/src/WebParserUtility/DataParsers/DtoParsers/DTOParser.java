@@ -1,13 +1,17 @@
-package WebParserUtility;
+package WebParserUtility.DataParsers.DtoParsers;
 
 import java.io.Closeable;
 import java.io.IOException;
 import java.util.Collection;
 import java.util.List;
 
+/* DTOParser is a process of parsing Data String from
+ * the specific data-type given from concrete DataParser.
+ */
+
 public abstract class DTOParser<T> implements Closeable{
-	public Collection parseData(String document) throws Exception{
-		Collection parsedData = createParsedData(document);
+	public List<T> parseData(String document) throws Exception{
+		List<T> parsedData = createParsedData(document);
 		close();
 		return parsedData;
 	}
