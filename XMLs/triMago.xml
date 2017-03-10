@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Wateball:XML_Head 
+	xmlns:Wateball="http://g9.xml.csie.mcu.edu.tw" 
+	infoAmount="0"
+	siteRate="5">
+	<Wateball:restaurant
+		id="0"
+		name="源一"
+		latitude="121.31153" 
+		longitude="24.992440"
+		rate="4">
+		<Wateball:comment
+			name="水球"
+			date="2017/3/10"
+			content="還不錯啊，便宜好吃，人很多而已，第三節來才安靜。"/>	
+	</Wateball:restaurant>
+	
+</Wateball:XML_Head>
