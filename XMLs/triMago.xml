@@ -18,4 +18,17 @@
 			<Waterball:content>還不錯啊，便宜好吃，人很多而已，第三節來才安靜。</Waterball:content>
 		</Waterball:comment>
 	</Waterball:restaurant>
+	
+	<Waterball:restaurant
+		id="r1"
+		name="源二"
+		latitude="121.31153" 
+		longitude="24.992440"
+		rate="2">
+		<Waterball:comment>
+			<Waterball:name>昇昇</Waterball:name>
+			<Waterball:date>2017/3/15</Waterball:date>
+			<Waterball:content>難吃，馬的。</Waterball:content>
+		</Waterball:comment>
+	</Waterball:restaurant>
 </Waterball:WebSite>
