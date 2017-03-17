@@ -1,15 +1,16 @@
-<!ELEMENT Waterball:website (Waterball:restaurant*)>
-<!ATTLIST Waterball:website xmlns CDATA #FIXED "http://g9.xml.csie.mcu.edu.tw">
-<!ATTLIST Waterball:website infoAmount CDATA #REQUIRED>
-<!ATTLIST Waterball:website siteRate CDATA #REQUIRED>
+<!ELEMENT Waterball:WebSite (Waterball:restaurant*)>
+
+<!ATTLIST Waterball:WebSite xmlns:Waterball CDATA #FIXED "http://g9.xml.csie.mcu.edu.tw">
+<!ATTLIST Waterball:WebSite infoAmount CDATA #REQUIRED>
+<!ATTLIST Waterball:WebSite siteRate CDATA #REQUIRED>
 
 <!ELEMENT Waterball:restaurant (Waterball:comment*)>
+
 <!ATTLIST Waterball:restaurant id ID #REQUIRED>
 <!ATTLIST Waterball:restaurant name CDATA #REQUIRED>
 <!ATTLIST Waterball:restaurant latitude CDATA #REQUIRED>
 <!ATTLIST Waterball:restaurant longitude CDATA #REQUIRED>
-<!ATTLIST Waterball:restaurant address CDATA #REQUIRED>
-<!ATTLIST Waterball:restaurant rate CDATA "3">
+<!ATTLIST Waterball:restaurant rate CDATA #REQUIRED>
 
 <!ELEMENT Waterball:comment (Waterball:name+,Waterball:date+,Waterball:content+)>
 <!ELEMENT Waterball:name (#PCDATA)>

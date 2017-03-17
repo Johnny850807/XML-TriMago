@@ -1,5 +1,6 @@
 package ParserUtility.DataParsers;
 
+import java.io.Closeable;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.util.List;
@@ -12,7 +13,7 @@ import WebParserUtility.DataParsers.DtoParsers.DTOParser;
  * , finally return the demanding data collection.
  */
 
-public abstract class DataHandler<T> {
+public abstract class DataHandler<T> implements Closeable{
 	protected String url;
 	protected DTOParser<T> dtoParser;
 	protected RequestAction requestAction;
@@ -44,13 +45,12 @@ public abstract class DataHandler<T> {
 	public List<T> getParsedDataSet() throws Exception{
 		if (dtoParser == null)
 			throw new DtoNullException();
-		String data = getDataOnRequest(requestAction);
+		String data = getDataString();
 		return dtoParser.parseData(data);
 	}
 	
-	private String getDataOnRequest(RequestAction request) throws Exception {
-		return request.parseStringFromResource();
+	public String getDataString() throws Exception {
+		return requestAction.parseStringFromResource();
 	}
 
-	public abstract void close() throws Exception;
 }

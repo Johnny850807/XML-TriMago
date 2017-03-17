@@ -8,8 +8,9 @@ import java.net.URL;
 import ParserUtility.Request.RequestAction;
 import ParserUtility.Request.WebRequestAction;
 
-public abstract class WebDataHandler<T> extends DataHandler{
+public class WebDataHandler<T> extends DataHandler{
 	protected HttpURLConnection connection;
+	private RequestAction request;
 	
 	public WebDataHandler(String url) throws Exception{
 		super(url);
@@ -22,13 +23,14 @@ public abstract class WebDataHandler<T> extends DataHandler{
 	}
 
 	@Override
-	public void close() throws Exception {
+	public void close() {
 		connection.disconnect();
 	}
 
 	@Override
 	protected RequestAction createRequestAction() {
-		return new WebRequestAction(connection);
+		this.request = new WebRequestAction(connection);
+		return request;
 	}
 	
 

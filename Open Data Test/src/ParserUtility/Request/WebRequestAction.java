@@ -29,9 +29,14 @@ public class WebRequestAction extends RequestAction{
 	}
 
 	@Override
-	protected void readerInitiate(BufferedReader reader) throws IOException {
-		reader = new BufferedReader(
+	protected BufferedReader readerInitiate() throws IOException {
+		return new BufferedReader(
 		        new InputStreamReader(connection.getInputStream()));
+	}
+
+	@Override
+	public void close() throws IOException {
+		
 	}
 
 	

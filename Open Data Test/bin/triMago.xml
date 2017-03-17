@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!DOCTYPE  Waterball:website  SYSTEM  "triMago.dtd">
+<!DOCTYPE Waterball:WebSite SYSTEM "triMago.dtd">
 
-<Waterball:website 
-	xmlns:Waterball="http://g9.xml.csie.mcu.edu.tw" 
+<Waterball:WebSite 
+	xmlns:Waterball="http://g9.xml.csie.mcu.edu.tw"
 	infoAmount="0"
-	siteRate="5">
+	siteRate="4">
 	<Waterball:restaurant
 		id="r0"
 		name="源一"
 		latitude="121.31153" 
 		longitude="24.992440"
-		address="銘傳大學"
 		rate="4">
 		<Waterball:comment>
 			<Waterball:name>水球</Waterball:name>
@@ -19,5 +18,4 @@
 			<Waterball:content>還不錯啊，便宜好吃，人很多而已，第三節來才安靜。</Waterball:content>
 		</Waterball:comment>
 	</Waterball:restaurant>
-	
-</Waterball:website>
+</Waterball:WebSite>

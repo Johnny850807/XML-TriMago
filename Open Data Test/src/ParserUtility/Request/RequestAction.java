@@ -1,13 +1,16 @@
 package ParserUtility.Request;
 
 import java.io.BufferedReader;
+import java.io.Closeable;
+import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 
 /* RequestAction is in charge of inputting data-set
  * from specific resources.
  */
 
-public abstract class RequestAction {
+public abstract class RequestAction implements Closeable{
 	private static BufferedReader reader;
 	protected String url;
 	public static final String GET = "GET";  //for web request
@@ -22,16 +25,16 @@ public abstract class RequestAction {
 		 printLog();
 		 if (reader != null)
 			 reader.close();
-		 readerInitiate(reader);
+		 reader = readerInitiate();
 		 return readResponse();
 	}
 	
 	protected abstract void prepare() throws Exception;
 	protected abstract void printLog() throws Exception;
-	protected abstract void readerInitiate(BufferedReader reader) throws IOException;
+	protected abstract BufferedReader readerInitiate() throws IOException;
 	
 	protected String readResponse() throws IOException{
-		StringBuffer response = new StringBuffer();
+		StringBuilder response = new StringBuilder();
 		while (reader.ready()) {
 			response.append(reader.readLine());
 		}

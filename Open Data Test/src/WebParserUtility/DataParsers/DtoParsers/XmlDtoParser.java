@@ -9,6 +9,10 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 import org.xml.sax.ErrorHandler;
 import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;
@@ -41,6 +45,7 @@ public abstract class XmlDtoParser<T> extends DTOParser{
 	private DocumentBuilderFactory initFactory(){
 		dbFactory = DocumentBuilderFactory.newInstance();
 		dbFactory.setValidating(true);
+		dbFactory.setNamespaceAware(true);
 		return dbFactory;
 	}
 	
@@ -49,16 +54,23 @@ public abstract class XmlDtoParser<T> extends DTOParser{
 		dBuilder.setErrorHandler(new MyXmlErrorHandler());
 		
 		if (parseFromUrl)
-			dBuilder.parse(new File(url));
+		{
+			Document document = dBuilder.parse(url);
+			 NodeList nodeList = document.getElementsByTagName("Waterball:restaurant");
+			System.out.println("¤¸¯À¼Æ¶q¡G " +nodeList.getLength() );
+			for ( int i = 0 ; i < nodeList.getLength() ; i ++ )
+				System.out.println(nodeList.item(i).getNodeName() + " ");
+		}
 		else
 			dBuilder.parse(new ByteArrayInputStream(document.getBytes()));
 		return dBuilder;
 	}
 	
+	protected abstract List<T> getParsedXmlData(DocumentBuilder dBuilder);
+	
 	@Override
 	public void close() throws IOException {}
 	
-	protected abstract List<T> getParsedXmlData(DocumentBuilder dBuilder);
 	
 	class MyXmlErrorHandler implements ErrorHandler{
 		@Override
