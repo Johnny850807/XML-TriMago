@@ -1,6 +1,7 @@
 /AirQuality.class
 /MyParser.class
 /ParserUtility/
-/WebParserUtility/
-/Test.class
 /Test$1.class
+/Test.class
+/WebParserUtility/
+/Test$MyXmlParser.class

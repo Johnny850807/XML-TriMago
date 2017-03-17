@@ -3,7 +3,7 @@ package ParserUtility.DataParsers;
 import ParserUtility.Request.FileRequestAction;
 import ParserUtility.Request.RequestAction;
 
-public abstract class FileDataHandler extends DataHandler{
+public class FileDataHandler extends DataHandler{
 	private FileRequestAction fileAction;
 
 	public FileDataHandler(String url) throws Exception {
@@ -20,7 +20,7 @@ public abstract class FileDataHandler extends DataHandler{
 	}
 	
 	@Override
-	public void close() throws Exception {}
+	public void close() {}
 
 	
 }

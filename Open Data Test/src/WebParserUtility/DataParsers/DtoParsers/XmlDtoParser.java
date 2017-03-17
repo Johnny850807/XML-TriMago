@@ -8,6 +8,7 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
+import org.w3c.dom.Document;
 import org.xml.sax.ErrorHandler;
 import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;
@@ -40,6 +41,7 @@ public abstract class XmlDtoParser<T> extends DTOParser{
 	private DocumentBuilderFactory initFactory(){
 		dbFactory = DocumentBuilderFactory.newInstance();
 		dbFactory.setValidating(true);
+		dbFactory.setNamespaceAware(true);
 		return dbFactory;
 	}
 	
@@ -54,10 +56,11 @@ public abstract class XmlDtoParser<T> extends DTOParser{
 		return dBuilder;
 	}
 	
+	protected abstract List<T> getParsedXmlData(DocumentBuilder dBuilder);
+	
 	@Override
 	public void close() throws IOException {}
 	
-	protected abstract List<T> getParsedXmlData(DocumentBuilder dBuilder);
 	
 	class MyXmlErrorHandler implements ErrorHandler{
 		@Override
