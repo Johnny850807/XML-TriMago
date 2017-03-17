@@ -1,6 +1,7 @@
 package WebParserUtility.DataParsers.DtoParsers;
 
 import java.io.ByteArrayInputStream;
+import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
@@ -48,7 +49,7 @@ public abstract class XmlDtoParser<T> extends DTOParser{
 		dBuilder.setErrorHandler(new MyXmlErrorHandler());
 		
 		if (parseFromUrl)
-			dBuilder.parse(url);
+			dBuilder.parse(new File(url));
 		else
 			dBuilder.parse(new ByteArrayInputStream(document.getBytes()));
 		return dBuilder;

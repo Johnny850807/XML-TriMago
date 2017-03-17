@@ -13,7 +13,7 @@ import org.xml.sax.SAXException;
  */
 
 public abstract class DTOParser<T> implements Closeable{
-	public List<T> parseData(String document) throws IOException, SAXException, ParserConfigurationException {
+	public List<T> parseData(String ...document) throws IOException, SAXException, ParserConfigurationException {
 		List<T> parsedData = createParsedData(document);
 		close();
 		return parsedData;
