@@ -9,7 +9,7 @@ import org.xml.sax.SAXException;
 import WebParserUtility.DataParsers.DtoParsers.XmlDtoParser;
 
 public class Test {
-	final static String LINK = "http://data.gov.tw/iisi/logaccess/46147?dataUrl=http://opendata.epa.gov.tw/ws/Data/ATM00564/?%24skip=0&%24top=1000&format=xml&ndctype=XML&ndcnid=34766";
+	final static String LINK = "C:\\Users\\user\\Desktop\\apache-tomcat-6.0.41\\webapps\\TriMago\\WEB-INF\\classes\\model\\triMago.xml";
 	final static String url = "triMago.xml";
 	public static void main(String[] args) {
 

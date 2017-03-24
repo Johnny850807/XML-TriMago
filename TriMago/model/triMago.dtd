@@ -10,9 +10,11 @@
 <!ATTLIST Waterball:restaurant name CDATA #REQUIRED>
 <!ATTLIST Waterball:restaurant latitude CDATA #REQUIRED>
 <!ATTLIST Waterball:restaurant longitude CDATA #REQUIRED>
-<!ATTLIST Waterball:restaurant rate CDATA #REQUIRED>
+<!ATTLIST Waterball:restaurant price CDATA #REQUIRED>
+<!ATTLIST Waterball:restaurant typeOfMeal CDATA #REQUIRED>
 
-<!ELEMENT Waterball:comment (Waterball:name+,Waterball:date+,Waterball:content+)>
+<!ELEMENT Waterball:comment (Waterball:name+,Waterball:date+,Waterball:content+,Waterball:rate+)>
 <!ELEMENT Waterball:name (#PCDATA)>
 <!ELEMENT Waterball:date (#PCDATA)>
 <!ELEMENT Waterball:content (#PCDATA)>
+<!ELEMENT Waterball:rate (#PCDATA)>
