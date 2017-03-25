@@ -9,12 +9,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="index.css">
     <style>
-        #map{
-            height: 600px;
-            width: 100%;
-        }
-        #leftSelection{
-            min-height: 900px;
+        #leftSelection {
+            min-height: 0px;
             padding-bottom: 15px;
         }
     </style>
@@ -32,7 +28,7 @@
             <nav class="nav nav-pills" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="index.html" id="homepage" class="navigationRight"> 首頁</a></li>
-                    <li><a href="AboutUs.html" id="about" class="navigationRight"> 關於我們</a></li>
+                    <li><a href="#" id="about" class="navigationRight"> 關於我們</a></li>
                 </ul>
             </nav>
         </div>
@@ -41,29 +37,16 @@
     <div class="container-fluid" id="leftSelection">
         <div class="row content">
             <div class="col-sm-10 text-left">
-                <div class="container" id="searchPanel">
-                    <div class="row" id="searchBar">
-                        <input class="flipkart-navbar-input col-xs-11" placeholder="輸入想查詢的餐廳名稱" name="searchInput" >
-                        <button class="flipkart-navbar-button col-xs-1">
-                            <svg width="15px" height="15px">
-                                <path d="M11.618 9.897l4.224 4.212c.092.09.1.23.02.312l-1.464 1.46c-.08.08-.222.072-.314-.02L9.868 11.66M6.486 10.9c-2.42 0-4.38-1.955-4.38-4.367 0-2.413 1.96-4.37 4.38-4.37s4.38 1.957 4.38 4.37c0 2.412-1.96 4.368-4.38 4.368m0-10.834C2.904.066 0 2.96 0 6.533 0 10.105 2.904 13 6.486 13s6.487-2.895 6.487-6.467c0-3.572-2.905-6.467-6.487-6.467 "></path>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-                <hr>
-                <!--地圖從這加-->
-                <div id="map" style="width:100% ; height:600px;"></div>
-                <script>
-                    function initMap() {
-                        // Create a map object and specify the DOM element for display.
-                        var map = new google.maps.Map(document.getElementById('map'), {
-                            center: {lat: 24.985859, lng: 121.343826},
-                            zoom: 17
-                        });
-                    }
-                </script>
-                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdaJtSkjptq9XngwoRWm_QOL_UczaKb_I&callback=initMap"></script>
+                <div class="container" id="aboutArticlePanel">
+                    <div class="jumbotron "><h1>銘傳大學期末製作專案</h1></div> <br/>
+                    <p>	網站原型為 <a href="https://www.trivago.com.tw/">trivago</a>。
+感謝豐緒老師指導，利用 XML 以及 JavaServlet 製作出簡單的動態網頁。
+                    </p>
+                    <p>創作動機為大學生似乎永遠都不知道午餐吃什麼，找飯吃 ? 那就 
+triMago 囉 。<br />trivago 的口號在此時朗朗上口並且流為廣傳，因此就以此做為網頁設計目標了。                     
+                    </p>
+                </div> 
+                <p style="color:deepskyblue ; float:right ; font-size:35px ; margin-top:800px ; font-family: 微軟正黑體 " >水球潘</p>
             </div>
             <div class="col-sm-2 sidenav">
                 <div class="well">
