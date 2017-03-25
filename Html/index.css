@@ -1,0 +1,137 @@
+﻿/* Remove the navbar's default margin-bottom and rounded borders */
+.navbar {
+    background-color: #FFF;
+    border-bottom: 3px solid gray;
+    height: 135px;
+    line-height: 135px;
+}
+
+.navbar-header{
+    width:100%;
+}
+
+#leftSelection{
+    min-height: 1500px;
+    padding-bottom: 15px;
+}
+
+.navigationRight{
+    font-size: 32px;
+}
+
+/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+.row.content {
+    height:100%;
+}
+
+/* Set gray background color and 100% height */
+.sidenav {
+    padding-top: 20px;
+    background-color: #f1f1f1;
+    height: 100%;
+}
+
+/* Set black background color, white text and some padding */
+footer {
+    height: 130px;
+    line-height: 130px;
+    background-color: #555;
+    color: white;
+}
+
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 767px) {
+    .sidenav {
+        height: auto;
+    }
+
+    .row.content {
+        height: auto;
+    }
+}
+
+.affix {
+    top: 0;
+    width: 100%;
+}
+
+ #logo
+ { 
+    width : 100%;
+}
+#logo img 
+{
+    margin: 0 auto;
+}
+
+#myNavbar
+{
+    margin:0;
+}
+
+#searchPanel{
+    height: 189px;
+    width: 100%;
+    background-color: #37454D;
+}
+
+#searchBar{
+    width: auto;
+    margin: 30px;
+}
+
+#mealTypeMenu{
+    margin-left: 30px;
+}
+
+
+.dropdown button{
+    padding: 6px 80px 6px 80px;
+}
+
+#goToGoogleMap{
+    font-family: 微軟正黑體;
+    text-decoration:underline;
+    font-size: 25px;
+    color: #99D9EA;
+}
+
+.flipkart-navbar-input {
+    padding: 11px 16px;
+    border-radius: 2px 0 0 2px;
+    border: 0 none;
+    outline: 0 none;
+    font-size: 15px;
+    color: #000;
+}
+
+.flipkart-navbar-button {
+    background-color: #ffe11b;
+    border: 1px solid #ffe11b;
+    border-radius: 0 2px 2px 0;
+    color: #565656;
+    padding: 10px 0;
+    height: 43px;
+    cursor: pointer;
+}
+
+#restaurantList{
+    padding-bottom: 15px;
+    border-bottom: 1px solid gray;
+}
+
+#restaurantList p{
+    font-size: 30px;
+}
+
+.address{
+    font-style: italic;
+}
+.price{
+    color: #007FAD;
+}
+
+.detailsButton{
+    padding: 20px 80px 20px 80px;
+    float:right;
+}
