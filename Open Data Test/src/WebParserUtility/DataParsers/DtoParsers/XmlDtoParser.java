@@ -1,45 +1,46 @@
 package WebParserUtility.DataParsers.DtoParsers;
 
 import java.io.ByteArrayInputStream;
-import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.List;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerException;
 
 import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
 import org.xml.sax.ErrorHandler;
 import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;
 
 public abstract class XmlDtoParser<T> extends DTOParser{
-	private String url;
+	private String filePath;
 	private String document;
 	private DocumentBuilderFactory dbFactory;
 	private DocumentBuilder dBuilder;
-	private boolean parseFromUrl;
+	private Document xmlDocument;
+	private boolean parseFromFilePath;
 	
 	public XmlDtoParser(){
-		parseFromUrl = false;
+		parseFromFilePath = false;
 	}
 	
-	public XmlDtoParser(String url){
+	public XmlDtoParser(String filePath){
 		super();
-		this.url = url;
-		parseFromUrl = true;
+		this.filePath = filePath;
+		parseFromFilePath = true;
 	}
 	@Override
-	protected List<T> createParsedData(String ...document) throws SAXException, IOException, ParserConfigurationException  {
+	protected List<T> createParsedData(String ...document) throws SAXException, IOException, ParserConfigurationException, TransformerException  {
 		if (document.length > 0)
 			this.document = document[0];
 		dbFactory = initFactory();
 		dBuilder = initBuilder();
-		return getParsedXmlData(dBuilder);
+		xmlDocument = parseXmlDocument();
+		return getParsedXmlData(dBuilder,xmlDocument);
 	}
 	
 	private DocumentBuilderFactory initFactory(){
@@ -52,21 +53,20 @@ public abstract class XmlDtoParser<T> extends DTOParser{
 	private DocumentBuilder initBuilder() throws ParserConfigurationException, SAXException, IOException{
 		dBuilder = dbFactory.newDocumentBuilder();
 		dBuilder.setErrorHandler(new MyXmlErrorHandler());
-		
-		if (parseFromUrl)
-		{
-			Document document = dBuilder.parse(url);
-			 NodeList nodeList = document.getElementsByTagName("Waterball:restaurant");
-			System.out.println("¤¸¯À¼Æ¶q¡G " +nodeList.getLength() );
-			for ( int i = 0 ; i < nodeList.getLength() ; i ++ )
-				System.out.println(nodeList.item(i).getNodeName() + " ");
-		}
-		else
-			dBuilder.parse(new ByteArrayInputStream(document.getBytes()));
 		return dBuilder;
 	}
 	
-	protected abstract List<T> getParsedXmlData(DocumentBuilder dBuilder);
+	private Document parseXmlDocument() throws SAXException, IOException{
+		if (parseFromFilePath)
+			return dBuilder.parse(filePath);
+		else
+		{
+			return dBuilder.parse(new ByteArrayInputStream(document.getBytes("UTF-8")));
+		}
+			
+	}
+	
+	protected abstract List<T> getParsedXmlData(DocumentBuilder dBuilder , Document xmlDocument) throws TransformerException;
 	
 	@Override
 	public void close() throws IOException {}

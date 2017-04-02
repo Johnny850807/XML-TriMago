@@ -1,29 +1,62 @@
-import java.io.IOException;
 import java.util.List;
 
 import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerException;
 
-import org.xml.sax.SAXException;
+import org.apache.xpath.XPathAPI;
+import org.w3c.dom.Document;
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
+import org.w3c.dom.traversal.NodeIterator;
 
+import ParserUtility.DataParsers.DataHandler;
+import ParserUtility.DataParsers.FileDataHandler;
 import WebParserUtility.DataParsers.DtoParsers.XmlDtoParser;
 
 public class Test {
-	final static String LINK = "C:\\Users\\user\\Desktop\\apache-tomcat-6.0.41\\webapps\\TriMago\\WEB-INF\\classes\\model\\triMago.xml";
-	final static String url = "triMago.xml";
-	public static void main(String[] args) {
 
-		XmlDtoParser myParser = new XmlDtoParser(url){
-			@Override
-			protected List getParsedXmlData(DocumentBuilder dBuilder) {
-				return null;
-			}
-		};
-		try {
-			myParser.parseData("");
-		} catch (IOException | SAXException | ParserConfigurationException e) {
+	public static void main(String[] argv){
+		final String xmlPath = "triMago.xml";
+	
+		try (DataHandler myHandler = new FileDataHandler(xmlPath)){
+			//System.out.println(myHandler.getDataString());
+			myHandler.setDtoParser(new MyXmlDtoParser());
+			myHandler.getParsedDataSet();
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 	
+	public static class MyXmlDtoParser extends XmlDtoParser{
+		@Override
+		protected List getParsedXmlData(DocumentBuilder dBuilder ,Document xmlDocument) throws TransformerException {
+			String findRestaurant = "//Waterball:restaurant[contains(@typeOfMeal,'早餐')]" ;  // to find all restaurants that are serving for breakfast
+			String findLowRateComment = "//Waterball:comment[@rate < 3]";  // to find all comments which giving a low rate
+			
+			runXpath(xmlDocument,findRestaurant);
+			runXpath(xmlDocument,findLowRateComment);
+			return null;
+		}
+	
+		
+		private void runXpath(Document xmlDocument,String xpath) throws TransformerException{
+			boolean hasResult = false;
+			NodeIterator iterator = XPathAPI.selectNodeIterator(xmlDocument, xpath);
+		    Node node;
+		    
+		    while ( (node = iterator.nextNode()) !=  null) 
+		    { 
+		    	hasResult = true;
+		    	NamedNodeMap attributes =  node.getAttributes();
+		    	System.out.println("================================");
+		    	for ( int i = 0 ; i < attributes.getLength() ; i ++ )
+		    		System.out.printf(" %s %n",attributes.item(i));
+		    	System.out.println("================================");
+		    	System.out.println();
+		    }
+		    
+		    if (!hasResult)
+		    	System.out.println("找無結果。");
+		}
+	}
 }

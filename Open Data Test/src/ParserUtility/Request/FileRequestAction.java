@@ -2,8 +2,9 @@ package ParserUtility.Request;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class FileRequestAction extends RequestAction{
 	private File file;
@@ -19,8 +20,8 @@ public class FileRequestAction extends RequestAction{
 
 	@Override
 	protected BufferedReader readerInitiate() throws IOException {
-		return new BufferedReader(
-		        new FileReader(file));
+		return new BufferedReader(new InputStreamReader(
+	            new FileInputStream(file),"UTF-8"));
 	}
 
 	@Override

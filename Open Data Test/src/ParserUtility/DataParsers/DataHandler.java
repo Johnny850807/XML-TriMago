@@ -5,8 +5,18 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.util.List;
 
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.transform.TransformerException;
+
+import  org.apache.xpath.XPathAPI;
+import org.w3c.dom.Document;
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
+import org.w3c.dom.traversal.NodeIterator;
+
 import ParserUtility.Request.RequestAction;
 import WebParserUtility.DataParsers.DtoParsers.DTOParser;
+import WebParserUtility.DataParsers.DtoParsers.XmlDtoParser;
 
 /*DataHandler takes all processes to retrieve data-set 
  * from resources and parsing them to a specific collection
@@ -52,5 +62,6 @@ public abstract class DataHandler<T> implements Closeable{
 	public String getDataString() throws Exception {
 		return requestAction.parseStringFromResource();
 	}
+	
 
 }

@@ -36,7 +36,7 @@ public abstract class RequestAction implements Closeable{
 	protected String readResponse() throws IOException{
 		StringBuilder response = new StringBuilder();
 		while (reader.ready()) {
-			response.append(reader.readLine());
+			response.append(reader.readLine()).append("\n");
 		}
 		return response.toString();
 	}
