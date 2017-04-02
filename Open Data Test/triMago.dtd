@@ -13,8 +13,9 @@
 <!ATTLIST Waterball:restaurant price CDATA #REQUIRED>
 <!ATTLIST Waterball:restaurant typeOfMeal CDATA #REQUIRED>
 
-<!ELEMENT Waterball:comment (Waterball:name+,Waterball:date+,Waterball:content+,Waterball:rate+)>
+<!ELEMENT Waterball:comment (Waterball:name+,Waterball:date+,Waterball:content+)>
 <!ELEMENT Waterball:name (#PCDATA)>
 <!ELEMENT Waterball:date (#PCDATA)>
 <!ELEMENT Waterball:content (#PCDATA)>
-<!ELEMENT Waterball:rate (#PCDATA)>
+
+<!ATTLIST Waterball:comment rate CDATA #REQUIRED>

@@ -7,6 +7,7 @@ import org.apache.xpath.XPathAPI;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 import org.w3c.dom.traversal.NodeIterator;
 
 import ParserUtility.DataParsers.DataHandler;
@@ -31,7 +32,7 @@ public class Test {
 		@Override
 		protected List getParsedXmlData(DocumentBuilder dBuilder ,Document xmlDocument) throws TransformerException {
 			String findRestaurant = "//Waterball:restaurant[contains(@typeOfMeal,'¦­À\')]" ;  // to find all restaurants that are serving for breakfast
-			String findLowRateComment = "//Waterball:comment[@rate < 3]";  // to find all comments which giving a low rate
+			String findLowRateComment = "//Waterball:comment[@rate < 2]";  // to find all comments which giving a low rate
 			
 			runXpath(xmlDocument,findRestaurant);
 			runXpath(xmlDocument,findLowRateComment);
@@ -47,11 +48,18 @@ public class Test {
 		    while ( (node = iterator.nextNode()) !=  null) 
 		    { 
 		    	hasResult = true;
-		    	NamedNodeMap attributes =  node.getAttributes();
 		    	System.out.println("================================");
+		    	
+		    	NamedNodeMap attributes =  node.getAttributes();
 		    	for ( int i = 0 ; i < attributes.getLength() ; i ++ )
 		    		System.out.printf(" %s %n",attributes.item(i));
+		    	
+		    	NodeList childs = node.getChildNodes();
+		    	for ( int i = 0 ; i < childs.getLength() ; i ++ )
+		    		System.out.println(childs.item(i).getTextContent().trim());
+		    	
 		    	System.out.println("================================");
+		    	
 		    	System.out.println();
 		    }
 		    
