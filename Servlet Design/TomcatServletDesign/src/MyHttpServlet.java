@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public abstract class MyHttpServlet extends HttpServlet{
+	protected HttpServletRequest request;
+	protected HttpServletResponse response;
 	protected String xpath;
 	protected String result;
 	protected BufferedReader resultReader;
@@ -19,10 +21,16 @@ public abstract class MyHttpServlet extends HttpServlet{
 	@Override
 	public void init() throws ServletException {
 		super.init();
-		initiate(getServletContext());
+		try{
+			initiate(getServletContext());
+		}catch(Exception err){
+			log(err.getMessage(),err);
+			err.printStackTrace();
+		}
+
 	}
 	
-	protected abstract void initiate(ServletContext context);  // to read files or to instantiate variables.
+	protected abstract void initiate(ServletContext context) throws Exception;  // to read files or to instantiate variables.
 
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -42,10 +50,11 @@ public abstract class MyHttpServlet extends HttpServlet{
 			log("寫入伺服器輸出步驟");
 			writeResultToResponse(result,responseWriter,resultReader);
 			
-			log("完成。");
+			onFinish();
 			
 		} catch (Exception e) {
-			log(e.getMessage(),e);
+			log(e.getMessage());
+			e.printStackTrace();
 		} finally{
 			try {
 				log("釋放資源。");
@@ -55,7 +64,7 @@ public abstract class MyHttpServlet extends HttpServlet{
 			}
 		}
 	}
-	
+
 	protected void initResponseBufferedWriter(PrintWriter responsePrintWriter){
 		responseWriter = new BufferedWriter(responsePrintWriter);
 	}
@@ -80,12 +89,16 @@ public abstract class MyHttpServlet extends HttpServlet{
 	
 	protected abstract String getXpathFormat() throws Exception;
 	
-	protected abstract String executeAndGetResult(String xpathFormat) throws Exception;
+	protected abstract String executeAndGetResult(String xpath) throws Exception;
 	
 	protected void writeResultToResponse(String result ,BufferedWriter responseWriter,BufferedReader resultReader) throws IOException{
 		String input;
 		while ((input = resultReader.readLine()) != null)
 			responseWriter.write(input+"<br/>");
+	}
+	
+	protected void onFinish() throws Exception{
+		log("完成。");
 	}
 	
 	@Override
@@ -95,8 +108,10 @@ public abstract class MyHttpServlet extends HttpServlet{
 	}
 	
 	protected void close(BufferedWriter responseWriter,BufferedReader resultReader) throws Exception{
-		responseWriter.close();
-		resultReader.close();
+		if (responseWriter != null)
+			responseWriter.close();
+		if (resultReader != null)
+			resultReader.close();
 	}
 
 	@Override

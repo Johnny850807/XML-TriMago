@@ -10,7 +10,7 @@ import org.w3c.dom.traversal.NodeIterator;
 
 import WebParserUtility.DataParsers.DtoParsers.XmlDtoParser;
 
-public class MyXmlDtoParser<T> extends XmlDtoParser<T>{
+public class MyXmlDtoParser extends XmlDtoParser<String>{
 	private String xpath;
 	private DocumentBuilder dBuilder;
 	private Document xmlDocument;
@@ -25,11 +25,12 @@ public class MyXmlDtoParser<T> extends XmlDtoParser<T>{
 		this.xpath = xpath;
 	}
 	
+
 	@Override  // 當父類別讀完也驗證完xml檔案之後會呼叫這個函數，傳入需要用到的xml工具
-	protected List<T> getParsedXmlData(DocumentBuilder dBuilder ,Document xmlDocument) throws TransformerException {
+	protected String getParsedXmlData(DocumentBuilder dBuilder ,Document xmlDocument) throws TransformerException {
 		this.dBuilder = dBuilder;
 		this.xmlDocument = xmlDocument;
-		return null; //作業只要求印出結果，所以目前都不需要製作物件導向的List QQ Null就好
+		return getQueryResult(); //作業只要求印出結果，所以目前都不需要製作物件導向的List QQ Null就好
 	}
 	
 	public String getQueryResult() throws TransformerException{
@@ -50,7 +51,6 @@ public class MyXmlDtoParser<T> extends XmlDtoParser<T>{
 
 		return result.toString();
 	}
-	
 	
 }
 	

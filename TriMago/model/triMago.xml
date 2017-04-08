@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!DOCTYPE Waterball:WebSite SYSTEM "triMago.dtd">
+<!DOCTYPE Waterball:WebSite SYSTEM "../webapps/TriMago/model/triMago.dtd">
 
 <Waterball:WebSite 
 	xmlns:Waterball="http://g9.xml.csie.mcu.edu.tw"
@@ -36,6 +36,23 @@
 			<Waterball:name>昇昇</Waterball:name>
 			<Waterball:date>2017/3/15</Waterball:date>
 			<Waterball:content>難吃，馬的。</Waterball:content>
+		</Waterball:comment>
+	</Waterball:restaurant>
+	
+	
+	
+	<Waterball:restaurant
+		id="r2"
+		name="Waterball Dream"
+		latitude="121.356" 
+		longitude="24.9966"
+		typeOfMeal="早餐 早午餐"
+		price="340">
+		<Waterball:comment
+			rate="5">
+			<Waterball:name>Waterball</Waterball:name>
+			<Waterball:date>2017/4/1</Waterball:date>
+			<Waterball:content>Welcome here to have hthe most popular and romantic date!</Waterball:content>
 		</Waterball:comment>
 	</Waterball:restaurant>
 </Waterball:WebSite>
