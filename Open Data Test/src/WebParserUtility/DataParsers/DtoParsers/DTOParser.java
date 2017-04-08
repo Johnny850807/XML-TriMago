@@ -19,6 +19,7 @@ public abstract class DTOParser<T> implements Closeable{
 		return parsedData;
 	}
 	
+	
 	/* Override this method to create own tailored object collection 
 	 * via a data string corresponding the way you define in the method.
 	 */

@@ -62,6 +62,4 @@ public abstract class DataHandler<T> implements Closeable{
 	public String getDataString() throws Exception {
 		return requestAction.parseStringFromResource();
 	}
-	
-
 }

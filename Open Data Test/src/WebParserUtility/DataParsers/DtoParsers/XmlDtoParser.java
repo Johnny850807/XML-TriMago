@@ -68,6 +68,7 @@ public abstract class XmlDtoParser<T> extends DTOParser{
 	
 	protected abstract List<T> getParsedXmlData(DocumentBuilder dBuilder , Document xmlDocument) throws TransformerException;
 	
+	
 	@Override
 	public void close() throws IOException {}
 	
