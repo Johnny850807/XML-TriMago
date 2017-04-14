@@ -12,6 +12,7 @@ import ParserUtility.DataParsers.FileDataHandler;
  * 筆記:
  * 1. 來源檔案要記得也列上 UTF-8 
  * 2. 使用到的資源(如:檔案)要釋放掉 不然可能無法將結果輸入瀏覽器上
+ * 3. 命名空間使用要用工廠設置awareNameSpace
  */
 
 public class SearchLowRateCommentServlet extends XmlQueryServlet{
