@@ -15,5 +15,5 @@ To build up and learn everything from the course XML in order to present our vie
 - A WebAPP should be deployed on a Tomcat server.
 
 ## 網頁設計 
-- All visual web design blueprints are here.
+- All visual web design blueprints here.
 
