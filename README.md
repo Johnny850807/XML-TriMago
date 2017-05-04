@@ -1,5 +1,5 @@
 # XML-Final-Project-Presentation
-To build up and learn everything from the course XML in order to present our viewpoint or project in the final class.
+TriMago is a webapp providing various restaurant options near MingChang university for every student, and here the github page contains an open source of it.
 
 ## Html
 - All web designs in HTML present here.
