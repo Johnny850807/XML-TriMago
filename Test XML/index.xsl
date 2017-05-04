@@ -109,7 +109,8 @@
     <div class="media" id="restaurantList">
       <div class="col-sm-8">
         <div class="media-left">
-          <img src="https://imgur.com/download/8WZa7jf" class="media-object" style="width:250px"/>
+          <xsl:variable name="imageUrl" select="@imageUrl"/>
+          <img src="{$imageUrl}" class="media-object" style="width:250px"/>
         </div>
         <div class="media-body">
           <h1 class="media-heading"> <xsl:value-of select="@name"/> </h1>

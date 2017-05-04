@@ -12,6 +12,7 @@
 <!ATTLIST Waterball:restaurant price CDATA #REQUIRED>
 <!ATTLIST Waterball:restaurant typeOfMeal CDATA #REQUIRED>
 <!ATTLIST Waterball:restaurant address CDATA #REQUIRED>
+<!ATTLIST Waterball:restaurant imageUrl CDATA "http://imgur.com/download/fKTtkuy" >
 
 <!ELEMENT Waterball:comment (Waterball:name+,Waterball:date+,Waterball:content+)>
 <!ELEMENT Waterball:name (#PCDATA)>
