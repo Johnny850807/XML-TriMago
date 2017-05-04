@@ -12,7 +12,7 @@ To build up and learn everything from the course XML in order to present our vie
 - The place using XML to test and produce a correct XSL.
 
 ## TriMago 
-- Where we can deploy on a Tomcat server.
+- A WebAPP should be deploy on a Tomcat server.
 
 ## 網頁設計 
 - All visual web design blueprint are here.
