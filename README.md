@@ -5,4 +5,4 @@ Html - All web designs in HTML present here
 Servlet Design - servlet models in a Eclipse project
 Test XML - The place we can use XML to produce correct XSL
 TriMago - Where we can place in Tomcat server
-∫Ù≠∂≥]≠pπœ - All visual web design are here
+Á∂≤È†ÅË®≠Ë®à - All visual web design blueprint are here
