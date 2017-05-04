@@ -17,7 +17,7 @@ TriMago is deployed on a Tomcat server for using Java servlet model and TriMago 
 - The place using XML to test and produce a correct XSL.
 
 ## TriMago 
-- A WebAPP should be deployed on a Tomcat server.
+- A WebAPP release should be deployed on a Tomcat server.
 
 ## 網頁設計 
 - All visual web design blueprints here.
