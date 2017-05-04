@@ -27,43 +27,7 @@
     <display-name>Index</display-name>
  application -->
 
-    <servlet>
-      <servlet-name>Hello</servlet-name>
-      <servlet-class>Hello</servlet-class>
-    </servlet>
-	<servlet>
-      <servlet-name>CheckXml</servlet-name>
-      <servlet-class>CheckXmlAvailableServlet</servlet-class>
-    </servlet>
-	<servlet>
-      <servlet-name>SearchRestaurantsByName</servlet-name>
-      <servlet-class>SearchRestaurantsByNameServlet</servlet-class>
-    </servlet>
-	
-	<servlet>
-      <servlet-name>SearchLowRateComment</servlet-name>
-      <servlet-class>SearchLowRateCommentServlet</servlet-class>
-    </servlet>
-  
-    <servlet-mapping>
-        <servlet-name>Hello</servlet-name>
-        <url-pattern>/Hello</url-pattern>
-    </servlet-mapping>
-	
-	<servlet-mapping>
-        <servlet-name>CheckXml</servlet-name>
-        <url-pattern>/CheckXml</url-pattern>
-    </servlet-mapping>
-	
-	<servlet-mapping>
-        <servlet-name>SearchRestaurantsByName</servlet-name>
-        <url-pattern>/SearchRestaurantsByName</url-pattern>
-    </servlet-mapping>
-	
-	<servlet-mapping>
-        <servlet-name>SearchLowRateComment</servlet-name>
-        <url-pattern>/SearchLowRateComment</url-pattern>
-    </servlet-mapping>
+    
     
 
 </web-app>
