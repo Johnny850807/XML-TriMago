@@ -8,7 +8,7 @@ To build up and learn everything from the course XML in order to present our vie
 - servlet models in a Eclipse project
 
 ## Test XML 
-- The place we can use XML to produce correct XSL
+- The place we can use XML to test and produce correct XSL
 
 ## TriMago 
 - Where we can place in Tomcat server
