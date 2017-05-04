@@ -5,7 +5,7 @@ To build up and learn everything from the course XML in order to present our vie
 - All web designs in HTML present here
 
 ## Servlet Design 
-- servlet models in a Eclipse project
+- servlet models open source in a Eclipse project
 - servlets using  [DataHandler](https://github.com/Johnny850807/DataHandler) created by Waterball
 
 ## Test XML 
