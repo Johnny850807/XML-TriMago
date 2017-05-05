@@ -109,12 +109,15 @@
 	
 	<xsl:template  match="Waterball:restaurant">
     <div class="media" id="restaurantList">
-      <div class="col-sm-8">
+      <div class="col-sm-4">
         <div class="media-left">
           <xsl:variable name="imageUrl" select="@imageUrl"/>
           <img src="{$imageUrl}" class="media-object" style="width:250px"/>
         </div>
-        <div class="media-body">
+        
+      </div>
+      <div class="col-sm-8" style="padding-top:111px">
+		<div class="media-body">
           <h1 class="media-heading"> <xsl:value-of select="@name"/> </h1>
           <div class="item__stars-wrp">
             <!--計算該餐廳的評價 = 所有留言給予的評價之平均-->
@@ -126,8 +129,6 @@
           <p class="address"><xsl:value-of select="@address"/></p>
           <p class="price">價位 <xsl:value-of select="@price"/></p>
         </div>
-      </div>
-      <div class="col-sm-4" style="padding-top:111px">
         <button type="button" class="btn btn-success detailsButton">查看詳情</button>
       </div>
      </div>
