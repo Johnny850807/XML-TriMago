@@ -13,11 +13,81 @@
 				<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 				<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 				<link rel="stylesheet" href="triMago.css"/>
+
+        <div class="modal fade" id="myModal" role="dialog">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title">新增餐廳</h4>
+              </div>
+              <form  id="modal-form" method="get" action="test.png" onsubmit="return onSubmitValidate()">
+                <div class="modal-body">
+                  <div class="form-group">
+                    <label for="res-name">餐廳名稱:</label>
+                    <input type="text" class="form-control" id="res-name" name="name"/>
+                  </div>
+                  <div class="form-group">
+                    <label for="res-img">餐廳照片:</label>
+                    <input type="file" class="form-control" id="res-img" name="imageUrl" accept="image/*"/>
+                  </div>
+                  <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" id="modal-select-btn" type="button" data-toggle="dropdown" name="typeOfMeal">
+                      選擇分類
+                      <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu modal-dropdown-menu">
+                      <li>
+                        <a href="#">早餐</a>
+                      </li>
+                      <li>
+                        <a href="#">午餐</a>
+                      </li>
+                      <li>
+                        <a href="#">早午餐</a>
+                      </li>
+                      <li>
+                        <a href="#">下午茶</a>
+                      </li>
+                      <li>
+                        <a href="#">晚餐</a>
+                      </li>
+                      <li>
+                        <a href="#">宵夜</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="form-group">
+                    <label for="res-latitude">緯度:</label>
+                    <input type="text" class="form-control" id="res-latitude" name="latitude"/>
+                  </div>
+                  <div class="form-group">
+                    <label for="res-longitude">經度:</label>
+                    <input type="text" class="form-control" id="res-longitude" name="longitude"/>
+                  </div>
+                  <div class="form-group">
+                    <label for="res-address">地址:</label>
+                    <input type="text" class="form-control" id="res-address" name="address"/>
+                  </div>
+                  <div class="form-group">
+                    <label for="res-avgprice">平均價格:</label>
+                    <input type="text" class="form-control" id="res-avgprice" name="price"/>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                  <button type="submit" class="btn btn-default"  form="modal-form" >新增</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
 			</head>
 			<body>
 					<xsl:apply-templates select="Waterball:WebSite"/>
 			</body>
 		</html>
+
+    
 	</xsl:template>
   
   <xsl:template match="Waterball:WebSite">
@@ -31,8 +101,8 @@
             </div>
             <nav class="nav nav-pills" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#" id="homepage" class="navigationRight" > 首頁</a></li>
-                    <li><a href="AboutUs.html" id="about" class="navigationRight" > 關於我們</a></li>
+                    <li><a href="index" id="homepage" class="navigationRight" > 首頁</a></li>
+                    <li><a href="about" id="about" class="navigationRight" > 關於我們</a></li>
                 </ul>
             </nav>
         </div>
@@ -51,13 +121,16 @@
                         </button>
                     </div>
                     <div class="row" id="mealTypeMenu" >
-                        <div class="col-sm-9">
-                            <div class="dropdown">
-                                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                        <div class="col-sm-7">
+                          <!--讓點擊分類之後能夠將文字印到按鈕上-->
+                        
+                          
+                            <div class="dropdown" style="margin-top:8px;">
+                                <button class="btn btn-primary dropdown-toggle" id="select-btn" type="button" data-toggle="dropdown" name="typeOfMeal">
                                     選擇分類
                                     <span class="caret"></span>
                                 </button>
-                                <ul class="dropdown-menu">
+                                <ul class="dropdown-menu search-dropdown-menu">
                                     <li><a href="#">早餐</a></li>
                                     <li><a href="#">午餐</a></li>
                                     <li><a href="#">早午餐</a></li>
@@ -67,13 +140,17 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-sm-3">
-                            <a href="MapPage.html" id="goToGoogleMap">前往美食地圖→</a>
+                        <div class="col-sm-5" style="margin-top:8px; text-align:right;">
+                          <form method="get" action="map">
+                            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal" style="margin-right:7px;">
+                              我要推薦餐廳
+                            </button>
+                            <input type="submit" id="goToGoogleMap" class="btn btn-danger" value="美食地圖→"/>
+                          </form>
                         </div>
                     </div>
                 </div>
                 <hr/>
-
                 <xsl:apply-templates select="Waterball:restaurant"/>
 
             </div>
@@ -109,29 +186,25 @@
 	
 	<xsl:template  match="Waterball:restaurant">
     <div class="media" id="restaurantList">
-      <div class="col-sm-4">
         <div class="media-left">
           <xsl:variable name="imageUrl" select="@imageUrl"/>
           <img src="{$imageUrl}" class="media-object" style="width:250px"/>
         </div>
-        
-      </div>
-      <div class="col-sm-8" style="padding-top:111px">
+
 		<div class="media-body">
-          <h1 class="media-heading"> <xsl:value-of select="@name"/> </h1>
-          <div class="item__stars-wrp">
-            <!--計算該餐廳的評價 = 所有留言給予的評價之平均-->
-            <xsl:variable name="rate" select="sum(Waterball:comment/@rate) div count(Waterball:comment)"/>
-            <xsl:for-each select="(//node())[$rate >= position()]">
-              <span class="icon-ic icon-category/star item__star"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><path class="svg-color--primary" fill="#F6AB3F" d="M11.988 5.21c-.052-.275-.27-.488-.545-.534l-3.604-.6L6.63.455C6.542.184 6.287 0 6 0s-.542.184-.632.456L4.16 4.076l-3.603.6c-.275.046-.493.26-.545.533-.052.273.072.55.312.695L3.2 7.63l-1.165 3.493c-.093.28.01.59.25.758.115.08.25.12.382.12.148 0 .295-.05.416-.146L6 9.52l2.917 2.333c.12.098.27.147.416.147.133 0 .267-.04.38-.12.244-.17.346-.478.252-.758L8.8 7.63l2.876-1.725c.24-.144.364-.422.312-.696z"></path></svg></span>
-            </xsl:for-each>
-          </div>
-          <p class="address"><xsl:value-of select="@address"/></p>
-          <p class="price">價位 <xsl:value-of select="@price"/></p>
-        </div>
-        <button type="button" class="btn btn-success detailsButton">查看詳情</button>
-      </div>
+       <h1 class="media-heading"> <xsl:value-of select="@name"/> </h1>
+       <div class="item__stars-wrp">
+         <!--計算該餐廳的評價 = 所有留言給予的評價之平均-->
+         <xsl:variable name="rate" select="sum(Waterball:comment/@rate) div count(Waterball:comment)"/>
+         <xsl:for-each select="(//node())[$rate >= position()]">
+           <span class="icon-ic icon-category/star item__star"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><path class="svg-color--primary" fill="#F6AB3F" d="M11.988 5.21c-.052-.275-.27-.488-.545-.534l-3.604-.6L6.63.455C6.542.184 6.287 0 6 0s-.542.184-.632.456L4.16 4.076l-3.603.6c-.275.046-.493.26-.545.533-.052.273.072.55.312.695L3.2 7.63l-1.165 3.493c-.093.28.01.59.25.758.115.08.25.12.382.12.148 0 .295-.05.416-.146L6 9.52l2.917 2.333c.12.098.27.147.416.147.133 0 .267-.04.38-.12.244-.17.346-.478.252-.758L8.8 7.63l2.876-1.725c.24-.144.364-.422.312-.696z"></path></svg></span>
+         </xsl:for-each>
+       </div>
+       <p class="address"><xsl:value-of select="@address"/></p>
+       <p class="price">價位 <xsl:value-of select="@price"/></p>
+      <button type="button" class="btn btn-success detailsButton">查看詳情</button>
      </div>
+    </div>
 	</xsl:template>
 
 </xsl:stylesheet>

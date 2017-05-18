@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE Waterball:WebSite SYSTEM "triMago.dtd">
-<?xml-stylesheet type="text/xsl" href="map.xsl"?>
+<!DOCTYPE Waterball:WebSite SYSTEM "../webapps/TriMago/triMago.dtd">
+<?xml-stylesheet type="text/xsl" href="detail.xsl"?>
 <Waterball:WebSite xmlns:Waterball="http://g9.xml.csie.mcu.edu.tw" >
 	<Waterball:restaurant 
     id="r0" 
@@ -13,7 +13,10 @@
 		<Waterball:comment rate="3">
 			<Waterball:name>水球</Waterball:name>
 			<Waterball:date>2017/3/10</Waterball:date>
-			<Waterball:content>很奇怪，他的椒麻雞，只是鹹酥雞+醬汁而已...</Waterball:content>
+			<Waterball:content>很奇怪，他的椒麻雞，只是鹹酥雞+醬汁而已...&#xA;
+      還算可以啦，哈哈哈哈 &#xA;
+      旁邊還有一家美國時間 其實都滿推薦derrr&#xA;
+      閒閒沒事就來吃吧</Waterball:content>
 		</Waterball:comment>
 	</Waterball:restaurant>
 	<Waterball:restaurant 
@@ -78,7 +81,7 @@
     longitude="121.343349" 
     typeOfMeal="早午餐" 
     price="40" 
-    address="333台灣桃園市龜山區明德路268號"
+    address="333台灣桃園市龜山區中山街5號"
     imageUrl="https://i.vimeocdn.com/portrait/4399054_300x300">
   </Waterball:restaurant>
 	

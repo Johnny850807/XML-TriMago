@@ -41,10 +41,10 @@
         <nav class="nav nav-pills" id="myNavbar">
           <ul class="nav navbar-nav navbar-right">
             <li>
-              <a href="index.html" id="homepage" class="navigationRight"> 首頁</a>
+              <a href="index" id="homepage" class="navigationRight"> 首頁</a>
             </li>
             <li>
-              <a href="AboutUs.html" id="about" class="navigationRight"> 關於我們</a>
+              <a href="about" id="about" class="navigationRight"> 關於我們</a>
             </li>
           </ul>
         </nav>

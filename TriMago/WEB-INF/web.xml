@@ -26,6 +26,32 @@
     </description>
     <display-name>Index</display-name>
  application -->
+	<servlet>
+        <servlet-name>IndexXslServlet</servlet-name>
+        <servlet-class>IndexXslServlet</servlet-class>
+    </servlet>
+	<servlet>
+        <servlet-name>MapXslServlet</servlet-name>
+        <servlet-class>MapXslServlet</servlet-class>
+    </servlet>
+	<servlet>
+        <servlet-name>AboutXslServlet</servlet-name>
+        <servlet-class>AboutXslServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>IndexXslServlet</servlet-name>
+        <url-pattern>/index</url-pattern>
+    </servlet-mapping>
+	<servlet-mapping>
+        <servlet-name>MapXslServlet</servlet-name>
+        <url-pattern>/map</url-pattern>
+    </servlet-mapping>
+	<servlet-mapping>
+        <servlet-name>AboutXslServlet</servlet-name>
+        <url-pattern>/about</url-pattern>
+    </servlet-mapping>
+	
 
     
     

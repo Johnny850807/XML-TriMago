@@ -13,19 +13,7 @@
 				<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 				<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 				<link rel="stylesheet" href="triMago.css"/>
-        <script>
-          $(function(){
-          $(".modal-dropdown-menu li a").click(function(){
-          $("#modal-select-btn:first-child").text($(this).text());
-          $("#modal-select-btn:first-child").val($(this).text());
-          });
-          });
 
-          function onSubmitValidate(){
-            alert("Submit button clicked!");
-            return true;
-          }
-        </script>
         <div class="modal fade" id="myModal" role="dialog">
           <div class="modal-dialog">
             <div class="modal-content">
@@ -113,8 +101,8 @@
             </div>
             <nav class="nav nav-pills" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#" id="homepage" class="navigationRight" > 首頁</a></li>
-                    <li><a href="AboutUs.html" id="about" class="navigationRight" > 關於我們</a></li>
+                    <li><a href="index" id="homepage" class="navigationRight" > 首頁</a></li>
+                    <li><a href="about" id="about" class="navigationRight" > 關於我們</a></li>
                 </ul>
             </nav>
         </div>
@@ -135,18 +123,7 @@
                     <div class="row" id="mealTypeMenu" >
                         <div class="col-sm-7">
                           <!--讓點擊分類之後能夠將文字印到按鈕上-->
-                          <script>
-                            $(function(){
-
-                            $(".search-dropdown-menu li a").click(function(){
-
-                            $("#select-btn:first-child").text($(this).text());
-                            $("#select-btn:first-child").val($(this).text());
-
-                            });
-
-                            });
-                          </script>
+                        
                           
                             <div class="dropdown" style="margin-top:8px;">
                                 <button class="btn btn-primary dropdown-toggle" id="select-btn" type="button" data-toggle="dropdown" name="typeOfMeal">
@@ -164,7 +141,7 @@
                             </div>
                         </div>
                         <div class="col-sm-5" style="margin-top:8px; text-align:right;">
-                          <form method="get" action="/index.xml">
+                          <form method="get" action="map">
                             <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal" style="margin-right:7px;">
                               我要推薦餐廳
                             </button>

@@ -43,7 +43,7 @@ public abstract class MyHttpServlet extends HttpServlet{
 			extractParameter(request);
 			
 			log("執行與得到結果步驟");
-			result = executeAndGetResult(getXpathFormat());
+			result = executeAndGetResult();
 			resultReader = new BufferedReader(new StringReader(result));
 			
 			log("結果為 : \n" + result);
@@ -87,14 +87,12 @@ public abstract class MyHttpServlet extends HttpServlet{
 	
 	protected abstract void extractParameter(HttpServletRequest request) throws Exception;
 	
-	protected abstract String getXpathFormat() throws Exception;
-	
-	protected abstract String executeAndGetResult(String xpath) throws Exception;
+	protected abstract String executeAndGetResult() throws Exception;
 	
 	protected void writeResultToResponse(String result ,BufferedWriter responseWriter,BufferedReader resultReader) throws IOException{
 		String input;
 		while ((input = resultReader.readLine()) != null)
-			responseWriter.write(input+"<br/>");
+			responseWriter.write(input+"\n");
 	}
 	
 	protected void onFinish() throws Exception{
