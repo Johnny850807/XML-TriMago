@@ -7,6 +7,7 @@
 .navbar {
     background-color: #FFF;
     border-bottom: 3px solid gray;
+    margin-bottom: 0px;
     height: 150px;
     line-height: 150px;
 }
@@ -32,7 +33,7 @@
 /* Set gray background color and 100% height */
 .sidenav {
     padding-top: 20px;
-    background-color: #f1f1f1;
+    background-color: #fcfcfc;
     height: 100%;
 }
 
@@ -120,7 +121,20 @@ footer {
     cursor: pointer;
 }
 
-#restaurantList{
+.media {
+    background-color: #FDFDFD;
+    padding: 12px;
+    margin-top: 4px;
+    margin-bottom: 15px;
+}
+
+.media-body{
+    padding-top:6px;
+    padding-left:10px;
+}
+
+
+#restaurantList {
     padding-bottom: 15px;
     border-bottom: 1px solid gray;
 }
