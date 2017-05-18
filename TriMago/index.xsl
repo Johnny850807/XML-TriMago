@@ -13,7 +13,19 @@
 				<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 				<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 				<link rel="stylesheet" href="triMago.css"/>
+        <script>
+          $(function(){
+          $(".modal-dropdown-menu li a").click(function(){
+          $("#modal-select-btn:first-child").text($(this).text());
+          $("#modal-select-btn:first-child").val($(this).text());
+          });
+          });
 
+          function onSubmitValidate(){
+          alert("Submit button clicked!");
+          return true;
+          }
+        </script>
         <div class="modal fade" id="myModal" role="dialog">
           <div class="modal-dialog">
             <div class="modal-content">
@@ -123,7 +135,18 @@
                     <div class="row" id="mealTypeMenu" >
                         <div class="col-sm-7">
                           <!--讓點擊分類之後能夠將文字印到按鈕上-->
-                        
+                          <script>
+                            $(function(){
+
+                            $(".search-dropdown-menu li a").click(function(){
+
+                            $("#select-btn:first-child").text($(this).text());
+                            $("#select-btn:first-child").val($(this).text());
+
+                            });
+
+                            });
+                          </script>
                           
                             <div class="dropdown" style="margin-top:8px;">
                                 <button class="btn btn-primary dropdown-toggle" id="select-btn" type="button" data-toggle="dropdown" name="typeOfMeal">
@@ -141,12 +164,11 @@
                             </div>
                         </div>
                         <div class="col-sm-5" style="margin-top:8px; text-align:right;">
-                          <form method="get" action="map">
-                            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal" style="margin-right:7px;">
+                            <button type="button" class="btn btn-info" data-toggle="modal"  
+                                    data-target="#myModal" style="margin-right:7px;"  >
                               我要推薦餐廳
                             </button>
-                            <input type="submit" id="goToGoogleMap" class="btn btn-danger" value="美食地圖→"/>
-                          </form>
+                          <button type="button" id="goToGoogleMap" class="btn btn-danger" onclick="location.href='map'">美食地圖→</button>
                         </div>
                     </div>
                 </div>

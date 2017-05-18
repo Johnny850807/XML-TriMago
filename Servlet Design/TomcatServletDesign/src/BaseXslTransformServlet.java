@@ -18,9 +18,9 @@ import ParserUtility.DataParsers.DataHandler;
 import ParserUtility.DataParsers.FileDataHandler;
 
 public abstract class BaseXslTransformServlet extends MyHttpServlet{
-	private DataHandler<Document> xmlDataHandler;
-	private String xslPath;
-	private String xmlPath;
+	protected DataHandler<Document> xmlDataHandler;
+	protected String xslPath;
+	protected String xmlPath;
 	@Override
 	protected void initiate(ServletContext context) throws Exception {
 		xmlPath = context.getRealPath(XmlContext.XML_NAME);
@@ -39,14 +39,24 @@ public abstract class BaseXslTransformServlet extends MyHttpServlet{
 	@Override
 	protected String executeAndGetResult() throws Exception {
 		TransformerFactory tranFactory = TransformerFactory.newInstance();
-		Transformer aTransformer = tranFactory.newTransformer
+		Transformer transformer = tranFactory.newTransformer
 				( new StreamSource(xslPath));
-		StringReader reader = new StringReader(xmlDataHandler.getDataString());
+		transformConfig(transformer);
 	    StringWriter writer = new StringWriter();
-		Source src = new StreamSource(reader);
+		Source src = getXmlStreamSource();
 		Result dest = new StreamResult(writer);
-		aTransformer.transform(src, dest);
+		transformer.transform(src, dest);
 		return writer.toString();
+	}
+	
+	protected void transformConfig(Transformer transformer){
+		//hook method
+	}
+	
+	protected Source getXmlStreamSource() throws Exception{
+		//hook method
+		StringReader reader = new StringReader(xmlDataHandler.getDataString());
+		return new StreamSource(reader);
 	}
 
 }

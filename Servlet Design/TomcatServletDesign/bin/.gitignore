@@ -7,3 +7,7 @@
 /IndexXslServlet.class
 /MapXslServlet.class
 /AboutXslServlet.class
+/ImgurApi.class
+/CreateRestaurantServlet.class
+/XPathResultServlet.class
+/SearchRestaurantServlet.class
