@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Waterball:WebSite SYSTEM "triMago.dtd">
-<?xml-stylesheet type="text/xsl" href="detail.xsl"?>
+<?xml-stylesheet type="text/xsl" href="index.xsl"?>
 <Waterball:WebSite xmlns:Waterball="http://g9.xml.csie.mcu.edu.tw" >
 	<Waterball:restaurant 
     id="r0" 

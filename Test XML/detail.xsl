@@ -14,10 +14,29 @@
 				<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 				<link rel="stylesheet" href="triMago.css"/>
         <link rel="stylesheet" href="detail.css"/>
+        <div class="modal fade" id="myModal" role="dialog">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title">留言</h4>
+              </div>
+              <form>
+                <div class="modal-body">
+                  <p>Some text in the modal.</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">留言</button>
+                  <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
 			</head>
 			<body>
 					<xsl:apply-templates select="Waterball:WebSite"/>
 			</body>
+      
 		</html>
 	</xsl:template>
   
@@ -43,7 +62,9 @@
         <div class="row content">
             <div class="col-sm-10 text-left">
               <div class="add-comment">
-                <button type="button" class="btn btn-info">我要留言</button>
+                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">
+                  我要留言
+                </button>
               </div>
                 <xsl:apply-templates select="Waterball:restaurant"/>
             </div>

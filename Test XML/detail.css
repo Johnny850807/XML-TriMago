@@ -1,14 +1,4 @@
-﻿.add-comment {
-    padding: 8px;
-    text-align: right;
-}
-
-.add-comment button
-{
-    text-align: center;
-    width: 200px;
-    height: 55px;
-}
+﻿
 
 #comment-name{
     font-size:25px;
@@ -27,3 +17,4 @@
 #commentList {
     border-bottom: 1px solid gray;
 }
+

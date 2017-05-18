@@ -13,11 +13,93 @@
 				<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 				<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 				<link rel="stylesheet" href="triMago.css"/>
+        <script>
+          $(function(){
+          $(".modal-dropdown-menu li a").click(function(){
+          $("#modal-select-btn:first-child").text($(this).text());
+          $("#modal-select-btn:first-child").val($(this).text());
+          });
+          });
+
+          function onSubmitValidate(){
+            alert("Submit button clicked!");
+            return true;
+          }
+        </script>
+        <div class="modal fade" id="myModal" role="dialog">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title">新增餐廳</h4>
+              </div>
+              <form  id="modal-form" method="get" action="test.png" onsubmit="return onSubmitValidate()">
+                <div class="modal-body">
+                  <div class="form-group">
+                    <label for="res-name">餐廳名稱:</label>
+                    <input type="text" class="form-control" id="res-name" name="name"/>
+                  </div>
+                  <div class="form-group">
+                    <label for="res-img">餐廳照片:</label>
+                    <input type="file" class="form-control" id="res-img" name="imageUrl" accept="image/*"/>
+                  </div>
+                  <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" id="modal-select-btn" type="button" data-toggle="dropdown" name="typeOfMeal">
+                      選擇分類
+                      <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu modal-dropdown-menu">
+                      <li>
+                        <a href="#">早餐</a>
+                      </li>
+                      <li>
+                        <a href="#">午餐</a>
+                      </li>
+                      <li>
+                        <a href="#">早午餐</a>
+                      </li>
+                      <li>
+                        <a href="#">下午茶</a>
+                      </li>
+                      <li>
+                        <a href="#">晚餐</a>
+                      </li>
+                      <li>
+                        <a href="#">宵夜</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="form-group">
+                    <label for="res-latitude">緯度:</label>
+                    <input type="text" class="form-control" id="res-latitude" name="latitude"/>
+                  </div>
+                  <div class="form-group">
+                    <label for="res-longitude">經度:</label>
+                    <input type="text" class="form-control" id="res-longitude" name="longitude"/>
+                  </div>
+                  <div class="form-group">
+                    <label for="res-address">地址:</label>
+                    <input type="text" class="form-control" id="res-address" name="address"/>
+                  </div>
+                  <div class="form-group">
+                    <label for="res-avgprice">平均價格:</label>
+                    <input type="text" class="form-control" id="res-avgprice" name="price"/>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                  <button type="submit" class="btn btn-default"  form="modal-form" >新增</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
 			</head>
 			<body>
 					<xsl:apply-templates select="Waterball:WebSite"/>
 			</body>
 		</html>
+
+    
 	</xsl:template>
   
   <xsl:template match="Waterball:WebSite">
@@ -51,13 +133,27 @@
                         </button>
                     </div>
                     <div class="row" id="mealTypeMenu" >
-                        <div class="col-sm-9">
-                            <div class="dropdown">
-                                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                        <div class="col-sm-7">
+                          <!--讓點擊分類之後能夠將文字印到按鈕上-->
+                          <script>
+                            $(function(){
+
+                            $(".search-dropdown-menu li a").click(function(){
+
+                            $("#select-btn:first-child").text($(this).text());
+                            $("#select-btn:first-child").val($(this).text());
+
+                            });
+
+                            });
+                          </script>
+                          
+                            <div class="dropdown" style="margin-top:8px;">
+                                <button class="btn btn-primary dropdown-toggle" id="select-btn" type="button" data-toggle="dropdown" name="typeOfMeal">
                                     選擇分類
                                     <span class="caret"></span>
                                 </button>
-                                <ul class="dropdown-menu">
+                                <ul class="dropdown-menu search-dropdown-menu">
                                     <li><a href="#">早餐</a></li>
                                     <li><a href="#">午餐</a></li>
                                     <li><a href="#">早午餐</a></li>
@@ -67,13 +163,17 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-sm-3">
-                            <a href="MapPage.html" id="goToGoogleMap">前往美食地圖→</a>
+                        <div class="col-sm-5" style="margin-top:8px; text-align:right;">
+                          <form method="get" action="/index.xml">
+                            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal" style="margin-right:7px;">
+                              我要推薦餐廳
+                            </button>
+                            <input type="submit" id="goToGoogleMap" class="btn btn-danger" value="美食地圖→"/>
+                          </form>
                         </div>
                     </div>
                 </div>
                 <hr/>
-
                 <xsl:apply-templates select="Waterball:restaurant"/>
 
             </div>
