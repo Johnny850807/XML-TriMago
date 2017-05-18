@@ -209,29 +209,25 @@
 	
 	<xsl:template  match="Waterball:restaurant">
     <div class="media" id="restaurantList">
-      <div class="col-sm-4">
         <div class="media-left">
           <xsl:variable name="imageUrl" select="@imageUrl"/>
           <img src="{$imageUrl}" class="media-object" style="width:250px"/>
         </div>
-        
-      </div>
-      <div class="col-sm-8">
+
 		<div class="media-body">
-          <h1 class="media-heading"> <xsl:value-of select="@name"/> </h1>
-          <div class="item__stars-wrp">
-            <!--計算該餐廳的評價 = 所有留言給予的評價之平均-->
-            <xsl:variable name="rate" select="sum(Waterball:comment/@rate) div count(Waterball:comment)"/>
-            <xsl:for-each select="(//node())[$rate >= position()]">
-              <span class="icon-ic icon-category/star item__star"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><path class="svg-color--primary" fill="#F6AB3F" d="M11.988 5.21c-.052-.275-.27-.488-.545-.534l-3.604-.6L6.63.455C6.542.184 6.287 0 6 0s-.542.184-.632.456L4.16 4.076l-3.603.6c-.275.046-.493.26-.545.533-.052.273.072.55.312.695L3.2 7.63l-1.165 3.493c-.093.28.01.59.25.758.115.08.25.12.382.12.148 0 .295-.05.416-.146L6 9.52l2.917 2.333c.12.098.27.147.416.147.133 0 .267-.04.38-.12.244-.17.346-.478.252-.758L8.8 7.63l2.876-1.725c.24-.144.364-.422.312-.696z"></path></svg></span>
-            </xsl:for-each>
-          </div>
-          <p class="address"><xsl:value-of select="@address"/></p>
-          <p class="price">價位 <xsl:value-of select="@price"/></p>
-        </div>
-        <button type="button" class="btn btn-success detailsButton">查看詳情</button>
-      </div>
+       <h1 class="media-heading"> <xsl:value-of select="@name"/> </h1>
+       <div class="item__stars-wrp">
+         <!--計算該餐廳的評價 = 所有留言給予的評價之平均-->
+         <xsl:variable name="rate" select="sum(Waterball:comment/@rate) div count(Waterball:comment)"/>
+         <xsl:for-each select="(//node())[$rate >= position()]">
+           <span class="icon-ic icon-category/star item__star"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><path class="svg-color--primary" fill="#F6AB3F" d="M11.988 5.21c-.052-.275-.27-.488-.545-.534l-3.604-.6L6.63.455C6.542.184 6.287 0 6 0s-.542.184-.632.456L4.16 4.076l-3.603.6c-.275.046-.493.26-.545.533-.052.273.072.55.312.695L3.2 7.63l-1.165 3.493c-.093.28.01.59.25.758.115.08.25.12.382.12.148 0 .295-.05.416-.146L6 9.52l2.917 2.333c.12.098.27.147.416.147.133 0 .267-.04.38-.12.244-.17.346-.478.252-.758L8.8 7.63l2.876-1.725c.24-.144.364-.422.312-.696z"></path></svg></span>
+         </xsl:for-each>
+       </div>
+       <p class="address"><xsl:value-of select="@address"/></p>
+       <p class="price">價位 <xsl:value-of select="@price"/></p>
+      <button type="button" class="btn btn-success detailsButton">查看詳情</button>
      </div>
+    </div>
 	</xsl:template>
 
 </xsl:stylesheet>
