@@ -1,10 +1,9 @@
-import java.io.File;
-import java.io.FileOutputStream;
 import java.io.StringReader;
 import java.io.StringWriter;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
+import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Result;
 import javax.xml.transform.Source;
 import javax.xml.transform.Transformer;
@@ -25,7 +24,6 @@ public abstract class BaseXslTransformServlet extends MyHttpServlet{
 	protected void initiate(ServletContext context) throws Exception {
 		xmlPath = context.getRealPath(XmlContext.XML_NAME);
 		xslPath = context.getRealPath(getXslFileName());
-		xmlDataHandler = new FileDataHandler(xmlPath);
 	}
 	
 	protected abstract String getXslFileName();
@@ -38,6 +36,15 @@ public abstract class BaseXslTransformServlet extends MyHttpServlet{
 
 	@Override
 	protected String executeAndGetResult() throws Exception {
+		doXmlCrud();
+		return transformXmlToHtml();
+	}
+	
+	protected void doXmlCrud(){
+		//hook method
+	}
+	
+	protected String transformXmlToHtml() throws Exception{
 		TransformerFactory tranFactory = TransformerFactory.newInstance();
 		Transformer transformer = tranFactory.newTransformer
 				( new StreamSource(xslPath));
@@ -46,15 +53,19 @@ public abstract class BaseXslTransformServlet extends MyHttpServlet{
 		Source src = getXmlStreamSource();
 		Result dest = new StreamResult(writer);
 		transformer.transform(src, dest);
+		String result = writer.toString();
+		writer.close();
 		return writer.toString();
 	}
 	
 	protected void transformConfig(Transformer transformer){
 		//hook method
+		transformer.setOutputProperty(OutputKeys.ENCODING, getEncoding());
 	}
 	
 	protected Source getXmlStreamSource() throws Exception{
 		//hook method
+		xmlDataHandler = new FileDataHandler(xmlPath);
 		StringReader reader = new StringReader(xmlDataHandler.getDataString());
 		return new StreamSource(reader);
 	}
