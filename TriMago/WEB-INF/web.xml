@@ -42,10 +42,18 @@
         <servlet-name>SearchRestaurantServlet</servlet-name>
         <servlet-class>SearchRestaurantServlet</servlet-class>
     </servlet>
+	<servlet>
+        <servlet-name>DetailXslServlet</servlet-name>
+        <servlet-class>DetailXslServlet</servlet-class>
+    </servlet>
 
     <servlet-mapping>
         <servlet-name>IndexXslServlet</servlet-name>
         <url-pattern>/index.xml</url-pattern>
+    </servlet-mapping>
+	<servlet-mapping>
+        <servlet-name>DetailXslServlet</servlet-name>
+        <url-pattern>/detail</url-pattern>
     </servlet-mapping>
 	<servlet-mapping>
         <servlet-name>IndexXslServlet</servlet-name>
