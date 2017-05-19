@@ -107,8 +107,7 @@ footer {
     margin-left: 30px;
 }
 
-
-.dropdown button{
+#select-btn{
     width: 180px;
     height: 40px;
 }

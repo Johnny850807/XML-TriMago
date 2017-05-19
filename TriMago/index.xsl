@@ -1,6 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0"
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
   xmlns:Waterball="http://g9.xml.csie.mcu.edu.tw">
+  <xsl:output method="html" version="1.0" encoding="UTF-8" indent="yes"/>
 	<xsl:template  match="/">
 		<html>
 			<head>
@@ -123,6 +125,8 @@
     <div class="container-fluid" id="leftSelection">
         <div class="row content">
             <div class="col-sm-10 text-left">
+              <form action="index" method="get" id="searchPanelForm">
+                 <input id="typeOfMealInput" name="typeOfMeal" type="hidden"/>
                 <div class="container" id="searchPanel">
                     <div class="row" id="searchBar">
                         <input class="flipkart-navbar-input col-xs-11" placeholder="輸入想查詢的餐廳名稱" name="searchInput" />
@@ -142,17 +146,15 @@
 
                             $("#select-btn:first-child").text($(this).text());
                             $("#select-btn:first-child").val($(this).text());
-
+                            $("#typeOfMealInput:first-child").val($(this).text());
                             });
 
                             });
                           </script>
                           
                             <div class="dropdown" style="margin-top:8px;">
-                                <button class="btn btn-primary dropdown-toggle" id="select-btn" type="button" data-toggle="dropdown" name="typeOfMeal">
-                                    選擇分類
-                                    <span class="caret"></span>
-                                </button>
+                                <input value ="選擇分類" class="btn btn-primary dropdown-toggle" id="select-btn" type="button" data-toggle="dropdown"/>
+        
                                 <ul class="dropdown-menu search-dropdown-menu">
                                     <li><a href="#">早餐</a></li>
                                     <li><a href="#">午餐</a></li>
@@ -172,6 +174,7 @@
                         </div>
                     </div>
                 </div>
+              </form>
                 <hr/>
                 <xsl:apply-templates select="Waterball:restaurant"/>
 

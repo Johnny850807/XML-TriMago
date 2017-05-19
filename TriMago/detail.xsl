@@ -100,13 +100,13 @@
 	
 	<xsl:template  match="Waterball:restaurant">
     <div class="media" id="restaurantList">
-	<div class="col-sm-3">
+	<div class="col-sm-5">
         <div class="media-left">
           <xsl:variable name="imageUrl" select="@imageUrl"/>
           <img src="{$imageUrl}" class="media-object" style="width:250px"/>
         </div>
 	</div>
-	<div class="col-sm-9">
+	<div class="col-sm-7">
 		<div class="media-body">
        <h1 class="media-heading"> <xsl:value-of select="@name"/> </h1>
        <div class="item__stars-wrp">

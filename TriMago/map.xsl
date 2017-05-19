@@ -67,11 +67,14 @@
           <hr/>
           <!--地圖從這加-->
           <div id="map" style="width:100% ; height:600px;"></div>
+		  <xsl:variable name="id" select="@id"/>
           <script>
-            function attachSecretMessage(marker,href) {
+	
+            function attachSecretMessage(marker,href,id) {
             var innerhtml = "<h3>"+marker.get('title')+"</h3>"
-            + "&#60;form action='" + href + "	'&#62;"
+            + "&#60;form action='" + href + "'&#62;"
             + "&#60;input type='submit' class='btn btn-success' value='查看詳情' /'&#62;"
+			+ "&#60;input type='hidden' name='id' value="+id+" /'&#62;"
             + "&#60;/form	&#62;";
 
             var infowindow = new google.maps.InfoWindow({
@@ -95,7 +98,7 @@
                     title:"<xsl:value-of select="@name" />",
                   map: map
                 } )
-                , "restaurant/<xsl:value-of select="@id" />");
+                , "detail" , "<xsl:value-of select="@id"/>");
               </xsl:for-each>
             }
 
