@@ -8,78 +8,19 @@
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link href="triMago.css" rel="stylesheet">
-<script>
-          $(function(){
-          $(".modal-dropdown-menu li a").click(function(){
-          $("#modal-select-btn:first-child").text($(this).text());
-          $("#modal-select-btn:first-child").val($(this).text());
-          $("#modal-typeOfMeal-input:first-child").val($(this).text());
-          });
-          });
-
-          function onSubmitValidate(){
-            
-            return true;
-          }
-        </script>
+<link href="detail.css" rel="stylesheet">
 <div role="dialog" id="myModal" class="modal fade">
 <div class="modal-dialog">
 <div class="modal-content">
 <div class="modal-header">
-<h4 class="modal-title">新增餐廳</h4>
+<h4 class="modal-title">留言</h4>
 </div>
-<form onsubmit="return onSubmitValidate()" action="index/create" method="get" id="modal-form">
-<input id="modal-typeOfMeal-input" name="typeOfMeal" type="hidden">
+<form>
 <div class="modal-body">
-<div class="form-group">
-<label for="res-name">餐廳名稱:</label><input required="required" name="name" id="res-name" class="form-control" type="text">
-</div>
-<div class="form-group">
-<label for="res-img">餐廳照片:</label><input required="required" accept="image/*" name="imageUrl" id="res-img" class="form-control" type="file">
-</div>
-<div class="dropdown">
-<button data-toggle="dropdown" type="button" id="modal-select-btn" class="btn btn-primary dropdown-toggle">
-                      選擇分類
-                      <span class="caret"></span></button>
-<ul class="dropdown-menu modal-dropdown-menu">
-<li>
-<a href="#">無分類</a>
-</li>
-<li>
-<a href="#">早餐</a>
-</li>
-<li>
-<a href="#">午餐</a>
-</li>
-<li>
-<a href="#">早午餐</a>
-</li>
-<li>
-<a href="#">下午茶</a>
-</li>
-<li>
-<a href="#">晚餐</a>
-</li>
-<li>
-<a href="#">宵夜</a>
-</li>
-</ul>
-</div>
-<div class="form-group">
-<label for="res-latitude">緯度:</label><input required="required" name="latitude" id="res-latitude" class="form-control" type="number">
-</div>
-<div class="form-group">
-<label for="res-longitude">經度:</label><input required="required" name="longitude" id="res-longitude" class="form-control" type="number">
-</div>
-<div class="form-group">
-<label for="res-address">地址:</label><input required="required" name="address" id="res-address" class="form-control" type="text">
-</div>
-<div class="form-group">
-<label for="res-avgprice">平均價格:</label><input required="required" name="price" id="res-avgprice" class="form-control" type="number">
-</div>
+<p>Some text in the modal.</p>
 </div>
 <div class="modal-footer">
-<button data-dismiss="modal" class="btn btn-default" type="button">取消</button><button form="modal-form" class="btn btn-default" type="submit">新增</button>
+<button data-dismiss="modal" class="btn btn-default" type="button">留言</button><button data-dismiss="modal" class="btn btn-default" type="button">取消</button>
 </div>
 </form>
 </div>
@@ -107,80 +48,65 @@
 <div id="leftSelection" class="container-fluid">
 <div class="row content">
 <div class="col-sm-10 text-left">
-<form id="searchPanelForm" method="get" action="index">
-<input type="hidden" name="typeOfMeal" id="typeOfMealInput">
-<div id="searchPanel" class="container">
-<div id="searchBar" class="row">
-<input name="searchInput" placeholder="輸入想查詢的餐廳名稱" class="flipkart-navbar-input col-xs-11"><button class="flipkart-navbar-button col-xs-1">
-<svg height="15px" width="15px">
-<path d="M11.618 9.897l4.224 4.212c.092.09.1.23.02.312l-1.464 1.46c-.08.08-.222.072-.314-.02L9.868 11.66M6.486 10.9c-2.42 0-4.38-1.955-4.38-4.367 0-2.413 1.96-4.37 4.38-4.37s4.38 1.957 4.38 4.37c0 2.412-1.96 4.368-4.38 4.368m0-10.834C2.904.066 0 2.96 0 6.533 0 10.105 2.904 13 6.486 13s6.487-2.895 6.487-6.467c0-3.572-2.905-6.467-6.487-6.467 "></path>
-</svg>
-</button>
+<div class="add-comment">
+<button data-target="#myModal" data-toggle="modal" class="btn btn-info" type="button">
+                  我要留言
+                </button>
 </div>
-<div id="mealTypeMenu" class="row">
-<div class="col-sm-7">
-<script>
-                            $(function(){
-
-                            $(".search-dropdown-menu li a").click(function(){
-
-                            $("#select-btn:first-child").text($(this).text());
-                            $("#select-btn:first-child").val($(this).text());
-                            $("#typeOfMealInput:first-child").val($(this).text());
-                            });
-
-                            });
-                          </script>
-<div style="margin-top:8px;" class="dropdown">
-<input data-toggle="dropdown" type="button" id="select-btn" class="btn btn-primary dropdown-toggle" value="選擇分類">
-<ul class="dropdown-menu search-dropdown-menu">
-<li>
-<a href="#">無分類</a>
-</li>
-<li>
-<a href="#">早餐</a>
-</li>
-<li>
-<a href="#">午餐</a>
-</li>
-<li>
-<a href="#">早午餐</a>
-</li>
-<li>
-<a href="#">下午茶</a>
-</li>
-<li>
-<a href="#">晚餐</a>
-</li>
-<li>
-<a href="#">宵夜</a>
-</li>
-</ul>
-</div>
-</div>
-<div style="margin-top:8px; text-align:right;" class="col-sm-5">
-<button style="margin-right:7px;" data-target="#myModal" data-toggle="modal" class="btn btn-info" type="button">
-                              我要推薦餐廳
-                            </button><button onclick="location.href='map'" class="btn btn-danger" id="goToGoogleMap" type="button">美食地圖&rarr;</button>
-</div>
-</div>
-</div>
-</form>
-<hr>
 <div id="restaurantList" class="media">
 <div class="col-sm-5">
 <div class="media-left">
-<img style="width:250px" class="media-object" src=""></div>
+<img style="width:250px" class="media-object" src="http://imgur.com/download/fKTtkuy"></div>
 </div>
 <div class="col-sm-7">
 <div class="media-body">
-<h1 class="media-heading">56</h1>
-<div class="item__stars-wrp"></div>
-<p class="address">4</p>
-<p class="price">價位 4</p>
-<form method="get" action="detail">
-<input class="btn btn-success detailsButton" value="查看詳情" type="submit"><input name="id" value="r10" type="hidden">
-</form>
+<h1 class="media-heading">癮食上癮</h1>
+<div class="item__stars-wrp">
+<span class="icon-ic icon-category/star item__star">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" height="12" width="12">
+<path d="M11.988 5.21c-.052-.275-.27-.488-.545-.534l-3.604-.6L6.63.455C6.542.184 6.287 0 6 0s-.542.184-.632.456L4.16 4.076l-3.603.6c-.275.046-.493.26-.545.533-.052.273.072.55.312.695L3.2 7.63l-1.165 3.493c-.093.28.01.59.25.758.115.08.25.12.382.12.148 0 .295-.05.416-.146L6 9.52l2.917 2.333c.12.098.27.147.416.147.133 0 .267-.04.38-.12.244-.17.346-.478.252-.758L8.8 7.63l2.876-1.725c.24-.144.364-.422.312-.696z" fill="#F6AB3F" class="svg-color--primary"/>
+</svg></span><span class="icon-ic icon-category/star item__star">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" height="12" width="12">
+<path d="M11.988 5.21c-.052-.275-.27-.488-.545-.534l-3.604-.6L6.63.455C6.542.184 6.287 0 6 0s-.542.184-.632.456L4.16 4.076l-3.603.6c-.275.046-.493.26-.545.533-.052.273.072.55.312.695L3.2 7.63l-1.165 3.493c-.093.28.01.59.25.758.115.08.25.12.382.12.148 0 .295-.05.416-.146L6 9.52l2.917 2.333c.12.098.27.147.416.147.133 0 .267-.04.38-.12.244-.17.346-.478.252-.758L8.8 7.63l2.876-1.725c.24-.144.364-.422.312-.696z" fill="#F6AB3F" class="svg-color--primary"/>
+</svg></span><span class="icon-ic icon-category/star item__star">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" height="12" width="12">
+<path d="M11.988 5.21c-.052-.275-.27-.488-.545-.534l-3.604-.6L6.63.455C6.542.184 6.287 0 6 0s-.542.184-.632.456L4.16 4.076l-3.603.6c-.275.046-.493.26-.545.533-.052.273.072.55.312.695L3.2 7.63l-1.165 3.493c-.093.28.01.59.25.758.115.08.25.12.382.12.148 0 .295-.05.416-.146L6 9.52l2.917 2.333c.12.098.27.147.416.147.133 0 .267-.04.38-.12.244-.17.346-.478.252-.758L8.8 7.63l2.876-1.725c.24-.144.364-.422.312-.696z" fill="#F6AB3F" class="svg-color--primary"/>
+</svg></span>
+</div>
+<p class="address">333台灣桃園市龜山區自強西路128號</p>
+<p class="price">價位 80</p>
+<button class="btn btn-success detailsButton" type="button">查看詳情</button>
+</div>
+</div>
+</div>
+<div id="commentList" class="media">
+<div class="col-sm-4">
+<div class="media-left">
+<p id="comment-name">水球</p>
+<span class="icon-ic icon-category/star item__star">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" height="12" width="12">
+<path d="M11.988 5.21c-.052-.275-.27-.488-.545-.534l-3.604-.6L6.63.455C6.542.184 6.287 0 6 0s-.542.184-.632.456L4.16 4.076l-3.603.6c-.275.046-.493.26-.545.533-.052.273.072.55.312.695L3.2 7.63l-1.165 3.493c-.093.28.01.59.25.758.115.08.25.12.382.12.148 0 .295-.05.416-.146L6 9.52l2.917 2.333c.12.098.27.147.416.147.133 0 .267-.04.38-.12.244-.17.346-.478.252-.758L8.8 7.63l2.876-1.725c.24-.144.364-.422.312-.696z" fill="#F6AB3F" class="svg-color--primary"/>
+</svg></span><span class="icon-ic icon-category/star item__star">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" height="12" width="12">
+<path d="M11.988 5.21c-.052-.275-.27-.488-.545-.534l-3.604-.6L6.63.455C6.542.184 6.287 0 6 0s-.542.184-.632.456L4.16 4.076l-3.603.6c-.275.046-.493.26-.545.533-.052.273.072.55.312.695L3.2 7.63l-1.165 3.493c-.093.28.01.59.25.758.115.08.25.12.382.12.148 0 .295-.05.416-.146L6 9.52l2.917 2.333c.12.098.27.147.416.147.133 0 .267-.04.38-.12.244-.17.346-.478.252-.758L8.8 7.63l2.876-1.725c.24-.144.364-.422.312-.696z" fill="#F6AB3F" class="svg-color--primary"/>
+</svg></span><span class="icon-ic icon-category/star item__star">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" height="12" width="12">
+<path d="M11.988 5.21c-.052-.275-.27-.488-.545-.534l-3.604-.6L6.63.455C6.542.184 6.287 0 6 0s-.542.184-.632.456L4.16 4.076l-3.603.6c-.275.046-.493.26-.545.533-.052.273.072.55.312.695L3.2 7.63l-1.165 3.493c-.093.28.01.59.25.758.115.08.25.12.382.12.148 0 .295-.05.416-.146L6 9.52l2.917 2.333c.12.098.27.147.416.147.133 0 .267-.04.38-.12.244-.17.346-.478.252-.758L8.8 7.63l2.876-1.725c.24-.144.364-.422.312-.696z" fill="#F6AB3F" class="svg-color--primary"/>
+</svg></span>
+</div>
+</div>
+<div class="col-sm-8">
+<div class="media-body">
+<div class="media-heading">
+<p>很奇怪，他的椒麻雞，只是鹹酥雞+醬汁而已...
+
+      還算可以啦，哈哈哈哈 
+
+      旁邊還有一家美國時間 其實都滿推薦derrr
+
+      閒閒沒事就來吃吧</p>
+<p id="date">2017/3/10</p>
+</div>
 </div>
 </div>
 </div>

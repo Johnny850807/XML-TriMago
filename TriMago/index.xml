@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><!--DOCTYPE Waterball:WebSite SYSTEM "../webapps/TriMago/triMago.dtd"--><Waterball:WebSite xmlns:Waterball="http://g9.xml.csie.mcu.edu.tw">
-	<Waterball:restaurant address="333台灣桃園市龜山區自強西路128號" id="r0" latitude="24.9966" longitude="121.336" name="癮食上癮" price="80" typeOfMeal="便當飯類">
+<?xml version="1.0" encoding="UTF-8"?><Waterball:WebSite xmlns:Waterball="http://g9.xml.csie.mcu.edu.tw">
+	<Waterball:restaurant address="333台灣桃園市龜山區自強西路128號" id="r0" imageUrl="http://imgur.com/download/fKTtkuy" latitude="24.9966" longitude="121.336" name="癮食上癮" price="80" typeOfMeal="便當飯類">
 		<Waterball:comment rate="3">
 			<Waterball:name>水球</Waterball:name>
 			<Waterball:date>2017/3/10</Waterball:date>
@@ -45,4 +45,4 @@
   </Waterball:restaurant>
   <Waterball:restaurant address="333台灣桃園市龜山區中山街5號" id="r4" imageUrl="https://i.vimeocdn.com/portrait/4399054_300x300" latitude="24.988532" longitude="121.343349" name="Mr.Q" price="40" typeOfMeal="早午餐">
   </Waterball:restaurant>
-</Waterball:WebSite>
+<Waterball:restaurant address="9" id="r5" imageUrl="http://imgur.com/download/fKTtkuy" latitude="8" longitude="7" name="78978" price="454" typeOfMeal="無分類"/><Waterball:restaurant address="5" id="r6" imageUrl="http://imgur.com/download/fKTtkuy" latitude="3" longitude="4" name="456" price="7" typeOfMeal="早餐"/></Waterball:WebSite>

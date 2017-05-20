@@ -15,7 +15,7 @@
 				<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 				<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 				<link rel="stylesheet" href="triMago.css"/>
-        <script>
+        <script language = "JavaScript"  type="text/javascript" >
           $(function(){
           $(".modal-dropdown-menu li a").click(function(){
           $("#modal-select-btn:first-child").text($(this).text());
@@ -25,8 +25,24 @@
           });
 
           function onSubmitValidate(){
-            
-            return true;
+            var file = document.getElementById("res-img").files[0];
+            var imageLink ="";
+            var finish = false;
+              var fd = new FormData();
+              fd.append("image", file); // Append the file
+
+              var xhr = new XMLHttpRequest();
+              xhr.open("POST", "https://api.imgur.com/3/image");
+              xhr.setRequestHeader('Authorization', 'Client-ID 6676c6a29041d49'); 
+              xhr.onload = function() {
+                  var link = JSON.parse(xhr.responseText).data.link;
+                  $("#modal-imageUrl-input:first-child").val(link);
+                 finish = true;
+                 console.log("上傳完成" + link);
+                 document.getElementById("modal-form").submit();
+              };
+              
+              xhr.send(fd);
           }
         </script>
         <div class="modal fade" id="myModal" role="dialog">
@@ -35,8 +51,9 @@
               <div class="modal-header">
                 <h4 class="modal-title">新增餐廳</h4>
               </div>
-              <form  id="modal-form" method="get" action="index/create"  onsubmit="return onSubmitValidate()">
+              <form  id="modal-form" method="post" action="index/create"   >
                 <input type="hidden" name="typeOfMeal" id="modal-typeOfMeal-input" />
+                <input type="hidden" name="imageUrl" id="modal-imageUrl-input" />
                 <div class="modal-body">
                   <div class="form-group">
                     <label for="res-name">餐廳名稱:</label>
@@ -44,7 +61,7 @@
                   </div>
                   <div class="form-group">
                     <label for="res-img">餐廳照片:</label>
-                    <input type="file" class="form-control" id="res-img" name="imageUrl" accept="image/*" required="required"/>
+                    <input type="file" class="form-control" id="res-img" name="image" accept="image/*" required="required"/>
                   </div>
                   <div class="dropdown">
                     <button class="btn btn-primary dropdown-toggle" id="modal-select-btn" type="button" data-toggle="dropdown" >
@@ -94,7 +111,7 @@
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                  <button type="submit" class="btn btn-default"  form="modal-form" >新增</button>
+                  <button type="submit" class="btn btn-default" form="modal-form" >新增</button>
                 </div>
               </form>
             </div>

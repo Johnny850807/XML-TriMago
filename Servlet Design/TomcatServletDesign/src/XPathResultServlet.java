@@ -43,6 +43,7 @@ public abstract class XPathResultServlet extends BaseXslTransformServlet{
 	private DocumentBuilder initBuilder() throws ParserConfigurationException{
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 		factory.setNamespaceAware(true);
+		factory.setValidating(true);
 		builder = factory.newDocumentBuilder();
 	    return builder;
 	}
