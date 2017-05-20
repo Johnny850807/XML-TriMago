@@ -36,6 +36,8 @@ public abstract class MyHttpServlet extends HttpServlet{
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
 			log("³]¸m¨BÆJ");
+			this.request = request;
+			this.response = response;
 			setupConfig(request,response);
 			initResponseBufferedWriter(response.getWriter());
 

@@ -41,7 +41,7 @@ public class CreateRestaurantServlet extends BaseXslTransformServlet{
 	}
 	
 	@Override
-	protected void doXmlCrud(Transformer transformer) throws SAXException, IOException, ParserConfigurationException, TransformerException {
+	protected boolean doXmlCrud(Transformer transformer) throws SAXException, IOException, ParserConfigurationException, TransformerException {
 		originalDocument = initBuilder().parse(new File(xmlPath));
 		rootElement = originalDocument.getDocumentElement();
 		Element restaurantNode = originalDocument.createElementNS
@@ -57,6 +57,9 @@ public class CreateRestaurantServlet extends BaseXslTransformServlet{
 		
 		transformer.transform(new DOMSource(originalDocument), 
 				new StreamResult(new FileOutputStream(xmlPath)));
+		
+		response.sendRedirect("../index");
+		return true;
 	}
 	
 	private String createNewGuid() throws TransformerException{

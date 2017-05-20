@@ -39,12 +39,15 @@ public abstract class BaseXslTransformServlet extends MyHttpServlet{
 
 	@Override
 	protected String executeAndGetResult() throws Exception {
-		doXmlCrud(TransformerFactory.newInstance().newTransformer());
+		boolean redirect = doXmlCrud(TransformerFactory.newInstance().newTransformer());
+		if (redirect)
+			return "Redirecting...";
 		return transformXmlToHtml();
 	}
 	
-	protected void doXmlCrud(Transformer transformer) throws Exception{
+	protected boolean doXmlCrud(Transformer transformer) throws Exception{
 		//hook method
+		return false;
 	}
 	
 	protected String transformXmlToHtml() throws Exception{
