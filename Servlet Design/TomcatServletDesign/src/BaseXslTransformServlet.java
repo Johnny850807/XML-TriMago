@@ -1,8 +1,10 @@
+import java.io.IOException;
 import java.io.StringReader;
 import java.io.StringWriter;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
+import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Result;
 import javax.xml.transform.Source;
@@ -12,6 +14,7 @@ import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
 
 import org.w3c.dom.Document;
+import org.xml.sax.SAXException;
 
 import ParserUtility.DataParsers.DataHandler;
 import ParserUtility.DataParsers.FileDataHandler;
@@ -36,11 +39,11 @@ public abstract class BaseXslTransformServlet extends MyHttpServlet{
 
 	@Override
 	protected String executeAndGetResult() throws Exception {
-		doXmlCrud();
+		doXmlCrud(TransformerFactory.newInstance().newTransformer());
 		return transformXmlToHtml();
 	}
 	
-	protected void doXmlCrud(){
+	protected void doXmlCrud(Transformer transformer) throws Exception{
 		//hook method
 	}
 	
