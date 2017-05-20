@@ -20,12 +20,13 @@
           $(".modal-dropdown-menu li a").click(function(){
           $("#modal-select-btn:first-child").text($(this).text());
           $("#modal-select-btn:first-child").val($(this).text());
+          $("#modal-typeOfMeal-input:first-child").val($(this).text());
           });
           });
 
           function onSubmitValidate(){
-          alert("Submit button clicked!");
-          return true;
+            
+            return true;
           }
         </script>
         <div class="modal fade" id="myModal" role="dialog">
@@ -34,22 +35,26 @@
               <div class="modal-header">
                 <h4 class="modal-title">新增餐廳</h4>
               </div>
-              <form  id="modal-form" method="get" action="test.png" onsubmit="return onSubmitValidate()">
+              <form  id="modal-form" method="get" action="index/create"  onsubmit="return onSubmitValidate()">
+                <input type="hidden" name="typeOfMeal" id="modal-typeOfMeal-input" />
                 <div class="modal-body">
                   <div class="form-group">
                     <label for="res-name">餐廳名稱:</label>
-                    <input type="text" class="form-control" id="res-name" name="name"/>
+                    <input type="text" class="form-control" id="res-name" name="name" required="required"/>
                   </div>
                   <div class="form-group">
                     <label for="res-img">餐廳照片:</label>
-                    <input type="file" class="form-control" id="res-img" name="imageUrl" accept="image/*"/>
+                    <input type="file" class="form-control" id="res-img" name="imageUrl" accept="image/*" required="required"/>
                   </div>
                   <div class="dropdown">
-                    <button class="btn btn-primary dropdown-toggle" id="modal-select-btn" type="button" data-toggle="dropdown" name="typeOfMeal">
+                    <button class="btn btn-primary dropdown-toggle" id="modal-select-btn" type="button" data-toggle="dropdown" >
                       選擇分類
                       <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu modal-dropdown-menu">
+                      <li>
+                        <a href="#">無分類</a>
+                      </li>
                       <li>
                         <a href="#">早餐</a>
                       </li>
@@ -72,19 +77,19 @@
                   </div>
                   <div class="form-group">
                     <label for="res-latitude">緯度:</label>
-                    <input type="text" class="form-control" id="res-latitude" name="latitude"/>
+                    <input type="number" class="form-control" id="res-latitude" name="latitude" required="required"/>
                   </div>
                   <div class="form-group">
                     <label for="res-longitude">經度:</label>
-                    <input type="text" class="form-control" id="res-longitude" name="longitude"/>
+                    <input type="number" class="form-control" id="res-longitude" name="longitude" required="required"/>
                   </div>
                   <div class="form-group">
                     <label for="res-address">地址:</label>
-                    <input type="text" class="form-control" id="res-address" name="address"/>
+                    <input type="text" class="form-control" id="res-address" name="address" required="required"/>
                   </div>
                   <div class="form-group">
                     <label for="res-avgprice">平均價格:</label>
-                    <input type="text" class="form-control" id="res-avgprice" name="price"/>
+                    <input type="number" class="form-control" id="res-avgprice" name="price" required="required"/>
                   </div>
                 </div>
                 <div class="modal-footer">
@@ -156,6 +161,7 @@
                                 <input value ="選擇分類" class="btn btn-primary dropdown-toggle" id="select-btn" type="button" data-toggle="dropdown"/>
         
                                 <ul class="dropdown-menu search-dropdown-menu">
+                                    <li><a href="#">無分類</a></li>
                                     <li><a href="#">早餐</a></li>
                                     <li><a href="#">午餐</a></li>
                                     <li><a href="#">早午餐</a></li>

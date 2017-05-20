@@ -50,6 +50,7 @@ public class CreateRestaurantServlet extends BaseXslTransformServlet{
 		restaurantNode.setAttribute("name", name);
 		restaurantNode.setAttribute("latitude", latitude);
 		restaurantNode.setAttribute("longitude", longitude);
+		typeOfMeal = typeOfMeal.equals("") ? "µL¤ÀÃþ" : typeOfMeal;
 		restaurantNode.setAttribute("typeOfMeal", typeOfMeal);
 		restaurantNode.setAttribute("price", price);
 		restaurantNode.setAttribute("address", address);

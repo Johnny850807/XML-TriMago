@@ -46,6 +46,10 @@
         <servlet-name>DetailXslServlet</servlet-name>
         <servlet-class>DetailXslServlet</servlet-class>
     </servlet>
+	<servlet>
+        <servlet-name>CreateRestaurantServlet</servlet-name>
+        <servlet-class>CreateRestaurantServlet</servlet-class>
+    </servlet>
 
     <servlet-mapping>
         <servlet-name>IndexXslServlet</servlet-name>
@@ -70,6 +74,10 @@
 	<servlet-mapping>
         <servlet-name>SearchRestaurantServlet</servlet-name>
         <url-pattern>/search</url-pattern>
+    </servlet-mapping>
+	<servlet-mapping>
+        <servlet-name>CreateRestaurantServlet</servlet-name>
+        <url-pattern>/index/create</url-pattern>
     </servlet-mapping>
 	
 
