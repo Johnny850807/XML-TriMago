@@ -9,7 +9,7 @@ import retrofit2.GsonConverterFactory;
 import retrofit2.Retrofit;
 
 public class APIFactory {
-	public static API createAPI(Class<? extends API> api) throws IllegalArgumentException, IllegalAccessException, NoSuchFieldException, SecurityException{	
+	public static <T> T createAPI(Class<T> api) throws IllegalArgumentException, IllegalAccessException, NoSuchFieldException, SecurityException{	
 		final String SERVER = (String) api.getDeclaredField("SERVER")
 				.get(new String());
 		Retrofit retrofit = new Retrofit.Builder()

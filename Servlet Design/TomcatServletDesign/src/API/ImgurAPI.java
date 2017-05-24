@@ -6,7 +6,7 @@ import retrofit2.http.Headers;
 import retrofit2.http.POST;
 import retrofit2.http.Query;
 
-public interface ImgurAPI extends API{
+public interface ImgurAPI {
     String SERVER = "https://api.imgur.com";
     public static final String AUTH = "6676c6a29041d49";
 

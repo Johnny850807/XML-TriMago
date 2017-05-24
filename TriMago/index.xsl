@@ -25,24 +25,7 @@
           });
 
           function onSubmitValidate(){
-            var file = document.getElementById("res-img").files[0];
-            var imageLink ="";
-            var finish = false;
-              var fd = new FormData();
-              fd.append("image", file); // Append the file
-
-              var xhr = new XMLHttpRequest();
-              xhr.open("POST", "https://api.imgur.com/3/image");
-              xhr.setRequestHeader('Authorization', 'Client-ID 6676c6a29041d49'); 
-              xhr.onload = function() {
-                  var link = JSON.parse(xhr.responseText).data.link;
-                  $("#modal-imageUrl-input:first-child").val(link);
-                 finish = true;
-                 console.log("上傳完成" + link);
-                 document.getElementById("modal-form").submit();
-              };
-              
-              xhr.send(fd);
+            return true;
           }
         </script>
         <div class="modal fade" id="myModal" role="dialog">
@@ -51,9 +34,8 @@
               <div class="modal-header">
                 <h4 class="modal-title">新增餐廳</h4>
               </div>
-              <form  id="modal-form" method="post" action="index/create"   >
+              <form  id="modal-form" method="post" action="index/create"   enctype="multipart/form-data" >
                 <input type="hidden" name="typeOfMeal" id="modal-typeOfMeal-input" />
-                <input type="hidden" name="imageUrl" id="modal-imageUrl-input" />
                 <div class="modal-body">
                   <div class="form-group">
                     <label for="res-name">餐廳名稱:</label>
