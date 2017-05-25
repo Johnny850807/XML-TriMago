@@ -1,5 +1,14 @@
 ﻿/* Remove the navbar's default margin-bottom and rounded borders */
 
+.cse .gsc-search-button input.gsc-search-button-v2,
+input.gsc-search-button-v2 {
+    height: 26px ;
+    margin-top: 0 ;
+    min-width: 13px ;
+    padding: 5px 26px ;
+    width: 68px ;
+}
+
 #nav{  /**解決nav affix透明問題**/
   z-index:9999;
 }

@@ -20,6 +20,14 @@
             font-size: 18px;
             font-family: 微軟雅黑體,微軟正黑體,新細明體,標楷體;
           }
+		  .cse .gsc-search-button input.gsc-search-button-v2,
+			input.gsc-search-button-v2 {
+				height: 26px !important;
+				margin-top: 0 !important;
+				min-width: 13px !important;
+				padding: 5px 26px !important;
+				width: 68px !important;
+			}
         </style>
 
       </head>
@@ -74,6 +82,18 @@
         <p style="color:deepskyblue ; float:right ; font-size:35px ; margin-top:800px ; font-family: 微軟正黑體 " >水球潘</p>
       </div>
       <div class="col-sm-2 sidenav">
+		<script>
+				  (function() {
+					var cx = '016452915066670004559:xkj40c_fjrw';
+					var gcse = document.createElement('script');
+					gcse.type = 'text/javascript';
+					gcse.async = true;
+					gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+					var s = document.getElementsByTagName('script')[0];
+					s.parentNode.insertBefore(gcse, s);
+				  })();
+		</script>
+		<div class="gcse-search"></div>
         <div class="well">
           <p>ADS</p>
         </div>

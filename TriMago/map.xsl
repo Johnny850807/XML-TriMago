@@ -20,6 +20,14 @@
           min-height: 900px;
           padding-bottom: 15px;
           }
+			.cse .gsc-search-button input.gsc-search-button-v2,
+			input.gsc-search-button-v2 {
+				height: 26px !important;
+				margin-top: 0 !important;
+				min-width: 13px !important;
+				padding: 5px 26px !important;
+				width: 68px !important;
+			}
         </style>
 
       </head>
@@ -141,6 +149,18 @@
           <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdaJtSkjptq9XngwoRWm_QOL_UczaKb_I&amp;callback=initMap"></script>
         </div>
         <div class="col-sm-2 sidenav">
+			<script>
+				  (function() {
+					var cx = '016452915066670004559:xkj40c_fjrw';
+					var gcse = document.createElement('script');
+					gcse.type = 'text/javascript';
+					gcse.async = true;
+					gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+					var s = document.getElementsByTagName('script')[0];
+					s.parentNode.insertBefore(gcse, s);
+				  })();
+			</script>
+			<div class="gcse-search"></div>
           <div class="well">
             <p>ADS</p>
           </div>
