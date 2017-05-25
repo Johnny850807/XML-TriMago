@@ -36,7 +36,6 @@ public abstract class XPathResultServlet extends BaseXslTransformServlet{
 	    buildUpXpathResultDocument();
  
 		Source result = new DOMSource(resultDocument);
-		outputResultForTesting(result);
 		return result;
 	}
 	
@@ -82,15 +81,6 @@ public abstract class XPathResultServlet extends BaseXslTransformServlet{
 		}
 	}
 	
-	private void outputResultForTesting(Source result) throws TransformerException, FileNotFoundException{
-		TransformerFactory tranFactory = TransformerFactory.newInstance();
-		Transformer transformer = tranFactory.newTransformer(
-				new StreamSource(xslPath));
-		Source src = result;
-		Result dest = new StreamResult(new FileOutputStream(getServletContext().getRealPath("TestingResult.html")));
-		
-		transformer.transform(src, dest);
-	}
 	
 	protected abstract String getXpathExpression();
 	

@@ -9,10 +9,14 @@
 					href="http://imgur.com/download/NCCXqIj" />
 				<meta charset="utf-8"/>
 				<meta name="viewport" content="width=device-width, initial-scale=1"/>
+				<script src="../js/star-rating.js" type="text/javascript"></script>
+				<script src="../js/start_test.js" type="text/javascript"></script>
+				
 				<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
 				<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 				<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 				<link rel="stylesheet" href="triMago.css"/>
+				
         <link rel="stylesheet" href="detail.css"/>
         <div class="modal fade" id="myModal" role="dialog">
           <div class="modal-dialog">
@@ -20,13 +24,26 @@
               <div class="modal-header">
                 <h4 class="modal-title">留言</h4>
               </div>
-              <form>
+              <form  id="modal-form" method="post" action="detail/create" >
+                <input type="hidden" name="id"  value="{//Waterball:restaurant/@id}" />
                 <div class="modal-body">
-                  <p>Some text in the modal.</p>
+                  <div class="form-group">
+                    <label for="res-name">暱稱:</label>
+                    <input type="text" class="form-control" id="res-name" name="name" required="required"/>
+                  </div> 
+				  <div class="form-group">
+                    <label for="input-21f">評價:</label>
+                    <input id="input-21f" value="0" type="text" data-min="0" data-max="5" data-step="0.1" data-size="md" title="" name="rate"/>
+                  </div> 
+				  
+				  <div class="form-group">
+                    <label for="content">內容:</label>
+					<textarea class="form-control" rows="5" id="content" required="required" name="content"></textarea>
+                  </div> 
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">留言</button>
                   <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                  <button type="submit" class="btn btn-default" form="modal-form" >新增</button>
                 </div>
               </form>
             </div>
@@ -96,6 +113,7 @@
     </footer>
   
   
+	 
   </xsl:template>
 	
 	<xsl:template  match="Waterball:restaurant">
@@ -118,7 +136,6 @@
        </div>
        <p class="address"><xsl:value-of select="@address"/></p>
        <p class="price">價位 <xsl:value-of select="@price"/></p>
-      <button type="button" class="btn btn-success detailsButton">查看詳情</button>
      </div>
 	 </div>
     </div>

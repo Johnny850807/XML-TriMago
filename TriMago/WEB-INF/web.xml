@@ -49,6 +49,10 @@
 	<servlet>
         <servlet-name>CreateRestaurantServlet</servlet-name>
         <servlet-class>CreateRestaurantServlet</servlet-class>
+    </servlet>CreateCommentServlet
+	<servlet>
+        <servlet-name>CreateCommentServlet</servlet-name>
+        <servlet-class>CreateCommentServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -78,6 +82,10 @@
 	<servlet-mapping>
         <servlet-name>CreateRestaurantServlet</servlet-name>
         <url-pattern>/index/create</url-pattern>
+    </servlet-mapping>
+	<servlet-mapping>
+        <servlet-name>CreateCommentServlet</servlet-name>
+        <url-pattern>/detail/create</url-pattern>
     </servlet-mapping>
 	
 
