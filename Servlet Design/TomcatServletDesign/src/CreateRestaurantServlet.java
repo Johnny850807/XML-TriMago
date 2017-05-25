@@ -24,8 +24,10 @@ import org.w3c.dom.traversal.NodeIterator;
 import org.xml.sax.SAXException;
 
 import API.APIFactory;
+import API.GoogleGeocodingAPI;
 import API.ImageResponse;
 import API.ImgurAPI;
+import API.LocationResponse;
 import okhttp3.MediaType;
 import okhttp3.RequestBody;
 import retrofit2.Call;
@@ -42,11 +44,12 @@ public class CreateRestaurantServlet extends BaseXslTransformServlet{
 	private String address;
 	private File picture;
 
+	private Thread imgurThread;
+	private Thread geocodingThread;
+	
 	@Override
 	protected void extractParameter(HttpServletRequest request) throws Exception {
 		name = request.getParameter("name");
-		latitude = request.getParameter("latitude");
-		longitude = request.getParameter("longitude");
 		typeOfMeal = request.getParameter("typeOfMeal");
 		price = request.getParameter("price");
 		address = request.getParameter("address");
@@ -71,27 +74,34 @@ public class CreateRestaurantServlet extends BaseXslTransformServlet{
 		return resultFile;
 	}
 
-	
 	@Override
-	protected boolean doXmlCrud(Transformer transformer) throws SAXException, IOException, ParserConfigurationException, TransformerException, DOMException, IllegalArgumentException, IllegalAccessException, NoSuchFieldException, SecurityException {
+	protected boolean doXmlCrud(Transformer transformer) throws SAXException, IOException, ParserConfigurationException, TransformerException, DOMException, IllegalArgumentException, IllegalAccessException, NoSuchFieldException, SecurityException, InterruptedException {
 		originalDocument = initBuilder().parse(new File(xmlPath));
 		rootElement = originalDocument.getDocumentElement();
 		Element restaurantNode = originalDocument.createElementNS
 	    		("http://g9.xml.csie.mcu.edu.tw","Waterball:restaurant");
 		restaurantNode.setAttribute("id", createNewGuid());
 		restaurantNode.setAttribute("name", name);
-		restaurantNode.setAttribute("latitude", latitude);
-		restaurantNode.setAttribute("longitude", longitude);
+		
 		typeOfMeal = typeOfMeal.equals("") ? "µL¤ÀÃþ" : typeOfMeal;
 		restaurantNode.setAttribute("typeOfMeal", typeOfMeal);
 		restaurantNode.setAttribute("price", price);
 		restaurantNode.setAttribute("address", address);
-		restaurantNode.setAttribute("imageUrl", uploadImageAndGetLink());
+
+					restaurantNode.setAttribute("imageUrl", uploadImageAndGetLink());
+
+					LocationResponse.Location location = geocoding();
+					restaurantNode.setAttribute("latitude", String.valueOf(location.getLat()));
+					restaurantNode.setAttribute("longitude", String.valueOf(location.getLng()));
+/*/
+		imgurThread.start();
+		geocodingThread.start();
+		imgurThread.join();
+		geocodingThread.join();*/
 		rootElement.appendChild(restaurantNode);
 		
 		transformer.transform(new DOMSource(originalDocument), 
 				new StreamResult(new FileOutputStream(xmlPath)));
-		
 		response.sendRedirect("../index");
 		return true;
 	}
@@ -108,8 +118,14 @@ public class CreateRestaurantServlet extends BaseXslTransformServlet{
 		return newId;
 	}
 	
+	private LocationResponse.Location geocoding() throws IllegalArgumentException, IllegalAccessException, NoSuchFieldException, SecurityException, IOException{
+		GoogleGeocodingAPI geoAPI = APIFactory.createAPI(GoogleGeocodingAPI.class);
+		Call<LocationResponse> call = geoAPI.getLocation(address, GoogleGeocodingAPI.API_KEY);
+		return call.execute().body().getResults().get(0).getGeometry().getLocation();
+	}
+	
 	private String uploadImageAndGetLink() throws IOException, IllegalArgumentException, IllegalAccessException, NoSuchFieldException, SecurityException{
-		ImgurAPI imgurAPI = (ImgurAPI) APIFactory.createAPI(ImgurAPI.class);
+		ImgurAPI imgurAPI = APIFactory.createAPI(ImgurAPI.class);
 		RequestBody request = RequestBody.create(MediaType.parse("image/*")
 				, picture);
 		Call<ImageResponse> call = imgurAPI.postImage(name, address, "file	", request);

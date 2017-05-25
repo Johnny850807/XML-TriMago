@@ -4,19 +4,19 @@ import java.util.List;
 
 public class LocationResponse {
 	private List<Results> results;
-	class Results{
+	public class Results{
 		private Geometry geometry;
 
 		public Geometry getGeometry() {
 			return geometry;
 		}
-
+		
 		public void setGeometry(Geometry geometry) {
 			this.geometry = geometry;
 		}
 	}
 	
-	class Geometry{
+	public class Geometry{
 		private Location location;
 
 		public Location getLocation() {
@@ -29,7 +29,7 @@ public class LocationResponse {
 		
 	}
 	
-	class Location{
+	public class Location{
 		private double lat;
 		private double lng;
 		public double getLat() {
