@@ -18,7 +18,11 @@ public class ParallelTasksManager {
 			threads.add(new Thread(){
 				@Override
 				public void run(){
-					t.run();
+					try {
+						t.run();
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
 				}
 			});
 		}
@@ -37,12 +41,12 @@ public class ParallelTasksManager {
 		return this;
 	}
 	
-	public ParallelTasksManager onComplete(Task task){
+	public ParallelTasksManager onComplete(Task task) throws Exception{
 		task.run();
 		return this;
 	}
 	
 	public static interface Task{
-		void run();
+		void run() throws Exception;
 	}
 }

@@ -1,4 +1,5 @@
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -38,8 +39,6 @@ public class CreateRestaurantServlet extends BaseXslTransformServlet{
 	private Document originalDocument;
 	private Element rootElement;
 	private String name;
-	private String latitude;
-	private String longitude;
 	private String typeOfMeal;
 	private String price;
 	private String address;
@@ -47,10 +46,11 @@ public class CreateRestaurantServlet extends BaseXslTransformServlet{
 
 	private Thread imgurTask;
 	private Thread geocodingTask;
-	private boolean taskSuccess = true;
+	private boolean taskSuccess;
 	
 	@Override
 	protected void extractParameter(HttpServletRequest request) throws Exception {
+		taskSuccess = true;
 		name = request.getParameter("name");
 		typeOfMeal = request.getParameter("typeOfMeal");
 		typeOfMeal = typeOfMeal.equals("") ? "無分類" : typeOfMeal;
@@ -58,9 +58,8 @@ public class CreateRestaurantServlet extends BaseXslTransformServlet{
 		address = request.getParameter("address");
 		Part uploadImagePart = request.getPart("image");
 		picture = extractImageFile(uploadImagePart.getInputStream());
-		log(String.format("新增餐廳: 名子 %s%n 座標 (%s,%s)%n"
-				+ "地址 %s%n 價格 %s%n 分類 %s%n ", name , latitude , longitude
-				, address , price , typeOfMeal));
+		log(String.format("新增餐廳: 名子 %s%n"
+				+ "地址 %s%n 價格 %s%n 分類 %s%n ", name , address , price , typeOfMeal));
 	}
 	
 	private File extractImageFile(InputStream inputStream) throws IOException{
@@ -122,51 +121,41 @@ public class CreateRestaurantServlet extends BaseXslTransformServlet{
 		});
 	}
 	
-	private String uploadImageAndGetLink() {
+	private String uploadImageAndGetLink() throws Exception {
 		ImgurAPI imgurAPI;
-		try {
-			imgurAPI = APIFactory.createAPI(ImgurAPI.class);
-			RequestBody request = RequestBody.create(MediaType.parse("image/*")
-					, picture);
-			Call<ImageResponse> call = imgurAPI.postImage(name, address, "file	", request);
-			retrofit2.Response<ImageResponse> res = call.execute();
-			if (res.isSuccessful())
-			{
-				if (picture.exists())
-					picture.delete();
-				log("圖片上傳成功 : " + res.body().data.link);
-				return res.body().data.link;
-			}	
-			else
-				throw new Exception("上傳失敗");
-		} catch (Exception e) {
-			e.printStackTrace();
-			return null;
-		}
-		
+		imgurAPI = APIFactory.createAPI(ImgurAPI.class);
+		RequestBody request = RequestBody.create(MediaType.parse("image/*")
+				, picture);
+		Call<ImageResponse> call = imgurAPI.postImage(name, address, "file	", request);
+		retrofit2.Response<ImageResponse> res = call.execute();
+		if (res.isSuccessful())
+		{
+			if (picture.exists())
+				picture.delete();
+			log("圖片上傳成功 : " + res.body().data.link);
+			return res.body().data.link;
+		}	
+		else
+			throw new Exception("上傳失敗");
 	}
 	
-	private void runGoogleGeocodingApiTask(Element restaurantNode){
+	private void runGoogleGeocodingApiTask(Element restaurantNode) throws Exception{
 		LocationResponse.Location location;
-		try {
-			location = geocoding();
-			if (location == null )
-			{
-				response.sendRedirect("../error_address.html");
-				taskSuccess = false;
-			}
-			double lat = location.getLat();
-			double lng = location.getLng();
-			if ( lat >= 26 || lat <= 21 || lng >= 123 || lng <= 119 )
-			{
-				response.sendRedirect("../error_should_be_taiwan_address.html");
-				taskSuccess = false;
-			}
-			restaurantNode.setAttribute("latitude", String.valueOf(lat));
-			restaurantNode.setAttribute("longitude", String.valueOf(lng));
-		} catch (Exception  e) {
-			e.printStackTrace();
-		}		
+		location = geocoding();
+		if (location == null )
+		{
+			response.sendRedirect("../error_address.html");
+			taskSuccess = false;
+		}
+		double lat = location.getLat();
+		double lng = location.getLng();
+		if ( lat >= 26 || lat <= 21 || lng >= 123 || lng <= 119 )
+		{
+			response.sendRedirect("../error_should_be_taiwan_address.html");
+			taskSuccess = false;
+		}
+		restaurantNode.setAttribute("latitude", String.valueOf(lat));
+		restaurantNode.setAttribute("longitude", String.valueOf(lng));
 	}
 	
 	private LocationResponse.Location geocoding() throws IllegalArgumentException, IllegalAccessException, NoSuchFieldException, SecurityException, IOException{
@@ -179,19 +168,15 @@ public class CreateRestaurantServlet extends BaseXslTransformServlet{
 		return results.get(0).getGeometry().getLocation();
 	}
 
-	private void transformAndRedirect(Element restaurantNode,Transformer transformer) {
-		try {
-			if (taskSuccess)
-			{
-				rootElement.appendChild(restaurantNode);
-				
-				transformer.transform(new DOMSource(originalDocument), 
-						new StreamResult(new FileOutputStream(xmlPath)));
-			}
-			response.sendRedirect("../index");
-		} catch (Exception e) {
-			e.printStackTrace();
+	private void transformAndRedirect(Element restaurantNode,Transformer transformer) throws TransformerException, IOException {
+		if (taskSuccess)
+		{
+			rootElement.appendChild(restaurantNode);
+			
+			transformer.transform(new DOMSource(originalDocument), 
+					new StreamResult(new FileOutputStream(xmlPath)));
 		}
+		response.sendRedirect("../index");
 	}
 	
 	
