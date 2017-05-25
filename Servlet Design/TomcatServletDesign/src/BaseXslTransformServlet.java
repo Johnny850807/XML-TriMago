@@ -39,7 +39,9 @@ public abstract class BaseXslTransformServlet extends MyHttpServlet{
 
 	@Override
 	protected String executeAndGetResult() throws Exception {
-		boolean redirect = doXmlCrud(TransformerFactory.newInstance().newTransformer());
+		Transformer transformer = transformConfig(
+				TransformerFactory.newInstance().newTransformer());
+		boolean redirect = doXmlCrud(transformer);
 		if (redirect)
 			return "Redirecting...";
 		return transformXmlToHtml();
@@ -64,9 +66,11 @@ public abstract class BaseXslTransformServlet extends MyHttpServlet{
 		return writer.toString();
 	}
 	
-	protected void transformConfig(Transformer transformer){
+	protected Transformer transformConfig(Transformer transformer){
 		//hook method
 		transformer.setOutputProperty(OutputKeys.ENCODING, getEncoding());
+		transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+		return transformer;
 	}
 	
 	protected Source getXmlStreamSource() throws Exception{

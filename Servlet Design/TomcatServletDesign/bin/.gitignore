@@ -1,3 +1,7 @@
+/API/
 /CreateRestaurantServlet$1.class
 /CreateRestaurantServlet$2.class
-/API/
+/ParallelTasksManager.class
+/ParallelTasksManager$Task.class
+/ParallelTasksManager$ParallelTasksRunner.class
+/ParallelTasksManager$1.class

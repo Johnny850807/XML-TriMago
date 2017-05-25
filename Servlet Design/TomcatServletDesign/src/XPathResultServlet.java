@@ -77,7 +77,6 @@ public abstract class XPathResultServlet extends BaseXslTransformServlet{
 		int count = 0;
 		while ((n = nl.nextNode())!= null) 
 		{ 
-			log("·j´Mµ²ªG"+count+": " + n.getAttributes().getNamedItem("name").getNodeValue());
 			Node newNode = resultDocument.importNode(n, true);
 		    resultDocument.getDocumentElement().appendChild(newNode);
 		}

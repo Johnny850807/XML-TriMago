@@ -4,9 +4,9 @@ public class ImageResponse {
 	
 	public boolean success;  
 	public int status;
-	public ImageResponse.UploadedImage data;
+	public UploadedImage data;
 
-	public static class UploadedImage{
+	public class UploadedImage{
 		public String id;
 		public String title;
 		public String description;
@@ -53,4 +53,5 @@ public class ImageResponse {
 	        ", data=" + data.toString() +
 	        '}';
 	}
+	
 }

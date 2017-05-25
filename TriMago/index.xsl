@@ -75,15 +75,7 @@
                     </ul>
                   </div>
                   <div class="form-group">
-                    <label for="res-latitude">緯度:</label>
-                    <input type="number" class="form-control" id="res-latitude" name="latitude" required="required"/>
-                  </div>
-                  <div class="form-group">
-                    <label for="res-longitude">經度:</label>
-                    <input type="number" class="form-control" id="res-longitude" name="longitude" required="required"/>
-                  </div>
-                  <div class="form-group">
-                    <label for="res-address">地址:</label>
+                    <label for="res-address">請輸入真實詳細地址:</label>
                     <input type="text" class="form-control" id="res-address" name="address" required="required"/>
                   </div>
                   <div class="form-group">
