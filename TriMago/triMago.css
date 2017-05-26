@@ -177,3 +177,13 @@ footer {
     padding: 20px 80px 20px 80px;
     float:right;
 }
+
+pre {
+	background-color: white;
+	border: 0px;
+  font-family:'微軟正黑體'; 
+  font-size:17px; 
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  text-align: justify;
+}

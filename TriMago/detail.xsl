@@ -164,7 +164,7 @@
         <div class="media-body">
           <div class="media-heading">
             <p>
-              <xsl:value-of select="Waterball:content"/>
+              <pre><xsl:value-of select="Waterball:content"/></pre>
             </p>
             <p id="date">
               <xsl:value-of select="Waterball:date"/>
@@ -174,5 +174,6 @@
       </div>
     </div>
   </xsl:template>
+  
 
 </xsl:stylesheet>
