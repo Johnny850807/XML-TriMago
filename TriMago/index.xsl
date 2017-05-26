@@ -4,6 +4,7 @@
   xmlns:Waterball="http://g9.xml.csie.mcu.edu.tw">
   <xsl:output method="html" version="1.0" encoding="UTF-8" indent="yes"/>
 	<xsl:template  match="/">
+	<xsl:param name="sort"/>
 		<html>
 			<head>
 				<title>銘傳找飯吃? TriMaGo</title>
@@ -107,7 +108,7 @@
         </div>
 			</head>
 			<body>
-					<xsl:apply-templates select="Waterball:WebSite"/>
+				<xsl:apply-templates select="Waterball:WebSite"/>
 			</body>
 		</html>
 
@@ -207,8 +208,11 @@
                 </div>
               </form>
                 <hr/>
-                <xsl:apply-templates select="Waterball:restaurant"/>
-
+				<xsl:apply-templates select="Waterball:restaurant">
+					
+					<xsl:sort order="descending" select="sum(Waterball:comment/@rate) div count(Waterball:comment)" data-type="number"/>
+									
+				</xsl:apply-templates>
             </div>
             <div class="col-sm-3 sidenav">
 				<script>

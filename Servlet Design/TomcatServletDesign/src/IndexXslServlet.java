@@ -1,5 +1,6 @@
 import javax.servlet.http.HttpServletRequest;
 import javax.xml.transform.Source;
+import javax.xml.transform.Transformer;
 
 public class IndexXslServlet extends XPathResultServlet{
 	private String searchInput;
@@ -22,6 +23,16 @@ public class IndexXslServlet extends XPathResultServlet{
 		sort = request.getParameter("sort");
 		sort = sort == null || sort.equals("無排序") ? "" : sort;
 		log("排序: " + sort);
+	}
+	
+
+	@Override
+	protected Transformer transformConfig(Transformer transformer) {
+		log("設定排序"+":"+sort);
+		transformer = super.transformConfig(transformer);
+		transformer.setParameter("sort", sort);
+		
+		return transformer;
 	}
 
 	@Override

@@ -314,4 +314,32 @@ xml 難搞</Waterball:content>
 </Waterball:comment>
 </Waterball:restaurant>
 <Waterball:restaurant address="333桃園市龜山區德明路142號" id="r11" imageUrl="http://i.imgur.com/eopV8ZT.jpg" latitude="24.9885188" longitude="121.3436166" name="里吉拿" price="130" typeOfMeal="無分類"/>
+<Waterball:restaurant address="333桃園市龜山區大同路208號" id="r12" imageUrl="http://i.imgur.com/6pjKPWe.jpg" latitude="24.9906167" longitude="121.3440573" name="戀戀冰棧" price="60" typeOfMeal="無分類">
+<Waterball:comment rate="3">
+<Waterball:date>2017/05/26 - 04:02:03</Waterball:date>
+<Waterball:name>家瑋好棒喔喔喔喔</Waterball:name>
+<Waterball:content>嗯嗯&#13;
+&#13;
+還滿好吃的</Waterball:content>
+</Waterball:comment>
+</Waterball:restaurant>
+<Waterball:restaurant address="桃園八德" id="r13" imageUrl="http://i.imgur.com/2nnOFSS.jpg" latitude="24.9469059" longitude="121.2912463" name="彥王" price="9000" typeOfMeal="晚餐">
+<Waterball:comment rate="3">
+<Waterball:date>2017/05/26 - 04:05:00</Waterball:date>
+<Waterball:name>小彥</Waterball:name>
+<Waterball:content>很可愛&#13;
+歡迎當晚餐吃</Waterball:content>
+</Waterball:comment>
+</Waterball:restaurant>
+<Waterball:restaurant address="臺中赤鬼牛排" id="r14" imageUrl="http://i.imgur.com/h7uOjXC.jpg" latitude="24.1507766" longitude="120.6499019" name="臺中赤鬼牛排" price="250" typeOfMeal="晚餐">
+<Waterball:comment rate="5">
+<Waterball:date>2017/05/26 - 04:08:35</Waterball:date>
+<Waterball:name>路人</Waterball:name>
+<Waterball:content>超好吃&#13;
+但是&#13;
+又不在銘傳&#13;
+&#13;
+乾</Waterball:content>
+</Waterball:comment>
+</Waterball:restaurant>
 </Waterball:WebSite>

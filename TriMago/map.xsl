@@ -89,7 +89,7 @@
                             });
                           </script>
                           
-                            <div class="dropdown" style="margin-top:8px;">
+                            <div class="dropdown" style="float:right; width:180px;">
                                 <input value ="選擇分類" class="btn btn-primary dropdown-toggle" id="select-btn" type="button" data-toggle="dropdown"/>
         
                                 <ul class="dropdown-menu search-dropdown-menu">
