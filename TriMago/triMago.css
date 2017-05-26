@@ -105,6 +105,7 @@ footer {
     width: 100%;
     background-color: #37454D;
     padding: 18px;
+	text-align: center;
 }
 
 #searchBar{
@@ -116,15 +117,13 @@ footer {
     margin-left: 30px;
 }
 
-#select-btn{
-    width: 180px;
+.search-btn{
+    width: 130px;
     height: 40px;
+	margin-right:15px;
+	margin-top:8px;
 }
 
-#goToGoogleMap {
-    width: 180px;
-    height: 40px;
-}
 
 .flipkart-navbar-input {
     padding: 11px 16px;

@@ -134,56 +134,75 @@
 
     <div class="container-fluid" id="leftSelection">
         <div class="row content">
-            <div class="col-sm-10 text-left">
+            <div class="col-sm-9 text-left">
               <form action="index" method="get" id="searchPanelForm">
-                 <input id="typeOfMealInput" name="typeOfMeal" type="hidden"/>
+				<input name="typeOfMeal" id="type-menu-input" type="hidden" />
+				<input name="sort" id="sort-menu-input" type="hidden" />
                 <div class="container" id="searchPanel">
                     <div class="row" id="searchBar">
                         <input class="flipkart-navbar-input col-xs-11" placeholder="輸入想查詢的餐廳名稱" name="searchInput" />
-                        <button class="flipkart-navbar-button col-xs-1">
-                            <svg width="15px" height="15px">
+                        <button class="flipkart-navbar-button col-xs-1" style="text-align:center;">
+                            <svg width="15px" height="15px" >
                                 <path d="M11.618 9.897l4.224 4.212c.092.09.1.23.02.312l-1.464 1.46c-.08.08-.222.072-.314-.02L9.868 11.66M6.486 10.9c-2.42 0-4.38-1.955-4.38-4.367 0-2.413 1.96-4.37 4.38-4.37s4.38 1.957 4.38 4.37c0 2.412-1.96 4.368-4.38 4.368m0-10.834C2.904.066 0 2.96 0 6.533 0 10.105 2.904 13 6.486 13s6.487-2.895 6.487-6.467c0-3.572-2.905-6.467-6.487-6.467 "></path>
                             </svg>
                         </button>
                     </div>
                     <div class="row" id="mealTypeMenu" >
-                        <div class="col-sm-7">
                           <!--讓點擊分類之後能夠將文字印到按鈕上-->
                           <script>
                             $(function(){
 
-                            $(".search-dropdown-menu li a").click(function(){
+                            $(".type-item").click(function(){
 
-                            $("#select-btn:first-child").text($(this).text());
-                            $("#select-btn:first-child").val($(this).text());
-                            $("#typeOfMealInput:first-child").val($(this).text());
+                            $("#type-menu-btn").text($(this).text());
+                            $("#type-menu-btn").val($(this).text());
+							$("#type-menu-input").val($(this).text());
+                            });
+							
+							$(".sort-item").click(function(){
+
+                            $("#sort-btn").text($(this).text());
+                            $("#sort-btn").val($(this).text());
+							$("#sort-menu-input").val($(this).text());
                             });
 
                             });
                           </script>
-                          
-                            <div class="dropdown" style="margin-top:8px;">
-                                <input value ="選擇分類" class="btn btn-primary dropdown-toggle" id="select-btn" type="button" data-toggle="dropdown"/>
+							
+                            <div class="dropdown" style="margin-top:8px;display:inline;">
+                                <input value ="選擇搜尋分類" name="typeOfMeal" id="type-menu-btn" class="btn btn-primary dropdown-toggle search-btn"  type="button" data-toggle="dropdown"/>
         
                                 <ul class="dropdown-menu search-dropdown-menu">
-                                    <li><a href="#">無分類</a></li>
-                                    <li><a href="#">早餐</a></li>
-                                    <li><a href="#">午餐</a></li>
-									<li><a href="#">甜點、冰</a></li>
-                                    <li><a href="#">早午餐</a></li>
-                                    <li><a href="#">下午茶</a></li>
-                                    <li><a href="#">晚餐</a></li>
-                                    <li><a href="#">宵夜</a></li>
+                                    <li><a href="#" class="type-item">無分類</a></li>
+                                    <li><a href="#" class="type-item">早餐</a></li>
+                                    <li><a href="#" class="type-item">午餐</a></li>
+									<li><a href="#" class="type-item">甜點、冰</a></li>
+                                    <li><a href="#" class="type-item">早午餐</a></li>
+                                    <li><a href="#" class="type-item">下午茶</a></li>
+                                    <li><a href="#" class="type-item">晚餐</a></li>
+                                    <li><a href="#" class="type-item">宵夜</a></li>
+                                </ul> 
+                            </div>
+							
+							<div class="dropdown" style="margin-top:8px;display:inline;">
+                                <input value ="選擇結果排序" name="sort" id="sort-btn" class="btn btn-success dropdown-toggle search-btn"  type="button" data-toggle="dropdown"/>
+        
+                                <ul class="dropdown-menu search-dropdown-menu">
+                                    <li><a href="#" class="sort-item">無排序</a></li>
+                                    <li><a href="#" class="sort-item">便宜到貴</a></li>
+                                    <li><a href="#" class="sort-item">貴到便宜</a></li>
+									<li><a href="#" class="sort-item">評價低到高</a></li>
+									<li><a href="#" class="sort-item">評價高到低</a></li>
                                 </ul>
                             </div>
-                        </div>
-                        <div class="col-sm-5" style="margin-top:8px; text-align:right;">
-                            <button type="button" class="btn btn-info" data-toggle="modal"  
-                                    data-target="#myModal" style="margin-right:7px;"  >
+							
+							<button type="button" class="btn btn-info search-btn" data-toggle="modal"  
+                                    data-target="#myModal">
                               我要推薦餐廳
                             </button>
-                          <button type="button" id="goToGoogleMap" class="btn btn-danger" onclick="location.href='map'">美食地圖→</button>
-                        </div>
+							
+							<button type="button"  
+								class="btn btn-danger search-btn" onclick="location.href='map'">美食地圖→</button>
                     </div>
                 </div>
               </form>
@@ -191,7 +210,7 @@
                 <xsl:apply-templates select="Waterball:restaurant"/>
 
             </div>
-            <div class="col-sm-2 sidenav">
+            <div class="col-sm-3 sidenav">
 				<script>
 				  (function() {
 					var cx = '016452915066670004559:xkj40c_fjrw';

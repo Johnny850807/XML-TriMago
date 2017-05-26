@@ -77,7 +77,7 @@
 
     <div class="container-fluid" id="leftSelection">
         <div class="row content">
-            <div class="col-sm-10 text-left">
+            <div class="col-sm-9 text-left">
               <div class="add-comment">
                 <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">
                   我要留言
@@ -85,7 +85,7 @@
               </div>
                 <xsl:apply-templates select="Waterball:restaurant"/>
             </div>
-            <div class="col-sm-2 sidenav">
+            <div class="col-sm-3 sidenav">
                 <div class="well">
                     <p>ADS</p>
                 </div>
