@@ -3,6 +3,7 @@ import javax.xml.transform.Source;
 
 public class IndexXslServlet extends XPathResultServlet{
 	private String searchInput;
+	private String sort;
 	private String typeOfMeal;
 	
 	@Override
@@ -16,8 +17,11 @@ public class IndexXslServlet extends XPathResultServlet{
 		searchInput = searchInput == null ? "" : searchInput;
 		log("搜尋: " + searchInput );
 		typeOfMeal = request.getParameter("typeOfMeal");
-		typeOfMeal = typeOfMeal == null || typeOfMeal.equals("選擇分類") ? "" : typeOfMeal;
+		typeOfMeal = typeOfMeal == null || typeOfMeal.endsWith("分類")? "" : typeOfMeal;
 		log("分類: " + typeOfMeal );
+		sort = request.getParameter("sort");
+		sort = sort == null || sort.equals("無排序") ? "" : sort;
+		log("排序: " + sort);
 	}
 
 	@Override

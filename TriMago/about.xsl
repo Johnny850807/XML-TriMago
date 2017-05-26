@@ -60,7 +60,7 @@
 
   <div class="container-fluid" id="leftSelection">
     <div class="row content">
-      <div class="col-sm-10 text-left">
+      <div class="col-sm-9 text-left">
         <div class="container" id="aboutArticlePanel">
           <div class="jumbotron ">
             <h1>銘傳大學期末製作專案</h1>
@@ -81,7 +81,7 @@
         </div>
         <p style="color:deepskyblue ; float:right ; font-size:35px ; margin-top:800px ; font-family: 微軟正黑體 " >水球潘</p>
       </div>
-      <div class="col-sm-2 sidenav">
+      <div class="col-sm-3 sidenav">
 		<script>
 				  (function() {
 					var cx = '016452915066670004559:xkj40c_fjrw';
