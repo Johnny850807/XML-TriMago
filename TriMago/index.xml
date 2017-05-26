@@ -61,6 +61,18 @@
 這樣就給五分?&#13;
 餐廳很好開?</Waterball:content>
 </Waterball:comment>
+<Waterball:comment rate="2">
+<Waterball:date>2017/05/26 - 02:10:21</Waterball:date>
+<Waterball:name>titsball</Waterball:name>
+<Waterball:content>Tits Love&#13;
+</Waterball:content>
+</Waterball:comment>
+<Waterball:comment rate="4">
+<Waterball:date>2017/05/26 - 02:25:09</Waterball:date>
+<Waterball:name>HaBall</Waterball:name>
+<Waterball:content>....&#13;
+</Waterball:content>
+</Waterball:comment>
 </Waterball:restaurant>
 	<Waterball:restaurant address="神之地址" id="r2" imageUrl="http://imgur.com/download/tHEZ1hi" latitude="24.992495" longitude="121.339421" name="Waterball Dream" price="340" typeOfMeal="早餐 早午餐">
 		<Waterball:comment rate="5">
@@ -111,6 +123,11 @@
 &#13;
 </Waterball:content>
 </Waterball:comment>
+<Waterball:comment rate="5">
+<Waterball:date>2017/05/26 - 03:04:21</Waterball:date>
+<Waterball:name>BoobsBall</Waterball:name>
+<Waterball:content>Boobs</Waterball:content>
+</Waterball:comment>
 </Waterball:restaurant>
 	<Waterball:restaurant address="333台灣桃園市龜山區333桃園市龜山區中山街2號 333桃園市龜山區中山街2號" id="r3" imageUrl="http://imgur.com/download/dUgGx8X" latitude="24.993181" longitude="121.337116" name="享樂主義" price="70" typeOfMeal="義大利麵">
 		<Waterball:comment rate="4">
@@ -155,6 +172,11 @@
 <Waterball:name>家瑋</Waterball:name>
 <Waterball:content>吃冰</Waterball:content>
 </Waterball:comment>
+<Waterball:comment rate="5">
+<Waterball:date>2017/05/26 - 02:13:21</Waterball:date>
+<Waterball:name>家瑋</Waterball:name>
+<Waterball:content>同名安安，呵呵</Waterball:content>
+</Waterball:comment>
 </Waterball:restaurant>
 <Waterball:restaurant address="桃園市蘆竹區中山路143號" id="r6" imageUrl="http://i.imgur.com/NP5paTS.jpg" latitude="25.0565938" longitude="121.2978322" name="無尾熊" price="3000" typeOfMeal="甜點、冰">
 <Waterball:comment rate="5">
@@ -162,12 +184,22 @@
 <Waterball:name>阿咧阿咧</Waterball:name>
 <Waterball:content>唷乎</Waterball:content>
 </Waterball:comment>
+<Waterball:comment rate="0">
+<Waterball:date>2017/05/26 - 02:10:30</Waterball:date>
+<Waterball:name>別亂新增 </Waterball:name>
+<Waterball:content>87</Waterball:content>
+</Waterball:comment>
 </Waterball:restaurant>
 <Waterball:restaurant address="桃園市南平路206號" id="r7" imageUrl="http://i.imgur.com/WMq0xxb.jpg" latitude="25.0194973" longitude="121.3012607" name="南平鵝肉" price="70" typeOfMeal="無分類">
 <Waterball:comment rate="5">
 <Waterball:date>2017/05/26 - 01:57:08</Waterball:date>
 <Waterball:name>銘傳金城武</Waterball:name>
 <Waterball:content>臥耖! 真不是普通的好吃，尤其是他的魯肉飯</Waterball:content>
+</Waterball:comment>
+<Waterball:comment rate="3">
+<Waterball:date>2017/05/26 - 02:12:51</Waterball:date>
+<Waterball:name>林宗幹</Waterball:name>
+<Waterball:content>還可以</Waterball:content>
 </Waterball:comment>
 </Waterball:restaurant>
 <Waterball:restaurant address="桃園市龜山區德明路35號" id="r8" imageUrl="http://i.imgur.com/ZVsLMnj.jpg" latitude="24.9882828" longitude="121.3436303" name="蘿西媽媽" price="50" typeOfMeal="無分類">
@@ -206,6 +238,20 @@
 <Waterball:name>王甯</Waterball:name>
 <Waterball:content>哈哈</Waterball:content>
 </Waterball:comment>
+<Waterball:comment rate="5">
+<Waterball:date>2017/05/26 - 02:10:48</Waterball:date>
+<Waterball:name>昇昇深幾許</Waterball:name>
+<Waterball:content>樓上是在笑什麼??</Waterball:content>
+</Waterball:comment>
 </Waterball:restaurant>
 <Waterball:restaurant address="333桃園市龜山區德明路142號" id="r9" imageUrl="http://i.imgur.com/kNTOFOR.jpg" latitude="24.9885188" longitude="121.3436166" name="歐尼の料理廚房" price="90" typeOfMeal="無分類"/>
+<Waterball:restaurant address="源一 桃園銘傳" id="r10" imageUrl="http://i.imgur.com/xB9jaFy.jpg" latitude="24.9844926" longitude="121.3423688" name="銘傳源一 " price="80" typeOfMeal="無分類">
+<Waterball:comment rate="5">
+<Waterball:date>2017/05/26 - 02:24:43</Waterball:date>
+<Waterball:name>吳榮豪</Waterball:name>
+<Waterball:content>推!!! &#13;
+住宿舍來這龜就對了!!!!!!</Waterball:content>
+</Waterball:comment>
+</Waterball:restaurant>
+<Waterball:restaurant address="333桃園市龜山區德明路142號" id="r11" imageUrl="http://i.imgur.com/eopV8ZT.jpg" latitude="24.9885188" longitude="121.3436166" name="里吉拿" price="130" typeOfMeal="無分類"/>
 </Waterball:WebSite>
