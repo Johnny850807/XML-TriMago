@@ -11,7 +11,22 @@
 
       閒閒沒事就來吃吧</Waterball:content>
 		</Waterball:comment>
-	</Waterball:restaurant>
+<Waterball:comment rate="2">
+<Waterball:date>2017/05/26 - 09:17:48</Waterball:date>
+<Waterball:name>家瑋</Waterball:name>
+<Waterball:content>喔價位還可</Waterball:content>
+</Waterball:comment>
+<Waterball:comment rate="1">
+<Waterball:date>2017/05/26 - 09:18:06</Waterball:date>
+<Waterball:name>家瑋</Waterball:name>
+<Waterball:content>圖片呢?</Waterball:content>
+</Waterball:comment>
+<Waterball:comment rate="4">
+<Waterball:date>2017/05/26 - 09:19:07</Waterball:date>
+<Waterball:name>..</Waterball:name>
+<Waterball:content>??</Waterball:content>
+</Waterball:comment>
+</Waterball:restaurant>
 	<Waterball:restaurant address="333台灣桃園市龜山區自強西路128號" id="r1" imageUrl="http://imgur.com/download/JWjcrU7" latitude="24.9966" longitude="121.336" name="美國時間" price="40" typeOfMeal="早餐 早午餐">
 		<Waterball:comment rate="1">
 			<Waterball:name>昇昇</Waterball:name>
@@ -28,7 +43,20 @@
 			<Waterball:date>2017/4/19</Waterball:date>
 			<Waterball:content>能抽菸又怎樣，沒抽菸你都買得起車了。</Waterball:content>
 		</Waterball:comment>
-  </Waterball:restaurant>
+  <Waterball:comment rate="5">
+<Waterball:date>2017/05/26 - 09:23:36</Waterball:date>
+<Waterball:name>嘉偉</Waterball:name>
+<Waterball:content>那隻狗怎麼那麼可愛</Waterball:content>
+</Waterball:comment>
+<Waterball:comment rate="0">
+<Waterball:date>2017/05/26 - 09:24:05</Waterball:date>
+<Waterball:name>昇昇</Waterball:name>
+<Waterball:content> 好像你沒看過狗依樣&#13;
+&#13;
+這樣就給五分?&#13;
+餐廳很好開?</Waterball:content>
+</Waterball:comment>
+</Waterball:restaurant>
 	<Waterball:restaurant address="神之地址" id="r2" imageUrl="http://imgur.com/download/tHEZ1hi" latitude="24.992495" longitude="121.339421" name="Waterball Dream" price="340" typeOfMeal="早餐 早午餐">
 		<Waterball:comment rate="5">
 			<Waterball:name>Waterball</Waterball:name>
@@ -53,7 +81,32 @@
 			<Waterball:date>2014/1/17</Waterball:date>
 			<Waterball:content>下次再來 如果我沒被21</Waterball:content>
 		</Waterball:comment>
-  </Waterball:restaurant>
+  <Waterball:comment rate="1">
+<Waterball:date>2017/05/26 - 09:30:04</Waterball:date>
+<Waterball:name>大津</Waterball:name>
+<Waterball:content>我被21了</Waterball:content>
+</Waterball:comment>
+
+<Waterball:comment rate="0">
+<Waterball:date>2017/05/26 - 09:33:56</Waterball:date>
+<Waterball:name>樓上工三小</Waterball:name>
+<Waterball:content>= =</Waterball:content>
+</Waterball:comment>
+</Waterball:restaurant>
   <Waterball:restaurant address="333台灣桃園市龜山區中山街5號" id="r4" imageUrl="https://i.vimeocdn.com/portrait/4399054_300x300" latitude="24.988532" longitude="121.343349" name="Mr.Q" price="40" typeOfMeal="早午餐">
   </Waterball:restaurant>
+<Waterball:restaurant address="333桃園市龜山區明德路17號" id="r5" imageUrl="http://i.imgur.com/AOzbZYR.jpg" latitude="24.9933927" longitude="121.337951" name="貓屋   吃冰" price="30" typeOfMeal="甜點、冰">
+<Waterball:comment rate="4">
+<Waterball:date>2017/05/26 - 09:37:23</Waterball:date>
+<Waterball:name>嘉偉</Waterball:name>
+<Waterball:content>喔幹&#13;
+&#13;
+我超愛這家的</Waterball:content>
+</Waterball:comment>
+<Waterball:comment rate="4">
+<Waterball:date>2017/05/26 - 09:37:54</Waterball:date>
+<Waterball:name>嘉偉</Waterball:name>
+<Waterball:content>但為啥我人在照片裡 幹</Waterball:content>
+</Waterball:comment>
+</Waterball:restaurant>
 </Waterball:WebSite>

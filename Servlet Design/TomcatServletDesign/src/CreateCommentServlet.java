@@ -38,6 +38,7 @@ public class CreateCommentServlet extends BaseXslTransformServlet{
 		name = request.getParameter("name");
 		content = request.getParameter("content");
 		rate = request.getParameter("rate");
+		rate = rate == null || rate.equals("")  ? "0" : rate;
 		log(String.format("id: %s%n , name: %s%n , content: %s%n , date: %s%n"
 				+ "rate: %s%n", id,name,content,date,rate));
 	}
