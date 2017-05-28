@@ -104,6 +104,16 @@ xml 難搞</Waterball:content>
 <Waterball:name>昇昇</Waterball:name>
 <Waterball:content>樓上阿是又干你什麼事??</Waterball:content>
 </Waterball:comment>
+<Waterball:comment rate="3">
+<Waterball:date>2017/05/27 - 01:21:39</Waterball:date>
+<Waterball:name>暖暖</Waterball:name>
+<Waterball:content>》昇昇 沒抽煙 你他媽的車呢？</Waterball:content>
+</Waterball:comment>
+<Waterball:comment rate="0">
+<Waterball:date>2017/05/28 - 06:50:49</Waterball:date>
+<Waterball:name>遊戲boy</Waterball:name>
+<Waterball:content> fuck me</Waterball:content>
+</Waterball:comment>
 </Waterball:restaurant>
 	<Waterball:restaurant address="神之地址" id="r2" imageUrl="http://imgur.com/download/tHEZ1hi" latitude="24.992495" longitude="121.339421" name="Waterball Dream" price="340" typeOfMeal="早餐 早午餐">
 		<Waterball:comment rate="5">
@@ -158,6 +168,11 @@ xml 難搞</Waterball:content>
 <Waterball:date>2017/05/26 - 03:04:21</Waterball:date>
 <Waterball:name>BoobsBall</Waterball:name>
 <Waterball:content>Boobs</Waterball:content>
+</Waterball:comment>
+<Waterball:comment rate="2">
+<Waterball:date>2017/05/27 - 11:15:20</Waterball:date>
+<Waterball:name>test</Waterball:name>
+<Waterball:content>test</Waterball:content>
 </Waterball:comment>
 </Waterball:restaurant>
 	<Waterball:restaurant address="333台灣桃園市龜山區333桃園市龜山區中山街2號 333桃園市龜山區中山街2號" id="r3" imageUrl="http://imgur.com/download/dUgGx8X" latitude="24.993181" longitude="121.337116" name="享樂主義" price="70" typeOfMeal="義大利麵">
@@ -297,6 +312,16 @@ xml 難搞</Waterball:content>
 <Waterball:name>昇昇深幾許</Waterball:name>
 <Waterball:content>樓上是在笑什麼??</Waterball:content>
 </Waterball:comment>
+<Waterball:comment rate="5">
+<Waterball:date>2017/05/28 - 06:49:52</Waterball:date>
+<Waterball:name>遊戲boy</Waterball:name>
+<Waterball:content>讚讚</Waterball:content>
+</Waterball:comment>
+<Waterball:comment rate="5">
+<Waterball:date>2017/05/28 - 04:33:02</Waterball:date>
+<Waterball:name>樓上洪賓忠</Waterball:name>
+<Waterball:content>賓忠愛++</Waterball:content>
+</Waterball:comment>
 </Waterball:restaurant>
 <Waterball:restaurant address="333桃園市龜山區德明路142號" id="r9" imageUrl="http://i.imgur.com/kNTOFOR.jpg" latitude="24.9885188" longitude="121.3436166" name="歐尼の料理廚房" price="90" typeOfMeal="無分類"/>
 <Waterball:restaurant address="源一 桃園銘傳" id="r10" imageUrl="http://i.imgur.com/xB9jaFy.jpg" latitude="24.9844926" longitude="121.3423688" name="銘傳源一 " price="80" typeOfMeal="無分類">
@@ -311,6 +336,20 @@ xml 難搞</Waterball:content>
 <Waterball:name>站長</Waterball:name>
 <Waterball:content>這家我也是推&#13;
 雖然等有點久</Waterball:content>
+</Waterball:comment>
+<Waterball:comment rate="5">
+<Waterball:date>2017/05/28 - 06:48:53</Waterball:date>
+<Waterball:name>遊戲boy</Waterball:name>
+<Waterball:content>住宿吃這間就對了，只是有時候等很久</Waterball:content>
+</Waterball:comment>
+<Waterball:comment rate="5">
+<Waterball:date>2017/05/28 - 04:12:25</Waterball:date>
+<Waterball:name>幹 洪賓忠</Waterball:name>
+<Waterball:content>拜託不要留表情符號&#13;
+我還沒parse好unicode&#13;
+&#13;
+你害我網頁爆掉&#13;
+我要重登伺服器</Waterball:content>
 </Waterball:comment>
 </Waterball:restaurant>
 <Waterball:restaurant address="333桃園市龜山區德明路142號" id="r11" imageUrl="http://i.imgur.com/eopV8ZT.jpg" latitude="24.9885188" longitude="121.3436166" name="里吉拿" price="130" typeOfMeal="無分類"/>
@@ -330,6 +369,21 @@ xml 難搞</Waterball:content>
 <Waterball:content>很可愛&#13;
 歡迎當晚餐吃</Waterball:content>
 </Waterball:comment>
+<Waterball:comment rate="5">
+<Waterball:date>2017/05/28 - 04:42:45</Waterball:date>
+<Waterball:name>Nyng</Waterball:name>
+<Waterball:content>Unity帶頭翹課</Waterball:content>
+</Waterball:comment>
+<Waterball:comment rate="5">
+<Waterball:date>2017/05/28 - 06:46:18</Waterball:date>
+<Waterball:name>遊戲boy</Waterball:name>
+<Waterball:content>帥炸!!</Waterball:content>
+</Waterball:comment>
+<Waterball:comment rate="4">
+<Waterball:date>2017/05/28 - 06:49:30</Waterball:date>
+<Waterball:name>樓上洪賓忠</Waterball:name>
+<Waterball:content>呵呵 匿名 小鬼</Waterball:content>
+</Waterball:comment>
 </Waterball:restaurant>
 <Waterball:restaurant address="臺中赤鬼牛排" id="r14" imageUrl="http://i.imgur.com/h7uOjXC.jpg" latitude="24.1507766" longitude="120.6499019" name="臺中赤鬼牛排" price="250" typeOfMeal="晚餐">
 <Waterball:comment rate="5">
@@ -340,6 +394,18 @@ xml 難搞</Waterball:content>
 又不在銘傳&#13;
 &#13;
 乾</Waterball:content>
+</Waterball:comment>
+</Waterball:restaurant>
+<Waterball:restaurant address="銘傳大學" id="r15" imageUrl="http://i.imgur.com/yhSOoli.jpg" latitude="25.087255" longitude="121.5269672" name="熊大討論串" price="100000" typeOfMeal="無分類">
+<Waterball:comment rate="0">
+<Waterball:date>2017/05/28 - 04:38:06</Waterball:date>
+<Waterball:name>昇昇</Waterball:name>
+<Waterball:content>= =</Waterball:content>
+</Waterball:comment>
+<Waterball:comment rate="5">
+<Waterball:date>2017/05/28 - 04:46:39</Waterball:date>
+<Waterball:name>學生Ａ</Waterball:name>
+<Waterball:content>專題選我選我</Waterball:content>
 </Waterball:comment>
 </Waterball:restaurant>
 </Waterball:WebSite>
