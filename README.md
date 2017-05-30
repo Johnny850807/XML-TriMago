@@ -20,4 +20,4 @@ TriMago is deployed on a Tomcat server for using Java servlet model and TriMago 
 - A WebAPP release should be deployed on a Tomcat server.
 
 ## 網頁設計 
-- All visual web design blueprints here.
+- All visual web design blueprints here..
