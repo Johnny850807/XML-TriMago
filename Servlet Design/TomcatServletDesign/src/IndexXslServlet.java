@@ -3,9 +3,9 @@ import javax.xml.transform.Source;
 import javax.xml.transform.Transformer;
 
 public class IndexXslServlet extends XPathResultServlet{
-	private String searchInput;
-	private String sort;
-	private String typeOfMeal;
+	protected String searchInput;
+	protected String sort;
+	protected String typeOfMeal;
 	
 	@Override
 	protected String getXslFileName() {

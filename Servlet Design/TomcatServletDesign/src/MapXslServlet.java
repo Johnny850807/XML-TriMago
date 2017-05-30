@@ -1,5 +1,6 @@
+import javax.servlet.http.HttpServletRequest;
 
-public class MapXslServlet extends BaseXslTransformServlet{
+public class MapXslServlet extends IndexXslServlet{
 
 	@Override
 	protected String getXslFileName() {

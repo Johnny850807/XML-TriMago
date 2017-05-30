@@ -18,7 +18,7 @@
 				<link rel="stylesheet" href="triMago.css"/>
         <script language = "JavaScript"  type="text/javascript" >
           $(function(){
-          $(".modal-dropdown-menu li a").click(function(){
+          $("#modal-dropdown-menu li a").click(function(){
           $("#modal-select-btn:first-child").text($(this).text());
           $("#modal-select-btn:first-child").val($(this).text());
           $("#modal-typeOfMeal-input:first-child").val($(this).text());
@@ -63,30 +63,13 @@
                       <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu modal-dropdown-menu">
-                      <li>
-                        <a href="#">無分類</a>
-                      </li>
-                      <li>
-                        <a href="#">早餐</a>
-                      </li>
-                      <li>
-                        <a href="#">午餐</a>
-                      </li>
-					  <li>
-                        <a href="#">甜點、冰</a>
-                      </li>
-                      <li>
-                        <a href="#">早午餐</a>
-                      </li>
-                      <li>
-                        <a href="#">下午茶</a>
-                      </li>
-                      <li>
-                        <a href="#">晚餐</a>
-                      </li>
-                      <li>
-                        <a href="#">宵夜</a>
-                      </li>
+                      <li><a href="#" >無分類</a></li>
+						<li><a href="#">早午餐店</a></li>
+						<li><a href="#">小吃店、路邊攤</a></li>
+						<li><a href="#">甜點、冰</a></li>
+						<li><a href="#">正餐、麵、飯</a></li>
+						<li><a href="#">下午茶、咖啡廳</a></li>
+						<li><a href="#">速食店</a></li>
                     </ul>
                   </div>
                   <div class="form-group">
@@ -175,13 +158,12 @@
         
                                 <ul class="dropdown-menu search-dropdown-menu">
                                     <li><a href="#" class="type-item">無分類</a></li>
-                                    <li><a href="#" class="type-item">早餐</a></li>
-                                    <li><a href="#" class="type-item">午餐</a></li>
+									<li><a href="#" class="type-item">早午餐店</a></li>
+									<li><a href="#" class="type-item">小吃店、路邊攤</a></li>
 									<li><a href="#" class="type-item">甜點、冰</a></li>
-                                    <li><a href="#" class="type-item">早午餐</a></li>
-                                    <li><a href="#" class="type-item">下午茶</a></li>
-                                    <li><a href="#" class="type-item">晚餐</a></li>
-                                    <li><a href="#" class="type-item">宵夜</a></li>
+									<li><a href="#" class="type-item">正餐、麵、飯</a></li>
+									<li><a href="#" class="type-item">下午茶、咖啡廳</a></li>
+									<li><a href="#" class="type-item">速食店</a></li>
                                 </ul> 
                             </div>
 							

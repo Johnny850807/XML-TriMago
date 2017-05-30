@@ -2,7 +2,7 @@
 
 <Waterball:WebSite xmlns:Waterball="http://g9.xml.csie.mcu.edu.tw">  
   
-  <Waterball:restaurant address="333台灣桃園市龜山區自強西路128號" id="r1" imageUrl="http://imgur.com/download/JWjcrU7" latitude="24.9966" longitude="121.336" name="美國時間" price="40" typeOfMeal="早餐 早午餐"> 
+  <Waterball:restaurant address="333台灣桃園市龜山區自強西路128號" id="r1" imageUrl="http://imgur.com/download/JWjcrU7" latitude="24.9966" longitude="121.336" name="美國時間" price="40" typeOfMeal="早午餐店"> 
     <Waterball:comment rate="1"> 
       <Waterball:name>昇昇</Waterball:name>  
       <Waterball:date>2017/3/15</Waterball:date>  
@@ -54,7 +54,7 @@
       <Waterball:content>樓上阿是又干你什麼事??</Waterball:content> 
     </Waterball:comment> 
   </Waterball:restaurant>  
-  <Waterball:restaurant address="神之地址" id="r2" imageUrl="http://imgur.com/download/tHEZ1hi" latitude="24.992495" longitude="121.339421" name="Waterball Dream" price="340" typeOfMeal="早餐 早午餐"> 
+  <Waterball:restaurant address="神之地址" id="r2" imageUrl="http://imgur.com/download/tHEZ1hi" latitude="24.992495" longitude="121.339421" name="Waterball Dream" price="340" typeOfMeal="正餐、麵、飯"> 
     <Waterball:comment rate="5"> 
       <Waterball:name>Waterball</Waterball:name>  
       <Waterball:date>2017/4/1</Waterball:date>  
@@ -116,7 +116,7 @@
       <Waterball:content>幹你老</Waterball:content> 
     </Waterball:comment> 
   </Waterball:restaurant> 
-<Waterball:restaurant address="333台灣桃園市龜山區自強西路128號" id="r0" imageUrl="http://i.imgur.com/1ZpFoo8.jpg" latitude="24.9966" longitude="121.336" name="癮食上癮" price="80" typeOfMeal="便當飯類"> 
+<Waterball:restaurant address="333台灣桃園市龜山區自強西路128號" id="r0" imageUrl="http://i.imgur.com/1ZpFoo8.jpg" latitude="24.9966" longitude="121.336" name="癮食上癮" price="80" typeOfMeal="早午餐店"> 
     <Waterball:comment rate="3"> 
       <Waterball:name>水球</Waterball:name>  
       <Waterball:date>2017/3/10</Waterball:date>  
@@ -143,7 +143,7 @@
       <Waterball:content>good</Waterball:content> 
     </Waterball:comment> 
   </Waterball:restaurant>    
-  <Waterball:restaurant address="333台灣桃園市龜山區333桃園市龜山區中山街2號 333桃園市龜山區中山街2號" id="r3" imageUrl="http://imgur.com/download/dUgGx8X" latitude="24.993181" longitude="121.337116" name="享樂主義" price="70" typeOfMeal="義大利麵"> 
+  <Waterball:restaurant address="333台灣桃園市龜山區333桃園市龜山區中山街2號 333桃園市龜山區中山街2號" id="r3" imageUrl="http://imgur.com/download/dUgGx8X" latitude="24.993181" longitude="121.337116" name="享樂主義" price="70" typeOfMeal="正餐、麵、飯"> 
     <Waterball:comment rate="4"> 
       <Waterball:name>大金 (Lee Po Yi)</Waterball:name>  
       <Waterball:date>2014/1/17</Waterball:date>  
@@ -160,7 +160,7 @@
       <Waterball:content>= =</Waterball:content> 
     </Waterball:comment> 
   </Waterball:restaurant>  
-  <Waterball:restaurant address="333台灣桃園市龜山區中山街5號" id="r4" imageUrl="https://i.vimeocdn.com/portrait/4399054_300x300" latitude="24.988532" longitude="121.343349" name="Mr.Q" price="40" typeOfMeal="早午餐"> 
+  <Waterball:restaurant address="333台灣桃園市龜山區中山街5號" id="r4" imageUrl="https://i.vimeocdn.com/portrait/4399054_300x300" latitude="24.988532" longitude="121.343349" name="Mr.Q" price="40" typeOfMeal="早午餐店"> 
     <Waterball:comment rate="5"> 
       <Waterball:date>2017/05/26 - 12:46:41</Waterball:date>  
       <Waterball:name>推</Waterball:name>  
@@ -221,7 +221,7 @@
       <Waterball:content>換 行 測 試</Waterball:content> 
     </Waterball:comment> 
   </Waterball:restaurant>  
-  <Waterball:restaurant address="桃園市南平路206號" id="r7" imageUrl="http://i.imgur.com/WMq0xxb.jpg" latitude="25.0194973" longitude="121.3012607" name="南平鵝肉" price="70" typeOfMeal="無分類"> 
+  <Waterball:restaurant address="桃園市南平路206號" id="r7" imageUrl="http://i.imgur.com/WMq0xxb.jpg" latitude="25.0194973" longitude="121.3012607" name="南平鵝肉" price="70" typeOfMeal="正餐、麵、飯"> 
     <Waterball:comment rate="5"> 
       <Waterball:date>2017/05/26 - 01:57:08</Waterball:date>  
       <Waterball:name>銘傳金城武</Waterball:name>  
@@ -233,7 +233,7 @@
       <Waterball:content>還可以</Waterball:content> 
     </Waterball:comment> 
   </Waterball:restaurant>  
-  <Waterball:restaurant address="桃園市龜山區德明路35號" id="r8" imageUrl="http://i.imgur.com/ZVsLMnj.jpg" latitude="24.9882828" longitude="121.3436303" name="蘿西媽媽" price="50" typeOfMeal="無分類"> 
+  <Waterball:restaurant address="桃園市龜山區德明路35號" id="r8" imageUrl="http://i.imgur.com/ZVsLMnj.jpg" latitude="24.9882828" longitude="121.3436303" name="蘿西媽媽" price="50" typeOfMeal="早午餐店"> 
     <Waterball:comment rate="4"> 
       <Waterball:date>2017/05/26 - 02:02:23</Waterball:date>  
       <Waterball:name>林宗金億</Waterball:name>  
@@ -275,8 +275,8 @@
       <Waterball:content>樓上是在笑什麼??</Waterball:content> 
     </Waterball:comment> 
   </Waterball:restaurant>  
-  <Waterball:restaurant address="333桃園市龜山區德明路142號" id="r9" imageUrl="http://i.imgur.com/kNTOFOR.jpg" latitude="24.9885188" longitude="121.3436166" name="歐尼の料理廚房" price="90" typeOfMeal="無分類"/>  
-  <Waterball:restaurant address="源一 桃園銘傳" id="r10" imageUrl="http://i.imgur.com/xB9jaFy.jpg" latitude="24.9844926" longitude="121.3423688" name="銘傳源一 " price="80" typeOfMeal="無分類"> 
+  <Waterball:restaurant address="333桃園市龜山區德明路142號" id="r9" imageUrl="http://i.imgur.com/kNTOFOR.jpg" latitude="24.9885188" longitude="121.3436166" name="歐尼の料理廚房" price="90" typeOfMeal="正餐、麵、飯"/>  
+  <Waterball:restaurant address="源一 桃園銘傳" id="r10" imageUrl="http://i.imgur.com/xB9jaFy.jpg" latitude="24.9844926" longitude="121.3423688" name="銘傳源一 " price="80" typeOfMeal="正餐、麵、飯"> 
     <Waterball:comment rate="5"> 
       <Waterball:date>2017/05/26 - 02:24:43</Waterball:date>  
       <Waterball:name>吳榮豪</Waterball:name>  
@@ -300,21 +300,21 @@
       <Waterball:content>很久沒吃</Waterball:content> 
     </Waterball:comment> 
   </Waterball:restaurant>  
-  <Waterball:restaurant address="333桃園市龜山區大同路208號" id="r12" imageUrl="http://i.imgur.com/6pjKPWe.jpg" latitude="24.9906167" longitude="121.3440573" name="戀戀冰棧" price="60" typeOfMeal="無分類"> 
+  <Waterball:restaurant address="333桃園市龜山區大同路208號" id="r12" imageUrl="http://i.imgur.com/6pjKPWe.jpg" latitude="24.9906167" longitude="121.3440573" name="戀戀冰棧" price="60" typeOfMeal="甜點、冰"> 
     <Waterball:comment rate="3"> 
       <Waterball:date>2017/05/26 - 04:02:03</Waterball:date>  
       <Waterball:name>家瑋好棒喔喔喔喔</Waterball:name>  
       <Waterball:content>嗯嗯 還滿好吃的</Waterball:content> 
     </Waterball:comment> 
   </Waterball:restaurant>  
-  <Waterball:restaurant address="桃園八德" id="r13" imageUrl="http://i.imgur.com/2nnOFSS.jpg" latitude="24.9469059" longitude="121.2912463" name="彥王" price="9000" typeOfMeal="晚餐"> 
+  <Waterball:restaurant address="桃園八德" id="r13" imageUrl="http://i.imgur.com/2nnOFSS.jpg" latitude="24.9469059" longitude="121.2912463" name="彥王" price="9000" typeOfMeal="正餐、麵、飯"> 
     <Waterball:comment rate="3"> 
       <Waterball:date>2017/05/26 - 04:05:00</Waterball:date>  
       <Waterball:name>小彥</Waterball:name>  
       <Waterball:content>很可愛 歡迎當晚餐吃</Waterball:content> 
     </Waterball:comment> 
   </Waterball:restaurant>  
-  <Waterball:restaurant address="臺中赤鬼牛排" id="r14" imageUrl="http://i.imgur.com/h7uOjXC.jpg" latitude="24.1507766" longitude="120.6499019" name="臺中赤鬼牛排" price="250" typeOfMeal="晚餐"> 
+  <Waterball:restaurant address="臺中赤鬼牛排" id="r14" imageUrl="http://i.imgur.com/h7uOjXC.jpg" latitude="24.1507766" longitude="120.6499019" name="臺中赤鬼牛排" price="250" typeOfMeal="正餐、麵、飯"> 
     <Waterball:comment rate="5"> 
       <Waterball:date>2017/05/26 - 04:08:35</Waterball:date>  
       <Waterball:name>路人</Waterball:name>  

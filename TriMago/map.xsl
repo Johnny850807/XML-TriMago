@@ -28,6 +28,9 @@
 				padding: 5px 26px !important;
 				width: 68px !important;
 			}
+			#select-btn{
+				width: 220px;
+			}
         </style>
 
       </head>
@@ -62,7 +65,7 @@
     <div class="container-fluid" id="leftSelection">
       <div class="row content">
         <div class="col-sm-10 text-left">
-          <form action="index" method="get" id="searchPanelForm">
+          <form action="map" method="get" id="searchPanelForm">
                  <input id="typeOfMealInput" name="typeOfMeal" type="hidden"/>
                 <div class="container" id="searchPanel">
                     <div class="row" id="searchBar">
@@ -94,12 +97,12 @@
         
                                 <ul class="dropdown-menu search-dropdown-menu">
                                     <li><a href="#">無分類</a></li>
-                                    <li><a href="#">早餐</a></li>
-                                    <li><a href="#">午餐</a></li>
-                                    <li><a href="#">早午餐</a></li>
-                                    <li><a href="#">下午茶</a></li>
-                                    <li><a href="#">晚餐</a></li>
-                                    <li><a href="#">宵夜</a></li>
+									<li><a href="#">早午餐店</a></li>
+									<li><a href="#">小吃店、路邊攤</a></li>
+									<li><a href="#">甜點、冰</a></li>
+									<li><a href="#">正餐、麵、飯</a></li>
+									<li><a href="#">下午茶、咖啡廳</a></li>
+									<li><a href="#">速食店</a></li>
                                 </ul>
                             </div>
                         </div>
