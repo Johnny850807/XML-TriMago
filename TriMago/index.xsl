@@ -241,16 +241,16 @@
 						</a>
 				</div>
                 <div class="well">
-                    <p>ADS</p>
+                    <p>請各位不要留表情唷!!!</p>
                 </div>
                 <div class="well">
-                    <p>ADS</p>
+                    <p>請各位不要留表情唷!!!</p>
                 </div>
                 <div class="well">
-                    <p>ADS</p>
+                    <p>Please don't leave an emoji in a comment!!!</p>
                 </div>
                 <div class="well">
-                    <p>ADS</p>
+                    <p>Please don't leave an emoji in a comment!!!</p>
                 </div>
             </div>
         </div>
