@@ -161,9 +161,19 @@
 				  })();
 			</script>
 			<div class="gcse-search"></div>
-          <div class="well">
-            <p>ADS</p>
-          </div>
+          <div id="myCarousel" class="carousel slide" data-ride="carousel" style="margin-top:20px;margin-bottom:20px;">
+						<div class="carousel-inner">
+							<xsl:apply-templates select="Waterball:restaurant/@imageUrl" />
+						</div>
+						<a class="left carousel-control" href="#myCarousel" data-slide="prev">
+							<span class="glyphicon glyphicon-chevron-left"></span>
+							<span class="sr-only">Previous</span>
+						</a>
+						<a class="right carousel-control" href="#myCarousel" data-slide="next">
+							<span class="glyphicon glyphicon-chevron-right"></span>
+							<span class="sr-only">Next</span>
+						</a>
+				</div>
           <div class="well">
             <p>ADS</p>
           </div>
@@ -189,6 +199,25 @@
   
   
   </xsl:template>
-	
+	<xsl:template match="Waterball:restaurant/@imageUrl">
+		<xsl:if test="position() > 1">
+				<div class="item">
+						<a href="detail?id={../@id}"><img src="{../@imageUrl}" alt="{../@name}" style="width:100%;"/></a>
+						<div class="carousel-caption">
+						  <h2><xsl:value-of select="../@name"/></h2>
+						  <p><xsl:value-of select="../@address"/></p>
+						  <p>點擊觀看詳情</p>
+						</div>
+				</div>
+		</xsl:if>
+		<xsl:if test="position() = 1">
+				<div class="item active">
+						<a href="detail?id={../@id}"><img src="{../@imageUrl}" alt="{../@name}" style="width:100%;"/></a>
+						<div class="carousel-caption">
+						  <h4><xsl:value-of select="../@name"/></h4>
+						</div>
+				</div>
+		</xsl:if>
+  </xsl:template>
 
 </xsl:stylesheet>

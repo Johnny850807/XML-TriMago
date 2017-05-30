@@ -239,7 +239,7 @@
 							<span class="glyphicon glyphicon-chevron-right"></span>
 							<span class="sr-only">Next</span>
 						</a>
-					</div>
+				</div>
                 <div class="well">
                     <p>ADS</p>
                 </div>
@@ -266,11 +266,21 @@
 		<xsl:if test="position() > 1">
 				<div class="item">
 						<a href="detail?id={../@id}"><img src="{../@imageUrl}" alt="{../@name}" style="width:100%;"/></a>
+						<div class="carousel-caption">
+						  <h2><xsl:value-of select="../@name"/></h2>
+						  <p><xsl:value-of select="../@address"/></p>
+						  <p>點擊觀看詳情</p>
+						</div>
 				</div>
 		</xsl:if>
 		<xsl:if test="position() = 1">
 				<div class="item active">
 						<a href="detail?id={../@id}"><img src="{../@imageUrl}" alt="{../@name}" style="width:100%;"/></a>
+						<div class="carousel-caption">
+						  <h2><xsl:value-of select="../@name"/></h2>
+						  <p><xsl:value-of select="../@address"/></p>
+						  <p>點擊觀看詳情</p>
+						</div>
 				</div>
 		</xsl:if>
   </xsl:template>
