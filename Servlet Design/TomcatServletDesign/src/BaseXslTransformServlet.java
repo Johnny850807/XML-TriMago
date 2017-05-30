@@ -1,10 +1,12 @@
-import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
 import java.io.StringReader;
 import java.io.StringWriter;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
-import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Result;
 import javax.xml.transform.Source;
@@ -13,21 +15,17 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
 
-import org.w3c.dom.Document;
-import org.xml.sax.SAXException;
-
-import ParserUtility.DataParsers.DataHandler;
-import ParserUtility.DataParsers.FileDataHandler;
 
 public abstract class BaseXslTransformServlet extends MyHttpServlet{
-	protected DataHandler<Document> xmlDataHandler;
 	protected String xslPath;
 	protected String xmlPath;
 	@Override
 	protected void initiate(ServletContext context) throws Exception {
-		xmlPath = context.getRealPath(XmlContext.XML_NAME);
+		xmlPath = context.getRealPath(getXmlFileName());
 		xslPath = context.getRealPath(getXslFileName());
 	}
+	
+	protected abstract String getXmlFileName();
 	
 	protected abstract String getXslFileName();
 	
@@ -75,9 +73,8 @@ public abstract class BaseXslTransformServlet extends MyHttpServlet{
 	
 	protected Source getXmlStreamSource() throws Exception{
 		//hook method
-		xmlDataHandler = new FileDataHandler(xmlPath);
-		StringReader reader = new StringReader(xmlDataHandler.getDataString());
-		return new StreamSource(reader);
+		return new StreamSource(new InputStreamReader(
+	            new FileInputStream(xmlPath),"UTF-8"));
 	}
 
 }

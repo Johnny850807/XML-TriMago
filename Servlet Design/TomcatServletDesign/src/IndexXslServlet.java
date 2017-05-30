@@ -42,7 +42,10 @@ public class IndexXslServlet extends XPathResultServlet{
 				, searchInput , typeOfMeal);
 	}
 
-	
+	@Override
+	protected String getXmlFileName() {
+		return XmlContext.XML_NAME;
+	}
 	
 	
 

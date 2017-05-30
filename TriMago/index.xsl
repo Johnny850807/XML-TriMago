@@ -227,9 +227,19 @@
 				  })();
 				</script>
 				<div class="gcse-search"></div>
-                <div class="well">
-                    <p>ADS</p>
-                </div>
+                <div id="myCarousel" class="carousel slide" data-ride="carousel" style="margin-top:20px;margin-bottom:20px;">
+						<div class="carousel-inner">
+							<xsl:apply-templates select="Waterball:restaurant/@imageUrl" />
+						</div>
+						<a class="left carousel-control" href="#myCarousel" data-slide="prev">
+							<span class="glyphicon glyphicon-chevron-left"></span>
+							<span class="sr-only">Previous</span>
+						</a>
+						<a class="right carousel-control" href="#myCarousel" data-slide="next">
+							<span class="glyphicon glyphicon-chevron-right"></span>
+							<span class="sr-only">Next</span>
+						</a>
+					</div>
                 <div class="well">
                     <p>ADS</p>
                 </div>
@@ -250,9 +260,21 @@
         <p>WaterBall @Copy MingChang Homework-Purpose</p>
     </footer>
   
-  
   </xsl:template>
-	
+  
+  <xsl:template match="Waterball:restaurant/@imageUrl">
+		<xsl:if test="position() > 1">
+				<div class="item">
+						<a href="detail?id={../@id}"><img src="{../@imageUrl}" alt="{../@name}" style="width:100%;"/></a>
+				</div>
+		</xsl:if>
+		<xsl:if test="position() = 1">
+				<div class="item active">
+						<a href="detail?id={../@id}"><img src="{../@imageUrl}" alt="{../@name}" style="width:100%;"/></a>
+				</div>
+		</xsl:if>
+  </xsl:template>
+  
 	<xsl:template  match="Waterball:restaurant">
     <div class="media" id="restaurantList">
 	<div class="col-sm-5">

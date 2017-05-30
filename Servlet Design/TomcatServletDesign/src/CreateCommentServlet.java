@@ -88,4 +88,9 @@ public class CreateCommentServlet extends BaseXslTransformServlet{
 		factory.setNamespaceAware(true);
 	    return factory.newDocumentBuilder();
 	}
+
+	@Override
+	protected String getXmlFileName() {
+		return XmlContext.XML_NAME;
+	}
 }

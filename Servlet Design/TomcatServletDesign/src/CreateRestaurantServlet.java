@@ -184,5 +184,10 @@ public class CreateRestaurantServlet extends BaseXslTransformServlet{
 	protected String getXslFileName() {
 		return "index.xsl";
 	}
+	
+	@Override
+	protected String getXmlFileName() {
+		return XmlContext.XML_NAME;
+	}
 
 }

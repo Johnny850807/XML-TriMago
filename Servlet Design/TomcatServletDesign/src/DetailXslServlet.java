@@ -17,6 +17,11 @@ public class DetailXslServlet extends XPathResultServlet{
 	protected String getXslFileName() {
 		return "detail.xsl";
 	}
+	
+	@Override
+	protected String getXmlFileName() {
+		return XmlContext.XML_NAME;
+	}
 
 }
 
