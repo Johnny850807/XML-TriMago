@@ -1,7 +1,7 @@
 import javax.servlet.http.HttpServletRequest;
 import javax.xml.transform.Source;
 
-public class DetailXslServlet extends XPathResultServlet{
+public class DetailXslServlet extends MyXPathResultServlet{
 	private String id;
 	@Override
 	protected void extractParameter(HttpServletRequest request) throws Exception {

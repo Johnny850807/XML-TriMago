@@ -2,7 +2,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.xml.transform.Source;
 import javax.xml.transform.Transformer;
 
-public class IndexXslServlet extends XPathResultServlet{
+public class IndexXslServlet extends MyXPathResultServlet{
 	protected String searchInput;
 	protected String sort;
 	protected String typeOfMeal;
@@ -46,7 +46,8 @@ public class IndexXslServlet extends XPathResultServlet{
 	protected String getXmlFileName() {
 		return XmlContext.XML_NAME;
 	}
-	
+
+
 	
 
 }

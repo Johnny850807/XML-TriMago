@@ -23,6 +23,8 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.traversal.NodeIterator;
 
+import xml.BaseXslTransformServlet;
+
 public class CreateCommentServlet extends BaseXslTransformServlet{
 	private String id;
 	private String date;

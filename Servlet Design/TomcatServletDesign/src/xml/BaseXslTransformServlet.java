@@ -1,8 +1,8 @@
-import java.io.BufferedReader;
-import java.io.File;
+package xml;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.InputStreamReader;
-import java.io.StringReader;
 import java.io.StringWriter;
 
 import javax.servlet.ServletContext;
@@ -11,9 +11,15 @@ import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Result;
 import javax.xml.transform.Source;
 import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerConfigurationException;
+import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
+
+import org.xml.sax.ErrorHandler;
+import org.xml.sax.SAXException;
+import org.xml.sax.SAXParseException;
 
 
 public abstract class BaseXslTransformServlet extends MyHttpServlet{
@@ -22,7 +28,9 @@ public abstract class BaseXslTransformServlet extends MyHttpServlet{
 	@Override
 	protected void initiate(ServletContext context) throws Exception {
 		xmlPath = context.getRealPath(getXmlFileName());
+		log("XML PATH : "+xmlPath);
 		xslPath = context.getRealPath(getXslFileName());
+		log("XSL PATH : "+xslPath);
 	}
 	
 	protected abstract String getXmlFileName();
@@ -60,8 +68,7 @@ public abstract class BaseXslTransformServlet extends MyHttpServlet{
 		Result dest = new StreamResult(writer);
 		transformer.transform(src, dest);
 		String result = writer.toString();
-		writer.close();
-		return writer.toString();
+		return result;
 	}
 	
 	protected Transformer transformConfig(Transformer transformer){
@@ -76,5 +83,7 @@ public abstract class BaseXslTransformServlet extends MyHttpServlet{
 		return new StreamSource(new InputStreamReader(
 	            new FileInputStream(xmlPath),"UTF-8"));
 	}
+	
+
 
 }
