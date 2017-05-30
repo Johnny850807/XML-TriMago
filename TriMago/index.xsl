@@ -199,11 +199,11 @@
 							
 							<button type="button" class="btn btn-info search-btn" data-toggle="modal"  
                                     data-target="#myModal">
-                              我要推薦餐廳
+                              <span class="glyphicon glyphicon-plus"></span> 我要推薦餐廳
                             </button>
 							
 							<button type="button"  
-								class="btn btn-danger search-btn" onclick="location.href='map'">美食地圖→</button>
+								class="btn btn-danger search-btn" onclick="location.href='map'">美食地圖 <span class="glyphicon glyphicon-hand-right"></span></button>
                     </div>
                 </div>
               </form>
