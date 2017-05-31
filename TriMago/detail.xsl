@@ -87,22 +87,26 @@
             </div>
             <div class="col-sm-3 sidenav">
                 <div class="well">
-                    <p>ADS</p>
+					<h2><kbd>2017/6/1 2:31</kbd></h2> 
+					<h2><kbd>TeamPathy</kbd></h2> 
+					<h2 style="display:inline;"><kbd>專研APP強勢上架</kbd></h2>
+                    <img src="adv1.png" style="width:40px;height:40px;"/>
+					<h3><kbd>盡請期待 另外徵求APP高手</kbd></h3>
                 </div>
                 <div class="well">
-                    <p>ADS</p>
+					<div class="alert alert-warning">
+						<p><strong>請各位不要留表情唷!!!</strong></p>
+					</div>
                 </div>
-                <div class="well">
-                    <p>ADS</p>
+				<div class="well">
+                    <div class="alert alert-warning">
+						<p><strong>請各位不要留表情唷!!!</strong></p>
+					</div>
                 </div>
-                <div class="well">
-                    <p>ADS</p>
-                </div>
-                <div class="well">
-                    <p>ADS</p>
-                </div>
-                <div class="well">
-                    <p>ADS</p>
+				<div class="well">
+                    <div class="alert alert-warning">
+						<p><strong>Please don't leave an emoji!!!</strong></p>
+					</div>
                 </div>
             </div>
         </div>

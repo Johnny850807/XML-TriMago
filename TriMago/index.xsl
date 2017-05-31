@@ -39,6 +39,9 @@
 				padding: 5px 26px !important;
 				width: 68px !important;
 			}
+			kbd{
+				font-size:22px;
+			}
 		</style>
         <div class="modal fade" id="myModal" role="dialog">
           <div class="modal-dialog">
@@ -227,20 +230,32 @@
                     <audio src="music2.mp3" style="width:100%;" controls="controls" autoplay="autoplay">Your browser does not support the audio element.
 					</audio>
                 </div>
+				<div class="well">
+					<h2><kbd>2017/6/1 2:31</kbd></h2> 
+					<h2><kbd>TeamPathy</kbd></h2> 
+					<h2 style="display:inline;"><kbd>專研APP強勢上架</kbd></h2>
+                    <img src="adv1.png" style="width:40px;height:40px;"/>
+					<h3><kbd>盡請期待 另外徵求APP高手</kbd></h3>
+                </div>
                 <div class="well">
-                    <p>請各位不要留表情唷!!!</p>
+					<div class="alert alert-warning">
+						<p><strong>請各位不要留表情唷!!!</strong></p>
+					</div>
                 </div>
 				<div class="well">
-                    <p>請各位不要留表情唷!!!</p>
+                    <div class="alert alert-warning">
+						<p><strong>請各位不要留表情唷!!!</strong></p>
+					</div>
                 </div>
 				<div class="well">
-                    <p>請各位不要留表情唷!!!</p>
+                    <div class="alert alert-warning">
+						<p><strong>Please don't leave an emoji!!!</strong></p>
+					</div>
                 </div>
-                <div class="well">
-                    <p>Please don't leave an emoji in a comment!!!</p>
-                </div>
-                <div class="well">
-                    <p>Please don't leave an emoji in a comment!!!</p>
+				<div class="well">
+                    <div class="alert alert-warning">
+						<p><strong>張書瑄是要不要睡覺</strong></p>
+					</div>
                 </div>
             </div>
         </div>
