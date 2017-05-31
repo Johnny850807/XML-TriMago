@@ -71,6 +71,7 @@
 						<li><a href="#">下午茶、咖啡廳</a></li>
 						<li><a href="#">速食店</a></li>
                     </ul>
+                    
                   </div>
                   <div class="form-group">
                     <label for="res-address">請輸入真實詳細地址:</label>
@@ -99,7 +100,7 @@
 	</xsl:template>
   
   <xsl:template match="Waterball:WebSite">
-      
+    
     <nav class="navbar navbar-default" data-spy="affix" data-offset-top="130" id="nav">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -223,9 +224,16 @@
 						</a>
 				</div>
                 <div class="well">
-                    <p>請各位不要留表情唷!!!</p>
+                    <audio src="music2.mp3" style="width:100%;" controls="controls" autoplay="autoplay">Your browser does not support the audio element.
+					</audio>
                 </div>
                 <div class="well">
+                    <p>請各位不要留表情唷!!!</p>
+                </div>
+				<div class="well">
+                    <p>請各位不要留表情唷!!!</p>
+                </div>
+				<div class="well">
                     <p>請各位不要留表情唷!!!</p>
                 </div>
                 <div class="well">
@@ -250,8 +258,6 @@
 						<a href="detail?id={../@id}"><img src="{../@imageUrl}" alt="{../@name}" style="width:100%;"/></a>
 						<div class="carousel-caption">
 						  <h2><xsl:value-of select="../@name"/></h2>
-						  <p><xsl:value-of select="../@address"/></p>
-						  <p>點擊觀看詳情</p>
 						</div>
 				</div>
 		</xsl:if>
@@ -260,8 +266,6 @@
 						<a href="detail?id={../@id}"><img src="{../@imageUrl}" alt="{../@name}" style="width:100%;"/></a>
 						<div class="carousel-caption">
 						  <h2><xsl:value-of select="../@name"/></h2>
-						  <p><xsl:value-of select="../@address"/></p>
-						  <p>點擊觀看詳情</p>
 						</div>
 				</div>
 		</xsl:if>

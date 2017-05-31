@@ -1,5 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE Waterball:WebSite [
+	<!ELEMENT Waterball:WebSite (Waterball:restaurant*)>
+<!ATTLIST Waterball:WebSite xmlns:Waterball CDATA #FIXED "http://g9.xml.csie.mcu.edu.tw">
+<!ELEMENT Waterball:restaurant (Waterball:comment*)>
 
+<!ATTLIST Waterball:restaurant id ID #REQUIRED>
+<!ATTLIST Waterball:restaurant name CDATA #REQUIRED>
+<!ATTLIST Waterball:restaurant latitude CDATA #REQUIRED>
+<!ATTLIST Waterball:restaurant longitude CDATA #REQUIRED>
+<!ATTLIST Waterball:restaurant price CDATA #REQUIRED>
+<!ATTLIST Waterball:restaurant typeOfMeal CDATA #REQUIRED>
+<!ATTLIST Waterball:restaurant address CDATA #REQUIRED>
+<!ATTLIST Waterball:restaurant imageUrl CDATA "http://imgur.com/download/fKTtkuy" >
+
+<!ELEMENT Waterball:comment ((Waterball:name+,Waterball:date+,Waterball:content+)| ( Waterball:date+,Waterball:name+,Waterball:content+))>
+<!ELEMENT Waterball:name (#PCDATA)>
+<!ELEMENT Waterball:date (#PCDATA)>
+<!ELEMENT Waterball:content (#PCDATA)>
+
+<!ATTLIST Waterball:comment rate CDATA #REQUIRED>
+]>
 <Waterball:WebSite xmlns:Waterball="http://g9.xml.csie.mcu.edu.tw">  
   
   <Waterball:restaurant address="333台灣桃園市龜山區自強西路128號" id="r1" imageUrl="http://imgur.com/download/JWjcrU7" latitude="24.9966" longitude="121.336" name="美國時間" price="40" typeOfMeal="早午餐店"> 
@@ -19,8 +39,8 @@
       <Waterball:content>能抽菸又怎樣，沒抽菸你都買得起車了。</Waterball:content> 
     </Waterball:comment>  
     <Waterball:comment rate="5"> 
-      <Waterball:date>2017/05/26 - 09:23:36</Waterball:date>  
       <Waterball:name>嘉偉</Waterball:name>  
+      <Waterball:date>2017/05/26 - 09:23:36</Waterball:date>  
       <Waterball:content>那隻狗怎麼那麼可愛</Waterball:content> 
     </Waterball:comment>  
     <Waterball:comment rate="0"> 
@@ -59,11 +79,6 @@
       <Waterball:name>Waterball</Waterball:name>  
       <Waterball:date>2017/4/1</Waterball:date>  
       <Waterball:content>Welcome here to have hthe most popular and romantic date!</Waterball:content> 
-    </Waterball:comment>  
-    <Waterball:comment> 
-      <Waterball:date>2017/05/26 - 01:10:44</Waterball:date>  
-      <Waterball:name>456</Waterball:name>  
-      <Waterball:content>6</Waterball:content> 
     </Waterball:comment>  
     <Waterball:comment rate="4"> 
       <Waterball:date>2017/05/26 - 01:25:34</Waterball:date>  
