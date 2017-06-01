@@ -109,27 +109,17 @@
 						</a>
 				</div>
         <div class="well">
+                    <audio src="music1.mp3" controls="controls" autoplay="true" style="width:100%;"></audio>
+                </div>
+				<div class="well">
 					<h2><kbd>2017/6/1 2:31</kbd></h2> 
 					<h2><kbd>TeamPathy</kbd></h2> 
 					<h2 style="display:inline;"><kbd>專研APP強勢上架</kbd></h2>
                     <img src="adv1.png" style="width:40px;height:40px;"/>
+					<iframe src="teampathy.mp4" style="width:100%;height:200px;margin-top:15px;margin-bottom:15px;" allowfullscreen=""></iframe>
 					<h3><kbd>盡請期待 另外徵求APP高手</kbd></h3>
                 </div>
-                <div class="well">
-					<div class="alert alert-warning">
-						<p><strong>請各位不要留表情唷!!!</strong></p>
-					</div>
-                </div>
-				<div class="well">
-                    <div class="alert alert-warning">
-						<p><strong>請各位不要留表情唷!!!</strong></p>
-					</div>
-                </div>
-				<div class="well">
-                    <div class="alert alert-warning">
-						<p><strong>Please don't leave an emoji!!!</strong></p>
-					</div>
-                </div>
+			
       </div>
     </div>
   </div>

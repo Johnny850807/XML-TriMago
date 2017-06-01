@@ -18,7 +18,7 @@
 				<link rel="stylesheet" href="triMago.css"/>
         <script language = "JavaScript"  type="text/javascript" >
           $(function(){
-          $("#modal-dropdown-menu li a").click(function(){
+          $(".modal-dropdown-menu li a").click(function(){
           $("#modal-select-btn:first-child").text($(this).text());
           $("#modal-select-btn:first-child").val($(this).text());
           $("#modal-typeOfMeal-input:first-child").val($(this).text());
@@ -28,7 +28,9 @@
           function onSubmitValidate(){
             return true;
           }
+		  
         </script>
+	
 		
 		<style>  <!--For the Google Custom Search Issue-->
 			.cse .gsc-search-button input.gsc-search-button-v2,
@@ -72,7 +74,7 @@
 						<li><a href="#">甜點、冰</a></li>
 						<li><a href="#">正餐、麵、飯</a></li>
 						<li><a href="#">下午茶、咖啡廳</a></li>
-						<li><a href="#">速食店</a></li>
+						<li><a href="#">速食店、漢堡店</a></li>
                     </ul>
                     
                   </div>
@@ -167,7 +169,7 @@
 									<li><a href="#" class="type-item">甜點、冰</a></li>
 									<li><a href="#" class="type-item">正餐、麵、飯</a></li>
 									<li><a href="#" class="type-item">下午茶、咖啡廳</a></li>
-									<li><a href="#" class="type-item">速食店</a></li>
+									<li><a href="#" class="type-item">速食店、漢堡店</a></li>
                                 </ul> 
                             </div>
 							
@@ -227,20 +229,23 @@
 						</a>
 				</div>
                 <div class="well">
-                    <audio src="music2.mp3" style="width:100%;" controls="controls" autoplay="autoplay">Your browser does not support the audio element.
-					</audio>
+                    <audio src="music1.mp3" controls="controls" autoplay="true" style="width:100%;"></audio>
                 </div>
 				<div class="well">
 					<h2><kbd>2017/6/1 2:31</kbd></h2> 
 					<h2><kbd>TeamPathy</kbd></h2> 
 					<h2 style="display:inline;"><kbd>專研APP強勢上架</kbd></h2>
                     <img src="adv1.png" style="width:40px;height:40px;"/>
+					<iframe src="teampathy.mp4" style="width:100%;height:200px;margin-top:15px;margin-bottom:15px;" allowfullscreen=""></iframe>
 					<h3><kbd>盡請期待 另外徵求APP高手</kbd></h3>
                 </div>
                 <div class="well">
-					<div class="alert alert-warning">
-						<p><strong>請各位不要留表情唷!!!</strong></p>
-					</div>
+					<h2><kbd>2017/6/2 2:40</kbd></h2> 
+					<h2><kbd>Instagram Spy</kbd></h2> 
+					<h2><kbd>To Show And Dominate Followers</kbd></h2>
+					<h2 style="display:inline;"><kbd>Coming Soon.</kbd></h2>
+					<iframe src="IG分析.mp4" style="width:100%;height:200px;margin-top:15px;margin-bottom:15px;" allowfullscreen=""></iframe>
+					<h3><kbd>To Unfollow Them..</kbd></h3>
                 </div>
 				<div class="well">
                     <div class="alert alert-warning">

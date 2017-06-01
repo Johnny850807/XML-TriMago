@@ -421,9 +421,16 @@
 <Waterball:restaurant address="桃園市龜山區德明路164號" id="r26" imageUrl="http://i.imgur.com/3n7gRrg.jpg" latitude="24.988651" longitude="121.344047" name="五味臭臭鍋" price="120" typeOfMeal="正餐、麵、飯"/>
 <Waterball:restaurant address="桃園市龜山區德明路51號" id="r27" imageUrl="http://i.imgur.com/9qNEQIa.jpg" latitude="24.9883739" longitude="121.3432377" name="燚家鐵板燒" price="150" typeOfMeal="正餐、麵、飯"/>
 <Waterball:restaurant address="桃園市龜山區明德路162號" id="r28" imageUrl="http://i.imgur.com/HhU0qzz.jpg" latitude="24.9922597" longitude="121.3408456" name="蘇杭小館" price="60" typeOfMeal="正餐、麵、飯"/>
-<Waterball:restaurant address="桃園市龜山區明德路330號" id="r29" imageUrl="http://i.imgur.com/vJsqI2Y.jpg" latitude="24.9895689" longitude="121.3436754" name="四海家小館" price="70" typeOfMeal="正餐、麵、飯"/>
+<Waterball:restaurant address="桃園市龜山區明德路330號" id="r29" imageUrl="http://i.imgur.com/vJsqI2Y.jpg" latitude="24.9895689" longitude="121.3436754" name="四海家小館" price="70" typeOfMeal="正餐、麵、飯">
+<Waterball:comment rate="4">
+<Waterball:date>2017/06/02 - 12:39:56</Waterball:date>
+<Waterball:name>路人甲</Waterball:name>
+<Waterball:content>好吃好吃</Waterball:content>
+</Waterball:comment>
+</Waterball:restaurant>
 <Waterball:restaurant address="桃園市龜山區明德路318號" id="r30" imageUrl="http://i.imgur.com/53UxhkO.jpg" latitude="24.9897449" longitude="121.3435085" name="小判 拉麵專門店" price="160" typeOfMeal="正餐、麵、飯"/>
 <Waterball:restaurant address="333桃園市龜山區大同路231 號" id="r31" imageUrl="http://i.imgur.com/D7max2k.png" latitude="24.9902932" longitude="121.3445887" name="雅加達漢堡店" price="120" typeOfMeal="速食店、漢堡店"/>
 <Waterball:restaurant address="桃園市龜山區大同路236巷40號" id="r32" imageUrl="http://i.imgur.com/FWZ0bWm.jpg" latitude="24.9898522" longitude="121.3441518" name="京采日式飯館" price="100" typeOfMeal="正餐、麵、飯"/>
 <Waterball:restaurant address="桃園市龜山區大同路230號" id="r33" imageUrl="http://i.imgur.com/6yMCu8F.jpg" latitude="24.9901647" longitude="121.3443283" name="泰皇泰式料理" price="100" typeOfMeal="正餐、麵、飯"/>
+<Waterball:restaurant address="No. 217大同路龜山區桃園市" id="r34" imageUrl="http://i.imgur.com/Li9Ge8v.jpg" latitude="24.9904716" longitude="121.3445742" name="大姆指精緻涮涮鍋" price="350" typeOfMeal="正餐、麵、飯"/>
 </Waterball:WebSite>

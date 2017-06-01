@@ -178,20 +178,9 @@
 						</a>
 				</div>
           <div class="well">
-            <p>ADS</p>
-          </div>
-          <div class="well">
-            <p>ADS</p>
-          </div>
-          <div class="well">
-            <p>ADS</p>
-          </div>
-          <div class="well">
-            <p>ADS</p>
-          </div>
-          <div class="well">
-            <p>ADS</p>
-          </div>
+                    <audio src="music1.mp3" controls="controls" autoplay="true" style="width:100%;"></audio>
+                </div>
+               
         </div>
       </div>
     </div>

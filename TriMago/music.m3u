@@ -1,0 +1,8 @@
+<ASX version ="3.0"> 
+	<Entry> 
+		<Ref href = "music1.mp3"/> 
+	</Entry> 
+	<Entry> 
+		<Ref href = "music2.mp3"/> 
+	</Entry> 
+</ASX> 
