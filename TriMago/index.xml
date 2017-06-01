@@ -64,11 +64,11 @@
 <Waterball:content>價位有超過80</Waterball:content>
 </Waterball:comment>
 </Waterball:restaurant>  
-  <Waterball:restaurant address="神之地址" id="r2" imageUrl="http://imgur.com/download/tHEZ1hi" latitude="24.992495" longitude="121.339421" name="Waterball Dream" price="340" typeOfMeal="正餐、麵、飯"> 
+  <Waterball:restaurant address="神之地址" id="r2" imageUrl="http://imgur.com/download/tHEZ1hi" latitude="24.992495" longitude="121.339421" name="版主留言區" price="99999" typeOfMeal="無分類"> 
     <Waterball:comment rate="5"> 
       <Waterball:name>Waterball</Waterball:name>  
       <Waterball:date>2017/4/1</Waterball:date>  
-      <Waterball:content>Welcome here to have hthe most popular and romantic date!</Waterball:content> 
+      <Waterball:content>感謝各位</Waterball:content> 
     </Waterball:comment>  
     <Waterball:comment> 
       <Waterball:date>2017/05/26 - 01:10:44</Waterball:date>  
@@ -129,6 +129,11 @@
 <Waterball:date>2017/06/02 - 09:25:34</Waterball:date>
 <Waterball:name>張家瑋</Waterball:name>
 <Waterball:content>感謝家瑋瘋狂新增餐廳</Waterball:content>
+</Waterball:comment>
+<Waterball:comment rate="5">
+<Waterball:date>2017/06/02 - 09:39:02</Waterball:date>
+<Waterball:name>版主</Waterball:name>
+<Waterball:content>感謝豐緒老師</Waterball:content>
 </Waterball:comment>
 </Waterball:restaurant> 
 <Waterball:restaurant address="333台灣桃園市龜山區自強西路128號" id="r0" imageUrl="http://i.imgur.com/1ZpFoo8.jpg" latitude="24.9966" longitude="121.336" name="癮食上癮" price="80" typeOfMeal="早午餐店"> 
@@ -372,8 +377,8 @@
 <Waterball:content>三寶只值三顆星而已</Waterball:content>
 </Waterball:comment>
 </Waterball:restaurant>
-<Waterball:restaurant address="桃園市龜山區桃園縣龜山鄉明德路323號" id="r16" imageUrl="http://i.imgur.com/UC5RSfP.jpg" latitude="24.9894993" longitude="121.3440411" name="核桃屋" price="80" typeOfMeal="無分類"/>
-<Waterball:restaurant address="桃園市龜山區大同路111之5號" id="r17" imageUrl="http://i.imgur.com/pubmfK3.jpg" latitude="24.9931005" longitude="121.3420706" name="巧口快餐店" price="70" typeOfMeal="無分類">
+<Waterball:restaurant address="桃園市龜山區桃園縣龜山鄉明德路323號" id="r16" imageUrl="http://i.imgur.com/UC5RSfP.jpg" latitude="24.9894993" longitude="121.3440411" name="核桃屋" price="80" typeOfMeal="正餐、麵、飯"/>
+<Waterball:restaurant address="桃園市龜山區大同路111之5號" id="r17" imageUrl="http://i.imgur.com/pubmfK3.jpg" latitude="24.9931005" longitude="121.3420706" name="巧口快餐店" price="70" typeOfMeal="正餐、麵、飯">
 <Waterball:comment rate="4">
 <Waterball:date>2017/06/02 - 09:01:06</Waterball:date>
 <Waterball:name>路人</Waterball:name>
@@ -382,16 +387,16 @@
 還是推</Waterball:content>
 </Waterball:comment>
 </Waterball:restaurant>
-<Waterball:restaurant address="桃園市龜山區德明路178號" id="r18" imageUrl="http://i.imgur.com/9k5mALi.jpg" latitude="24.989289" longitude="121.3444084" name="大台北阿松的店" price="60" typeOfMeal="無分類">
+<Waterball:restaurant address="桃園市龜山區德明路178號" id="r18" imageUrl="http://i.imgur.com/9k5mALi.jpg" latitude="24.989289" longitude="121.3444084" name="大台北阿松的店" price="60" typeOfMeal="正餐、麵、飯">
 <Waterball:comment rate="2">
 <Waterball:date>2017/06/02 - 09:15:58</Waterball:date>
 <Waterball:name>老梗大台北</Waterball:name>
 <Waterball:content>= =都是羊肉</Waterball:content>
 </Waterball:comment>
 </Waterball:restaurant>
-<Waterball:restaurant address="桃園市龜山區德明路117號" id="r19" imageUrl="http://i.imgur.com/bGdUWPF.jpg" latitude="24.9894088" longitude="121.3443864" name="八哥重慶酸辣粉" price="90" typeOfMeal="無分類"/>
-<Waterball:restaurant address="桃園市龜山區大同路111-7號" id="r20" imageUrl="http://i.imgur.com/bQI8yVY.jpg" latitude="24.9931053" longitude="121.3421828" name="世代小館" price="70" typeOfMeal="無分類"/>
-<Waterball:restaurant address="桃園市龜山區大同路255號" id="r21" imageUrl="http://i.imgur.com/C6uxP42.jpg" latitude="24.9897932" longitude="121.3449922" name="低俗空間" price="250" typeOfMeal="無分類">
+<Waterball:restaurant address="桃園市龜山區德明路117號" id="r19" imageUrl="http://i.imgur.com/bGdUWPF.jpg" latitude="24.9894088" longitude="121.3443864" name="八哥重慶酸辣粉" price="90" typeOfMeal="小吃店、路邊攤"/>
+<Waterball:restaurant address="桃園市龜山區大同路111-7號" id="r20" imageUrl="http://i.imgur.com/bQI8yVY.jpg" latitude="24.9931053" longitude="121.3421828" name="世代小館" price="70" typeOfMeal="正餐、麵、飯"/>
+<Waterball:restaurant address="桃園市龜山區大同路255號" id="r21" imageUrl="http://i.imgur.com/C6uxP42.jpg" latitude="24.9897932" longitude="121.3449922" name="低俗空間" price="250" typeOfMeal="速食店、漢堡店">
 <Waterball:comment rate="3">
 <Waterball:date>2017/06/02 - 09:19:38</Waterball:date>
 <Waterball:name>家瑋</Waterball:name>
@@ -403,18 +408,22 @@
 <Waterball:content>壽星有打折活動喔</Waterball:content>
 </Waterball:comment>
 </Waterball:restaurant>
-<Waterball:restaurant address="桃園市龜山區桃園市龜山區德明路142號" id="r22" imageUrl="http://i.imgur.com/KLV5StK.jpg" latitude="24.9885188" longitude="121.3436166" name="羅媽媽牛肉麵" price="80" typeOfMeal="無分類"/>
-<Waterball:restaurant address=" No. 81德明路龜山區桃園市333" id="r23" imageUrl="http://i.imgur.com/LvRBZZx.jpg" latitude="24.9886806" longitude="121.3435069" name="找兩圓 TWO COINS" price="80" typeOfMeal="無分類"/>
-<Waterball:restaurant address="桃園市龜山區德明路77巷2號1樓" id="r24" imageUrl="http://i.imgur.com/U2dzBdb.jpg" latitude="24.9887273" longitude="121.3432249" name="品誠豆花店" price="40" typeOfMeal="無分類">
+<Waterball:restaurant address="桃園市龜山區桃園市龜山區德明路142號" id="r22" imageUrl="http://i.imgur.com/KLV5StK.jpg" latitude="24.9885188" longitude="121.3436166" name="羅媽媽牛肉麵" price="80" typeOfMeal="正餐、麵、飯"/>
+<Waterball:restaurant address=" No. 81德明路龜山區桃園市333" id="r23" imageUrl="http://i.imgur.com/LvRBZZx.jpg" latitude="24.9886806" longitude="121.3435069" name="找兩圓 TWO COINS" price="80" typeOfMeal="正餐、麵、飯"/>
+<Waterball:restaurant address="桃園市龜山區德明路77巷2號1樓" id="r24" imageUrl="http://i.imgur.com/U2dzBdb.jpg" latitude="24.9887273" longitude="121.3432249" name="品誠豆花店" price="40" typeOfMeal="甜點、冰">
 <Waterball:comment rate="3">
 <Waterball:date>2017/06/02 - 09:15:20</Waterball:date>
 <Waterball:name>愛假</Waterball:name>
 <Waterball:content>銘傳最紅</Waterball:content>
 </Waterball:comment>
 </Waterball:restaurant>
-<Waterball:restaurant address="桃園市龜山區德明路59號" id="r25" imageUrl="http://i.imgur.com/DseWQYA.jpg" latitude="24.9884892" longitude="121.3433658" name="後埔戰鬥雞排銘傳店" price="60" typeOfMeal="無分類"/>
-<Waterball:restaurant address="桃園市龜山區德明路164號" id="r26" imageUrl="http://i.imgur.com/3n7gRrg.jpg" latitude="24.988651" longitude="121.344047" name="五味臭臭鍋" price="120" typeOfMeal="無分類"/>
-<Waterball:restaurant address="桃園市龜山區德明路51號" id="r27" imageUrl="http://i.imgur.com/9qNEQIa.jpg" latitude="24.9883739" longitude="121.3432377" name="燚家鐵板燒" price="150" typeOfMeal="無分類"/>
-<Waterball:restaurant address="桃園市龜山區明德路162號" id="r28" imageUrl="http://i.imgur.com/HhU0qzz.jpg" latitude="24.9922597" longitude="121.3408456" name="蘇杭小館" price="60" typeOfMeal="無分類"/>
-<Waterball:restaurant address="桃園市龜山區明德路330號" id="r29" imageUrl="http://i.imgur.com/vJsqI2Y.jpg" latitude="24.9895689" longitude="121.3436754" name="四海家小館" price="70" typeOfMeal="無分類"/>
+<Waterball:restaurant address="桃園市龜山區德明路59號" id="r25" imageUrl="http://i.imgur.com/DseWQYA.jpg" latitude="24.9884892" longitude="121.3433658" name="後埔戰鬥雞排銘傳店" price="60" typeOfMeal="小吃店、路邊攤"/>
+<Waterball:restaurant address="桃園市龜山區德明路164號" id="r26" imageUrl="http://i.imgur.com/3n7gRrg.jpg" latitude="24.988651" longitude="121.344047" name="五味臭臭鍋" price="120" typeOfMeal="正餐、麵、飯"/>
+<Waterball:restaurant address="桃園市龜山區德明路51號" id="r27" imageUrl="http://i.imgur.com/9qNEQIa.jpg" latitude="24.9883739" longitude="121.3432377" name="燚家鐵板燒" price="150" typeOfMeal="正餐、麵、飯"/>
+<Waterball:restaurant address="桃園市龜山區明德路162號" id="r28" imageUrl="http://i.imgur.com/HhU0qzz.jpg" latitude="24.9922597" longitude="121.3408456" name="蘇杭小館" price="60" typeOfMeal="正餐、麵、飯"/>
+<Waterball:restaurant address="桃園市龜山區明德路330號" id="r29" imageUrl="http://i.imgur.com/vJsqI2Y.jpg" latitude="24.9895689" longitude="121.3436754" name="四海家小館" price="70" typeOfMeal="正餐、麵、飯"/>
+<Waterball:restaurant address="桃園市龜山區明德路318號" id="r30" imageUrl="http://i.imgur.com/53UxhkO.jpg" latitude="24.9897449" longitude="121.3435085" name="小判 拉麵專門店" price="160" typeOfMeal="正餐、麵、飯"/>
+<Waterball:restaurant address="333桃園市龜山區大同路231 號" id="r31" imageUrl="http://i.imgur.com/D7max2k.png" latitude="24.9902932" longitude="121.3445887" name="雅加達漢堡店" price="120" typeOfMeal="速食店、漢堡店"/>
+<Waterball:restaurant address="桃園市龜山區大同路236巷40號" id="r32" imageUrl="http://i.imgur.com/FWZ0bWm.jpg" latitude="24.9898522" longitude="121.3441518" name="京采日式飯館" price="100" typeOfMeal="正餐、麵、飯"/>
+<Waterball:restaurant address="桃園市龜山區大同路230號" id="r33" imageUrl="http://i.imgur.com/6yMCu8F.jpg" latitude="24.9901647" longitude="121.3443283" name="泰皇泰式料理" price="100" typeOfMeal="正餐、麵、飯"/>
 </Waterball:WebSite>
