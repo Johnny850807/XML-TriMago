@@ -47,7 +47,6 @@ public abstract class MyHttpServlet extends HttpServlet{
 			
 			log("執行與得到結果步驟");
 			result = executeAndGetResult();
-			log("result: " + result);
 			resultReader = new BufferedReader(new StringReader(result));
 			
 			log("寫入伺服器輸出步驟");

@@ -66,6 +66,7 @@ public abstract class BaseXslTransformServlet extends MyHttpServlet{
 	    StringWriter writer = new StringWriter();
 		Source src = getXmlStreamSource();
 		Result dest = new StreamResult(writer);
+		log("得到sort參數:"+transformer.getParameter("sort"));
 		transformer.transform(src, dest);
 		String result = writer.toString();
 		return result;

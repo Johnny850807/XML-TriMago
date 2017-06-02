@@ -62,7 +62,7 @@
     <nav class="navbar navbar-default" data-spy="affix" data-offset-top="130" id="nav">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#" id="logo">
+                <a class="navbar-brand" href="index" id="logo">
                     <img src="https://imgur.com/download/8WZa7jf" alt="logo"/>
                 </a>
             </div>
@@ -141,6 +141,12 @@
        <p class="address"><xsl:value-of select="@address"/></p>
 	   <p class="typeOfMeal"><xsl:value-of select="@typeOfMeal"/></p>
        <p class="price">價位 <xsl:value-of select="@price"/></p>
+	   <xsl:variable name="name" select="@name"/>
+	   <form action="map" method="get">
+		<xsl:variable name="id" select="@id"/>
+		<input type="submit" value="前往地圖" class="btn btn-success detailsButton"/>
+		<input type="hidden" value="{$name}" name="searchInput"/>
+	   </form>
      </div>
 	 </div>
     </div>

@@ -421,7 +421,13 @@
 </Waterball:comment>
 </Waterball:restaurant>
 <Waterball:restaurant address="桃園市龜山區桃園市龜山區德明路142號" id="r22" imageUrl="http://i.imgur.com/KLV5StK.jpg" latitude="24.9885188" longitude="121.3436166" name="羅媽媽牛肉麵" price="80" typeOfMeal="正餐、麵、飯"/>
-<Waterball:restaurant address=" No. 81德明路龜山區桃園市333" id="r23" imageUrl="http://i.imgur.com/LvRBZZx.jpg" latitude="24.9886806" longitude="121.3435069" name="找兩圓 TWO COINS" price="80" typeOfMeal="正餐、麵、飯"/>
+<Waterball:restaurant address=" No. 81德明路龜山區桃園市333" id="r23" imageUrl="http://i.imgur.com/LvRBZZx.jpg" latitude="24.9886806" longitude="121.3435069" name="找兩圓 TWO COINS" price="80" typeOfMeal="正餐、麵、飯">
+<Waterball:comment rate="3">
+<Waterball:date>2017/06/02 - 07:50:56</Waterball:date>
+<Waterball:name>不錯</Waterball:name>
+<Waterball:content>推高</Waterball:content>
+</Waterball:comment>
+</Waterball:restaurant>
 <Waterball:restaurant address="桃園市龜山區德明路77巷2號1樓" id="r24" imageUrl="http://i.imgur.com/U2dzBdb.jpg" latitude="24.9887273" longitude="121.3432249" name="品誠豆花店" price="40" typeOfMeal="甜點、冰">
 <Waterball:comment rate="3">
 <Waterball:date>2017/06/02 - 09:15:20</Waterball:date>

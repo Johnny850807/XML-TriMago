@@ -45,7 +45,7 @@
     <nav class="navbar navbar-default"  >
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand" href="#" id="logo">
+          <a class="navbar-brand" href="index" id="logo">
             <img src="https://imgur.com/download/8WZa7jf" alt="logo"/>
           </a>
         </div>

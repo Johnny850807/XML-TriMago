@@ -1,6 +1,12 @@
+import java.io.StringWriter;
+
 import javax.servlet.http.HttpServletRequest;
+import javax.xml.transform.Result;
 import javax.xml.transform.Source;
 import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.stream.StreamResult;
+import javax.xml.transform.stream.StreamSource;
 
 public class IndexXslServlet extends MyXPathResultServlet{
 	protected String searchInput;
@@ -22,19 +28,17 @@ public class IndexXslServlet extends MyXPathResultServlet{
 		log("分類: " + typeOfMeal );
 		sort = request.getParameter("sort");
 		sort = sort == null || sort.equals("無排序") ? "" : sort;
-		log("排序: " + sort);
 	}
 	
 
 	@Override
 	protected Transformer transformConfig(Transformer transformer) {
-		log("設定排序"+":"+sort);
 		transformer = super.transformConfig(transformer);
 		transformer.setParameter("sort", sort);
-		
+		log("設定排序"+":"+sort);
 		return transformer;
 	}
-
+	
 	@Override
 	protected String getXpathExpression() {
 		return String.format
@@ -46,8 +50,5 @@ public class IndexXslServlet extends MyXPathResultServlet{
 	protected String getXmlFileName() {
 		return XmlContext.XML_NAME;
 	}
-
-
-	
 
 }

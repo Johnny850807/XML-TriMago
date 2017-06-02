@@ -18,3 +18,8 @@
     border-bottom: 1px solid gray;
 }
 
+#commentList:hover{
+	background-color:#F7F7F7;
+	transition: background-color .3s;
+}
+

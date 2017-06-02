@@ -2,9 +2,9 @@
 <xsl:stylesheet version="1.0"
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
   xmlns:Waterball="http://g9.xml.csie.mcu.edu.tw">
+  	<xsl:param name="sort"/>
   <xsl:output method="html" version="1.0" encoding="UTF-8" indent="yes"/>
 	<xsl:template  match="/">
-	<xsl:param name="sort"/>
 		<html>
 			<head>
 				<title>銘傳找飯吃? TriMaGo</title>
@@ -109,7 +109,7 @@
     <nav class="navbar navbar-default" data-spy="affix" data-offset-top="130" id="nav">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#" id="logo">
+                <a class="navbar-brand" href="index" id="logo">
                     <img src="https://imgur.com/download/8WZa7jf" alt="logo"/>
                 </a>
             </div>
@@ -182,6 +182,8 @@
                                     <li><a href="#" class="sort-item">貴到便宜</a></li>
 									<li><a href="#" class="sort-item">評價低到高</a></li>
 									<li><a href="#" class="sort-item">評價高到低</a></li>
+									<li><a href="#" class="sort-item">留言數低到高</a></li>
+									<li><a href="#" class="sort-item">留言數高到低</a></li>
                                 </ul>
                             </div>
 							
@@ -196,11 +198,41 @@
                 </div>
               </form>
                 <hr/>
-				<xsl:apply-templates select="Waterball:restaurant">
-					
-					<xsl:sort order="descending" select="sum(Waterball:comment/@rate) div count(Waterball:comment)" data-type="number"/>
-									
+				<xsl:choose>
+					  <xsl:when test="$sort='便宜到貴'">
+						<xsl:apply-templates select="Waterball:restaurant">
+					<xsl:sort order="ascending" select="@price" data-type="number"/>			
 				</xsl:apply-templates>
+					  </xsl:when>
+					  <xsl:when test="$sort='貴到便宜'">
+						<xsl:apply-templates select="Waterball:restaurant">
+					<xsl:sort order="descending" select="@price" data-type="number"/>			
+				</xsl:apply-templates>
+					  </xsl:when>
+					  <xsl:when test="$sort='評價低到高'">
+						<xsl:apply-templates select="Waterball:restaurant">
+					<xsl:sort order="ascending" select="sum(Waterball:comment/@rate) div count(Waterball:comment)" data-type="number"/>			
+				</xsl:apply-templates>
+					  </xsl:when>
+					  <xsl:when test="$sort='評價高到低'">
+						<xsl:apply-templates select="Waterball:restaurant">
+					<xsl:sort order="descending" select="sum(Waterball:comment/@rate) div count(Waterball:comment)" data-type="number"/>			
+				</xsl:apply-templates>
+					  </xsl:when>
+					  <xsl:when test="$sort='留言數低到高'">
+						<xsl:apply-templates select="Waterball:restaurant">
+					<xsl:sort order="ascending" select="count(Waterball:comment)" data-type="number"/>			
+				</xsl:apply-templates>
+					  </xsl:when>
+					  <xsl:when test="$sort='留言數高到低'">
+						<xsl:apply-templates select="Waterball:restaurant">
+					<xsl:sort order="descending" select="count(Waterball:comment)" data-type="number"/>			
+				</xsl:apply-templates>
+					  </xsl:when>
+					  <xsl:otherwise>
+						<xsl:apply-templates select="Waterball:restaurant"></xsl:apply-templates>
+					  </xsl:otherwise>
+					</xsl:choose>
             </div>
             <div class="col-sm-3 sidenav">
 				<script>

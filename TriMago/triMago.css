@@ -156,10 +156,14 @@ footer {
     padding-left:10px;
 }
 
-
 #restaurantList {
-    padding-bottom: 15px;
+	padding-bottom: 15px;
     border-bottom: 1px solid gray;
+}
+
+#restaurantList:hover {
+    background-color:#F7F7F7;
+	transition: background-color .3s;
 }
 
 #restaurantList p {
@@ -189,7 +193,7 @@ footer {
 }
 
 pre {
-	background-color: white;
+	background-color: inherit;
 	border: 0px;
   font-family:'微軟正黑體'; 
   font-size:17px; 
