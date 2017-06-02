@@ -54,7 +54,7 @@ public class CreateRestaurantServlet extends BaseXslTransformServlet{
 		taskSuccess = true;
 		name = request.getParameter("name");
 		typeOfMeal = request.getParameter("typeOfMeal");
-		typeOfMeal = typeOfMeal.equals("") ? "無分類" : typeOfMeal;
+		typeOfMeal = typeOfMeal == null || typeOfMeal.equals("") ? "無分類" : typeOfMeal;
 		price = request.getParameter("price");
 		address = request.getParameter("address");
 		Part uploadImagePart = request.getPart("image");
@@ -90,12 +90,6 @@ public class CreateRestaurantServlet extends BaseXslTransformServlet{
 		restaurantNode.setAttribute("address", address);
 		doMultipleNetworkTask(restaurantNode,transformer);
 		return true;
-	}
-	
-	private DocumentBuilder initBuilder() throws ParserConfigurationException{
-		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-		factory.setNamespaceAware(true);
-	    return factory.newDocumentBuilder();
 	}
 	
 	private String createNewGuid() throws TransformerException{

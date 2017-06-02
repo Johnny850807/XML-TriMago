@@ -171,7 +171,7 @@ footer {
 }
 
 .media-object{
-	width:100%;
+	width:70%;
 }
 
 .address{
@@ -200,4 +200,8 @@ pre {
   white-space: pre-wrap;
   word-wrap: break-word;
   text-align: justify;
+}
+
+.pager li{
+	width: 200px;
 }

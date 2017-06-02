@@ -7,6 +7,9 @@ import java.io.StringWriter;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Result;
 import javax.xml.transform.Source;
@@ -83,6 +86,12 @@ public abstract class BaseXslTransformServlet extends MyHttpServlet{
 		//hook method
 		return new StreamSource(new InputStreamReader(
 	            new FileInputStream(xmlPath),"UTF-8"));
+	}
+	
+	protected DocumentBuilder initBuilder() throws ParserConfigurationException{
+		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+		factory.setNamespaceAware(true);
+	    return factory.newDocumentBuilder();
 	}
 	
 

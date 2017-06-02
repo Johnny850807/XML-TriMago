@@ -147,6 +147,21 @@
 &#13;
 </Waterball:content>
 </Waterball:comment>
+<Waterball:comment rate="5">
+<Waterball:date>2017/06/03 - 08:54:24</Waterball:date>
+<Waterball:name>123GPL</Waterball:name>
+<Waterball:content>請大家支持GODJJ twitch.tv/godjj</Waterball:content>
+</Waterball:comment>
+<Waterball:comment rate="5">
+<Waterball:date>2017/06/03 - 08:58:23</Waterball:date>
+<Waterball:name>O.&lt;</Waterball:name>
+<Waterball:content>還有支持動畫瘋的動物朋友</Waterball:content>
+</Waterball:comment>
+<Waterball:comment rate="5">
+<Waterball:date>2017/06/03 - 09:00:57</Waterball:date>
+<Waterball:name>樓上許俊智</Waterball:name>
+<Waterball:content>一個抓包</Waterball:content>
+</Waterball:comment>
 </Waterball:restaurant> 
 <Waterball:restaurant address="333台灣桃園市龜山區自強西路128號" id="r0" imageUrl="http://i.imgur.com/1ZpFoo8.jpg" latitude="24.9966" longitude="121.336" name="癮食上癮" price="80" typeOfMeal="早午餐店"> 
     <Waterball:comment rate="3"> 
@@ -374,7 +389,12 @@
       <Waterball:name>小彥</Waterball:name>  
       <Waterball:content>很可愛 歡迎當晚餐吃</Waterball:content> 
     </Waterball:comment> 
-  </Waterball:restaurant>  
+  <Waterball:comment rate="5">
+<Waterball:date>2017/06/03 - 10:32:20</Waterball:date>
+<Waterball:name>虎一波</Waterball:name>
+<Waterball:content>虎虎虎</Waterball:content>
+</Waterball:comment>
+</Waterball:restaurant>  
   <Waterball:restaurant address="臺中赤鬼牛排" id="r14" imageUrl="http://i.imgur.com/h7uOjXC.jpg" latitude="24.1507766" longitude="120.6499019" name="臺中赤鬼牛排" price="250" typeOfMeal="正餐、麵、飯"> 
     <Waterball:comment rate="5"> 
       <Waterball:date>2017/05/26 - 04:08:35</Waterball:date>  
@@ -387,6 +407,12 @@
 <Waterball:date>2017/06/02 - 04:53:27</Waterball:date>
 <Waterball:name>宗億三寶</Waterball:name>
 <Waterball:content>三寶只值三顆星而已</Waterball:content>
+</Waterball:comment>
+<Waterball:comment rate="5">
+<Waterball:date>2017/06/03 - 10:31:11</Waterball:date>
+<Waterball:name>媽我入鏡了</Waterball:name>
+<Waterball:content>這價錢太親民了吧哈哈哈&#13;
+虎虎</Waterball:content>
 </Waterball:comment>
 </Waterball:restaurant>
 <Waterball:restaurant address="桃園市龜山區桃園縣龜山鄉明德路323號" id="r16" imageUrl="http://i.imgur.com/UC5RSfP.jpg" latitude="24.9894993" longitude="121.3440411" name="核桃屋" price="80" typeOfMeal="正餐、麵、飯"/>
@@ -421,13 +447,7 @@
 </Waterball:comment>
 </Waterball:restaurant>
 <Waterball:restaurant address="桃園市龜山區桃園市龜山區德明路142號" id="r22" imageUrl="http://i.imgur.com/KLV5StK.jpg" latitude="24.9885188" longitude="121.3436166" name="羅媽媽牛肉麵" price="80" typeOfMeal="正餐、麵、飯"/>
-<Waterball:restaurant address=" No. 81德明路龜山區桃園市333" id="r23" imageUrl="http://i.imgur.com/LvRBZZx.jpg" latitude="24.9886806" longitude="121.3435069" name="找兩圓 TWO COINS" price="80" typeOfMeal="正餐、麵、飯">
-<Waterball:comment rate="3">
-<Waterball:date>2017/06/02 - 07:50:56</Waterball:date>
-<Waterball:name>不錯</Waterball:name>
-<Waterball:content>推高</Waterball:content>
-</Waterball:comment>
-</Waterball:restaurant>
+<Waterball:restaurant address=" No. 81德明路龜山區桃園市333" id="r23" imageUrl="http://i.imgur.com/LvRBZZx.jpg" latitude="24.9886806" longitude="121.3435069" name="找兩圓 TWO COINS" price="80" typeOfMeal="正餐、麵、飯"/>
 <Waterball:restaurant address="桃園市龜山區德明路77巷2號1樓" id="r24" imageUrl="http://i.imgur.com/U2dzBdb.jpg" latitude="24.9887273" longitude="121.3432249" name="品誠豆花店" price="40" typeOfMeal="甜點、冰">
 <Waterball:comment rate="3">
 <Waterball:date>2017/06/02 - 09:15:20</Waterball:date>
@@ -451,4 +471,5 @@
 <Waterball:restaurant address="桃園市龜山區大同路236巷40號" id="r32" imageUrl="http://i.imgur.com/FWZ0bWm.jpg" latitude="24.9898522" longitude="121.3441518" name="京采日式飯館" price="100" typeOfMeal="正餐、麵、飯"/>
 <Waterball:restaurant address="桃園市龜山區大同路230號" id="r33" imageUrl="http://i.imgur.com/6yMCu8F.jpg" latitude="24.9901647" longitude="121.3443283" name="泰皇泰式料理" price="100" typeOfMeal="正餐、麵、飯"/>
 <Waterball:restaurant address="No. 217大同路龜山區桃園市" id="r34" imageUrl="http://i.imgur.com/Li9Ge8v.jpg" latitude="24.9904716" longitude="121.3445742" name="大姆指精緻涮涮鍋" price="350" typeOfMeal="正餐、麵、飯"/>
+
 </Waterball:WebSite>

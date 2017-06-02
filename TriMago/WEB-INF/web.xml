@@ -54,6 +54,10 @@
         <servlet-name>CreateCommentServlet</servlet-name>
         <servlet-class>CreateCommentServlet</servlet-class>
     </servlet>
+	<servlet>
+        <servlet-name>DeleteRestaurantServlet</servlet-name>
+        <servlet-class>DeleteRestaurantServlet</servlet-class>
+    </servlet>
 
     <servlet-mapping>
         <servlet-name>IndexXslServlet</servlet-name>
@@ -86,6 +90,10 @@
 	<servlet-mapping>
         <servlet-name>CreateCommentServlet</servlet-name>
         <url-pattern>/detail/create</url-pattern>
+    </servlet-mapping>
+	<servlet-mapping>
+        <servlet-name>DeleteRestaurantServlet</servlet-name>
+        <url-pattern>/delete</url-pattern>
     </servlet-mapping>
 	
 

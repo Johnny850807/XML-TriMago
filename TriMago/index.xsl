@@ -45,6 +45,7 @@
 				font-size:22px;
 			}
 		</style>
+		
         <div class="modal fade" id="myModal" role="dialog">
           <div class="modal-dialog">
             <div class="modal-content">
@@ -323,6 +324,7 @@
   </xsl:template>
   
 	<xsl:template  match="Waterball:restaurant">
+		<xsl:variable name="id" select="@id"/>	
     <div class="media" id="restaurantList">
 	<div class="col-sm-3">
         <div class="media-left">
@@ -332,6 +334,9 @@
 	</div>
 	<div class="col-sm-9">
 		<div class="media-body">
+		<button type="button" class="close" aria-label="Close" data-target="#myDeleteModal{$id}" data-toggle="modal">
+		  <span aria-hidden="true">Delete</span>
+		</button>
        <h2 class="media-heading"> <xsl:value-of select="@name"/> </h2>
        <div class="item__stars-wrp">
          <!--計算該餐廳的評價 = 所有留言給予的評價之平均-->
@@ -353,6 +358,33 @@
      </div>
 	 </div>
     </div>
+	
+	<div class="modal fade" id="myDeleteModal{$id}" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h2 class="modal-title">沒密碼還想刪除??</h2>
+				</div>
+			<div class="modal-body">
+		<form  id="modal-form-delete{$id}" method="get" action="delete"  >
+							<div class="form-group">
+								<input type="password" class="form-control" id="res-passwd" name="password" required="required" placeholder="輸入金鑰"/>
+								<input type="hidden" name="delete_id" value="{$id}" />
+							  </div>
+						 </form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+						<button type="submit" class="btn btn-default" form="modal-form-delete{$id}" >刪除</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			$('#myDeleteModal<xsl:value-of select="$id"/>').on('shown.bs.modal', function() {
+			$("input[name=delete_id]").val('<xsl:value-of select="$id"/>');
+			})
+		</script>
 	</xsl:template>
 
 </xsl:stylesheet>

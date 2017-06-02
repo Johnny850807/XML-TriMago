@@ -83,13 +83,6 @@ public class CreateCommentServlet extends BaseXslTransformServlet{
 		response.sendRedirect("../detail?id="+id);
 		return true;
 	}
-	
-	
-	private DocumentBuilder initBuilder() throws ParserConfigurationException{
-		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-		factory.setNamespaceAware(true);
-	    return factory.newDocumentBuilder();
-	}
 
 	@Override
 	protected String getXmlFileName() {

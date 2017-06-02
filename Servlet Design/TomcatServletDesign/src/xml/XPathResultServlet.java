@@ -25,7 +25,7 @@ public abstract class XPathResultServlet extends BaseXslTransformServlet{
 	private Element rootNode;
 	@Override
 	protected Source getXmlStreamSource() throws Exception {
-		initBuilder();
+		builder = initBuilder();
 	    initDocuments();
 	    initRootNode();
 	    String expression = getXpathExpression();
@@ -36,15 +36,6 @@ public abstract class XPathResultServlet extends BaseXslTransformServlet{
 	    		  (original, expression , rootElement));
 		Source result = new DOMSource(resultDocument);
 		return result;
-	}
-	
-	private DocumentBuilder initBuilder() throws ParserConfigurationException{
-		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-		factory.setNamespaceAware(true);
-		//factory.setValidating(true);
-		builder = factory.newDocumentBuilder();
-		//builder.setErrorHandler(new MyXmlErrorHandler());
-	    return builder;
 	}
 	
 	private void initDocuments() throws SAXException, IOException{
