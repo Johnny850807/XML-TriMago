@@ -162,8 +162,12 @@ footer {
     border-bottom: 1px solid gray;
 }
 
-#restaurantList p{
-    font-size: 30px;
+#restaurantList p {
+    font-size: 22px;
+}
+
+.media-object{
+	width:100%;
 }
 
 .address{
@@ -173,9 +177,15 @@ footer {
     color: #007FAD;
 }
 
+.typeOfMeal{
+	float:left;
+	margin-right: 20px;
+}
+
 .detailsButton {
-    padding: 20px 80px 20px 80px;
-    float:right;
+	width: 150px;
+	height: 40px;
+	float:right;
 }
 
 pre {

@@ -229,7 +229,7 @@
 						</a>
 				</div>
                 <div class="well">
-                    <audio src="music1.mp3" controls="controls" autoplay="true" style="width:100%;"></audio>
+                    <audio src="music2.mp3" controls="controls" autoplay="true" style="width:100%;"></audio>
                 </div>
 				<div class="well">
 					<h2><kbd>2017/6/1 2:31</kbd></h2> 
@@ -258,9 +258,8 @@
 					</div>
                 </div>
 				<div class="well">
-                    <div class="alert alert-warning">
-						<p><strong>張書瑄是要不要睡覺</strong></p>
-					</div>
+					<h2><kbd>驚世語錄</kbd></h2>
+                    <img src="adv2.png"/>
                 </div>
             </div>
         </div>
@@ -293,15 +292,15 @@
   
 	<xsl:template  match="Waterball:restaurant">
     <div class="media" id="restaurantList">
-	<div class="col-sm-5">
+	<div class="col-sm-3">
         <div class="media-left">
           <xsl:variable name="imageUrl" select="@imageUrl"/>
-          <img src="{$imageUrl}" class="media-object" style="width:250px"/>
+          <img src="{$imageUrl}" class="media-object" />
         </div>
 	</div>
-	<div class="col-sm-7">
+	<div class="col-sm-9">
 		<div class="media-body">
-       <h1 class="media-heading"> <xsl:value-of select="@name"/> </h1>
+       <h2 class="media-heading"> <xsl:value-of select="@name"/> </h2>
        <div class="item__stars-wrp">
          <!--計算該餐廳的評價 = 所有留言給予的評價之平均-->
          <xsl:variable name="rate" select="sum(Waterball:comment/@rate) div count(Waterball:comment)"/>
@@ -310,7 +309,9 @@
          </xsl:for-each>
        </div>
        <p class="address"><xsl:value-of select="@address"/></p>
+	   <p class="typeOfMeal"><xsl:value-of select="@typeOfMeal"/>  </p>
        <p class="price">價位 <xsl:value-of select="@price"/></p>
+	   <p class="commentAmount" style="float:left;">留言數 <xsl:value-of select="count(Waterball:comment)"/></p>
 	   <form action="detail" method="get">
 		<xsl:variable name="id" select="@id"/>
 		<input type="submit" value="查看詳情" class="btn btn-success detailsButton"/>

@@ -63,6 +63,11 @@
 <Waterball:name>有點貴</Waterball:name>
 <Waterball:content>價位有超過80</Waterball:content>
 </Waterball:comment>
+<Waterball:comment rate="4">
+<Waterball:date>2017/06/03 - 03:16:57</Waterball:date>
+<Waterball:name>老師</Waterball:name>
+<Waterball:content>蠻好吃的</Waterball:content>
+</Waterball:comment>
 </Waterball:restaurant>  
   <Waterball:restaurant address="神之地址" id="r2" imageUrl="http://imgur.com/download/tHEZ1hi" latitude="24.992495" longitude="121.339421" name="版主留言區" price="99999" typeOfMeal="無分類"> 
     <Waterball:comment rate="5"> 
@@ -134,6 +139,13 @@
 <Waterball:date>2017/06/02 - 09:39:02</Waterball:date>
 <Waterball:name>版主</Waterball:name>
 <Waterball:content>感謝豐緒老師</Waterball:content>
+</Waterball:comment>
+<Waterball:comment rate="5">
+<Waterball:date>2017/06/03 - 03:16:23</Waterball:date>
+<Waterball:name>宗毛</Waterball:name>
+<Waterball:content>幹&#13;
+&#13;
+</Waterball:content>
 </Waterball:comment>
 </Waterball:restaurant> 
 <Waterball:restaurant address="333台灣桃園市龜山區自強西路128號" id="r0" imageUrl="http://i.imgur.com/1ZpFoo8.jpg" latitude="24.9966" longitude="121.336" name="癮食上癮" price="80" typeOfMeal="早午餐店"> 

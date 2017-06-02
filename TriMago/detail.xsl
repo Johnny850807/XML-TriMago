@@ -122,13 +122,13 @@
 	
 	<xsl:template  match="Waterball:restaurant">
     <div class="media" id="restaurantList">
-	<div class="col-sm-5">
+	<div class="col-sm-3">
         <div class="media-left">
           <xsl:variable name="imageUrl" select="@imageUrl"/>
-          <img src="{$imageUrl}" class="media-object" style="width:250px"/>
+          <img src="{$imageUrl}" class="media-object"/>
         </div>
 	</div>
-	<div class="col-sm-7">
+	<div class="col-sm-9">
 		<div class="media-body">
        <h1 class="media-heading"> <xsl:value-of select="@name"/> </h1>
        <div class="item__stars-wrp">
@@ -139,6 +139,7 @@
          </xsl:for-each>
        </div>
        <p class="address"><xsl:value-of select="@address"/></p>
+	   <p class="typeOfMeal"><xsl:value-of select="@typeOfMeal"/></p>
        <p class="price">價位 <xsl:value-of select="@price"/></p>
      </div>
 	 </div>
@@ -148,7 +149,7 @@
 
   <xsl:template  match="Waterball:comment">
     <div class="media" id="commentList">
-      <div class="col-sm-4">
+      <div class="col-sm-3">
         <div class="media-left">
           <p id="comment-name">
             <xsl:value-of select="Waterball:name"/>
@@ -164,7 +165,7 @@
         </div>
 
       </div>
-      <div class="col-sm-8" >
+      <div class="col-sm-9" >
         <div class="media-body">
           <div class="media-heading">
             <p>
