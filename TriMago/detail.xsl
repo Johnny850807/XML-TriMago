@@ -30,37 +30,7 @@
 				  ga('send', 'pageview');
 
 				</script>
-        <div class="modal fade" id="myModal" role="dialog">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h4 class="modal-title">留言</h4>
-              </div>
-              <form  id="modal-form" method="post" action="detail/create" >
-                <input type="hidden" name="id"  value="{//Waterball:restaurant/@id}" />
-                <div class="modal-body">
-                  <div class="form-group">
-                    <label for="res-name">暱稱:</label>
-                    <input type="text" class="form-control" id="res-name" name="name" required="required"/>
-                  </div> 
-				  <div class="form-group">
-                    <label for="input-1" class="control-label">給予評價:</label>
-					<input id="input-1" name="rate" class="rating rating-loading" data-min="0" data-max="5" data-step="1"/>	
-                  </div> 
-				  
-				  <div class="form-group">
-                    <label for="content">內容:</label>
-					<textarea class="form-control" rows="5" id="content" required="required" name="content"></textarea>
-                  </div> 
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                  <button type="submit" class="btn btn-default" form="modal-form" >新增</button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
+        
 			</head>
 			<body>
 					<xsl:apply-templates select="Waterball:WebSite"/>
@@ -90,11 +60,45 @@
     <div class="container-fluid">
         <div class="row content">
             <div class="col-sm-9 text-left"  id="leftSelection">
+				
               <div class="add-comment">
-                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">
+                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myCommentModal">
                   我要留言
                 </button>
+				<link href="css/star-rating.css" media="all" rel="stylesheet" type="text/css" />
+				<script src="js/star-rating.js" type="text/javascript"></script>
               </div>
+			  <div class="modal fade" id="myCommentModal" role="dialog">
+				  <div class="modal-dialog">
+					<div class="modal-content">
+					  <div class="modal-header">
+						<h4 class="modal-title">留言</h4>
+					  </div>
+					  <form  id="modal-form-comment" method="post" action="detail/create" >
+						<input type="hidden" name="id"  value="{//Waterball:restaurant/@id}" />
+						<div class="modal-body">
+						  <div class="form-group">
+							<label for="res-name">暱稱:</label>
+							<input type="text" class="form-control" id="res-name" name="name" required="required"/>
+						  </div> 
+						  <div class="form-group">
+							<label for="input-1" class="control-label">給予評價:</label>
+							<input id="input-1" name="rate" class="rating rating-loading" data-min="0" data-max="5" data-step="1"/>	
+						  </div> 
+						  
+						  <div class="form-group">
+							<label for="content">內容:</label>
+							<textarea class="form-control" rows="5" id="content" required="required" name="content"></textarea>
+						  </div> 
+						</div>
+						<div class="modal-footer">
+						  <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+						  <button type="submit" class="btn btn-default" form="modal-form-comment" >新增</button>
+						</div>
+					  </form>
+					</div>
+				  </div>
+        </div>
                 <xsl:apply-templates select="Waterball:restaurant"/>
             </div>
             <div class="col-sm-3 sidenav">
@@ -133,6 +137,22 @@
   </xsl:template>
 	
 	<xsl:template  match="Waterball:restaurant">
+		<script>
+				$(document).ready(function(){
+					
+					$('#toMapButton').click(function(e) {
+						$.ajax({ type: "GET",   
+							 url: 'map?searchInput=<xsl:value-of select="@name"/>',   
+							 success : function(text)
+							 {
+								 $('#leftSelection').html($(text).find('#leftSelection').html());
+							 }
+						});
+					});
+					
+				});
+				
+			</script>
     <div class="media" id="restaurantList">
 	<div class="col-sm-3">
         <div class="media-left">
@@ -154,11 +174,7 @@
 	   <p class="typeOfMeal"><xsl:value-of select="@typeOfMeal"/></p>
        <p class="price">價位 <xsl:value-of select="@price"/></p>
 	   <xsl:variable name="name" select="@name"/>
-	   <form action="map" method="get">
-		<xsl:variable name="id" select="@id"/>
-		<input type="submit" value="前往地圖" class="btn btn-success detailsButton"/>
-		<input type="hidden" value="{$name}" name="searchInput"/>
-	   </form>
+		<input type="submit" value="前往地圖" class="btn btn-success detailsButton" id="toMapButton"/>
      </div>
 	 </div>
     </div>

@@ -58,7 +58,8 @@ public class CreateRestaurantServlet extends BaseXslTransformServlet{
 		price = request.getParameter("price");
 		address = request.getParameter("address");
 		Part uploadImagePart = request.getPart("image");
-		picture = extractImageFile(uploadImagePart.getInputStream());
+		if (uploadImagePart != null)
+			picture = extractImageFile(uploadImagePart.getInputStream());
 		log(String.format("新增餐廳: 名子 %s%n"
 				+ "地址 %s%n 價格 %s%n 分類 %s%n ", name , address , price , typeOfMeal));
 	}
@@ -166,12 +167,16 @@ public class CreateRestaurantServlet extends BaseXslTransformServlet{
 	private void transformAndRedirect(Element restaurantNode,Transformer transformer) throws TransformerException, IOException {
 		if (taskSuccess)
 		{
-			rootElement.appendChild(restaurantNode);
-			
+			doFurtherCrud(rootElement,restaurantNode);
 			transformer.transform(new DOMSource(originalDocument), 
 					new StreamResult(new FileOutputStream(xmlPath)));
 		}
 		response.sendRedirect("../index");
+	}
+	
+	protected void doFurtherCrud(Element rootElement,Node newNode){
+		//hook method for operating the node created.
+		rootElement.appendChild(newNode);
 	}
 	
 	

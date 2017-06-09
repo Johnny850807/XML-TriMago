@@ -23,6 +23,7 @@
 				  {lang: 'zh-TW'}
 				</script>
 				<link rel="stylesheet" href="triMago.css"/>
+				<link rel="stylesheet" href="detail.css"/>
         <script language = "JavaScript"  type="text/javascript" >
           $(function(){
           $(".modal-dropdown-menu-create").click(function(){
@@ -129,22 +130,61 @@
             </div>
             <nav class="nav nav-pills" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="index" id="homepage" class="navigationRight" > 首頁</a></li>
+                    <li><a href="#" id="homepage" class="navigationRight" > 首頁</a></li>
                     <li><a href="about" id="about" class="navigationRight" > 關於我們</a></li>
                 </ul>
             </nav>
         </div>
     </nav>
-
+	
     <main class="container-fluid">
         <div class="row content">
             <div class="col-sm-9 text-left" id="leftSelection">
+				<script>
+				$(document).ready(function(){
+					$('#homepage').click(function(e) {
+						$.ajax({ type: "GET",   
+							 url: 'index',   
+							 success : function(text)
+							 {
+								 $('#leftSelection').html($(text).find('#leftSelection').html());
+							 }
+						});
+					});
+					$('#searchPanelForm').on('submit', function(e){
+						e.preventDefault();
+						
+						var input = $('#searchInput').val();
+						var type = $('#type-menu-input').val();
+						var sort = $('#sort-menu-input').val();
+						var eventUrl = 'index?searchInput='+input+'&amp;typeOfMeal='+type+'&amp;sort='+sort;
+
+						$.ajax({ type: "GET",   
+							 url: eventUrl,   
+							 success : function(text)
+							 {
+								 $('#leftSelection').html($(text).find('#leftSelection').html());
+							 }
+						});
+					});
+					$("#map-button").click(function(){
+					$.ajax({ type: "GET",   
+							 url: 'map',   
+							 success : function(text)
+							 {
+								 $('#leftSelection').html($(text).find('#leftSelection').html());
+							 }
+						});detailsButton
+					});
+				});
+				
+			</script>
               <form action="index" method="get" id="searchPanelForm">
 				<input name="typeOfMeal" id="type-menu-input" type="hidden" />
 				<input name="sort" id="sort-menu-input" type="hidden" />
                 <div class="container" id="searchPanel">
                     <div class="row" id="searchBar">
-                        <input class="flipkart-navbar-input col-xs-11" placeholder="輸入想查詢的餐廳名稱" name="searchInput" />
+                        <input class="flipkart-navbar-input col-xs-11" placeholder="輸入想查詢的餐廳名稱" name="searchInput" id="searchInput"/>
                         <button class="flipkart-navbar-button col-xs-1" style="text-align:center;">
                             <svg width="15px" height="15px" >
                                 <path d="M11.618 9.897l4.224 4.212c.092.09.1.23.02.312l-1.464 1.46c-.08.08-.222.072-.314-.02L9.868 11.66M6.486 10.9c-2.42 0-4.38-1.955-4.38-4.367 0-2.413 1.96-4.37 4.38-4.37s4.38 1.957 4.38 4.37c0 2.412-1.96 4.368-4.38 4.368m0-10.834C2.904.066 0 2.96 0 6.533 0 10.105 2.904 13 6.486 13s6.487-2.895 6.487-6.467c0-3.572-2.905-6.467-6.487-6.467 "></path>
@@ -207,7 +247,7 @@
                             </button>
 							
 							<button type="button"  
-								class="btn btn-danger search-btn" onclick="location.href='map'">美食地圖 <span class="glyphicon glyphicon-hand-right"></span></button>
+								class="btn btn-danger search-btn" id="map-button">美食地圖 <span class="glyphicon glyphicon-hand-right"></span></button>
                     </div>
                 </div>
               </form>
@@ -277,7 +317,7 @@
 						</a>
 				</div>
                 <div class="well">
-                    <audio src="music3.mp3" controls="controls" autoplay="true" style="width:100%;"></audio>
+                    <audio src="music3.mp3" controls="controls" style="width:100%;"></audio>
                 </div>
 				<div class="well">
 					<h2><kbd>2017/6/1 2:31</kbd></h2> 
@@ -339,6 +379,19 @@
   </xsl:template>
   
 	<xsl:template  match="Waterball:restaurant">
+		<script>
+			$(document).ready(function() {
+				$("#detailsButton<xsl:value-of select="@id"/>").click(function(){
+					$.ajax({ type: "GET",   
+							 url: 'detail?id=<xsl:value-of select="@id"/>',   
+							 success : function(text)
+							 {
+								 $('#leftSelection').html($(text).find('#leftSelection').html());
+							 }
+					});
+				}); 
+			});
+		</script>
 		<xsl:variable name="id" select="@id"/>	
     <div class="media" id="restaurantList">
 	<div class="col-sm-3">
@@ -364,11 +417,9 @@
 	   <p class="typeOfMeal"><xsl:value-of select="@typeOfMeal"/>  </p>
        <p class="price">價位 <xsl:value-of select="@price"/></p>
 	   <p class="commentAmount" style="float:left;">留言數 <xsl:value-of select="count(Waterball:comment)"/></p>
-	   <form action="detail" method="get">
-		<xsl:variable name="id" select="@id"/>
-		<input type="submit" value="查看詳情" class="btn btn-success detailsButton"/>
-		<input type="hidden" value="{$id}" name="id"/>
-	   </form>
+
+		<input type="button" value="查看詳情" class="btn btn-success detailsButton" id="detailsButton{$id}"/>
+
       
      </article>
 	 </div>
