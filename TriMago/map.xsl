@@ -7,10 +7,26 @@
         <title>銘傳找飯吃? TriMaGo</title>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<meta name="description" content="銘傳找飯吃? TriMago! 一個無須登入可自由分享以及評價的銘傳周邊美食網站，歡迎分享你的美食經驗！"/>
+		<meta name="keywords" content="銘傳大學,美食,trimago"/>
+		<meta name="author" content="潘冠辰"/>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="triMago.css"/>
+		<script src="https://apis.google.com/js/platform.js" async="true" defer="true">
+				  {lang: 'zh-TW'}
+				</script>
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-100403751-1', 'auto');
+		  ga('send', 'pageview');
+
+		</script>
         <style>
           #map{
           height: 600px;
@@ -62,9 +78,9 @@
       </div>
     </nav>
 
-    <div class="container-fluid" id="leftSelection">
+    <div class="container-fluid">
       <div class="row content">
-        <div class="col-sm-10 text-left">
+        <div class="col-sm-10 text-left" id="leftSelection">
           <form action="map" method="get" id="searchPanelForm">
                  <input id="typeOfMealInput" name="typeOfMeal" type="hidden"/>
                 <div class="container" id="searchPanel">
@@ -109,6 +125,7 @@
                     </div>
                 </div>
               </form>
+			  <div class="g-plusone" data-annotation="inline" data-width="300"></div>
                 <hr/>
           <!--地圖從這加-->
           <div id="map" style="width:100% ; height:600px;"></div>
@@ -178,7 +195,7 @@
 						</a>
 				</div>
           <div class="well">
-                    <audio src="music1.mp3" controls="controls" autoplay="true" style="width:100%;"></audio>
+                    <audio src="music3.mp3" controls="controls" autoplay="true" style="width:100%;"></audio>
                 </div>
                
         </div>

@@ -9,6 +9,9 @@
 					href="http://imgur.com/download/NCCXqIj" />
 				<meta charset="utf-8"/>
 				<meta name="viewport" content="width=device-width, initial-scale=1"/>
+				<meta name="description" content="銘傳找飯吃? TriMago! 一個無須登入可自由分享以及評價的銘傳周邊美食網站，歡迎分享你的美食經驗！"/>
+				<meta name="keywords" content="銘傳大學,美食,trimago"/>
+				<meta name="author" content="潘冠辰"/>
 				<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
 				<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 				<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -17,7 +20,16 @@
 
 				<link href="css/star-rating.css" media="all" rel="stylesheet" type="text/css" />
 				<script src="js/star-rating.js" type="text/javascript"></script>
-				
+				<script>
+				  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+				  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+				  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+				  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+				  ga('create', 'UA-100403751-1', 'auto');
+				  ga('send', 'pageview');
+
+				</script>
         <div class="modal fade" id="myModal" role="dialog">
           <div class="modal-dialog">
             <div class="modal-content">
@@ -75,9 +87,9 @@
         </div>
     </nav>
 
-    <div class="container-fluid" id="leftSelection">
+    <div class="container-fluid">
         <div class="row content">
-            <div class="col-sm-9 text-left">
+            <div class="col-sm-9 text-left"  id="leftSelection">
               <div class="add-comment">
                 <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">
                   我要留言

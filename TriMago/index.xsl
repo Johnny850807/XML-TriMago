@@ -12,13 +12,20 @@
 					href="http://imgur.com/download/NCCXqIj" />
 				<meta charset="utf-8"/>
 				<meta name="viewport" content="width=device-width, initial-scale=1"/>
+				<meta name="description" content="銘傳找飯吃? TriMago! 一個無須登入可自由分享以及評價的銘傳周邊美食網站，歡迎分享你的美食經驗！"/>
+				<meta name="keywords" content="銘傳大學,美食,trimago"/>
+				<meta name="author" content="潘冠辰"/>
+				<link rel="canonical" href="http://www.teampathy.tk:8080/TriMago" />
 				<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
 				<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 				<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+				<script src="https://apis.google.com/js/platform.js" async="true" defer="true">
+				  {lang: 'zh-TW'}
+				</script>
 				<link rel="stylesheet" href="triMago.css"/>
         <script language = "JavaScript"  type="text/javascript" >
           $(function(){
-          $(".modal-dropdown-menu li a").click(function(){
+          $(".modal-dropdown-menu-create").click(function(){
           $("#modal-select-btn:first-child").text($(this).text());
           $("#modal-select-btn:first-child").val($(this).text());
           $("#modal-typeOfMeal-input:first-child").val($(this).text());
@@ -29,8 +36,14 @@
             return true;
           }
 		  
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-100403751-1', 'auto');
+		  ga('send', 'pageview');
         </script>
-	
 		
 		<style>  <!--For the Google Custom Search Issue-->
 			.cse .gsc-search-button input.gsc-search-button-v2,
@@ -69,13 +82,13 @@
                       <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu modal-dropdown-menu">
-                      <li><a href="#" >無分類</a></li>
-						<li><a href="#">早午餐店</a></li>
-						<li><a href="#">小吃店、路邊攤</a></li>
-						<li><a href="#">甜點、冰</a></li>
-						<li><a href="#">正餐、麵、飯</a></li>
-						<li><a href="#">下午茶、咖啡廳</a></li>
-						<li><a href="#">速食店、漢堡店</a></li>
+                      <li><a href="#" class="modal-dropdown-menu-create">無分類</a></li>
+						<li><a href="#" class="modal-dropdown-menu-create">早午餐店</a></li>
+						<li><a href="#" class="modal-dropdown-menu-create">小吃店、路邊攤</a></li>
+						<li><a href="#" class="modal-dropdown-menu-create">甜點、冰</a></li>
+						<li><a href="#" class="modal-dropdown-menu-create">正餐、麵、飯</a></li>
+						<li><a href="#" class="modal-dropdown-menu-create">下午茶、咖啡廳</a></li>
+						<li><a href="#" class="modal-dropdown-menu-create">速食店、漢堡店</a></li>
                     </ul>
                     
                   </div>
@@ -123,9 +136,9 @@
         </div>
     </nav>
 
-    <div class="container-fluid" id="leftSelection">
+    <main class="container-fluid">
         <div class="row content">
-            <div class="col-sm-9 text-left">
+            <div class="col-sm-9 text-left" id="leftSelection">
               <form action="index" method="get" id="searchPanelForm">
 				<input name="typeOfMeal" id="type-menu-input" type="hidden" />
 				<input name="sort" id="sort-menu-input" type="hidden" />
@@ -198,18 +211,19 @@
                     </div>
                 </div>
               </form>
+				<div class="g-plusone" data-annotation="inline" data-width="300"></div>
                 <hr/>
-				<xsl:choose>
-					  <xsl:when test="$sort='便宜到貴'">
+					<xsl:choose>
+					<xsl:when test="$sort='便宜到貴'">
 						<xsl:apply-templates select="Waterball:restaurant">
-					<xsl:sort order="ascending" select="@price" data-type="number"/>			
-				</xsl:apply-templates>
-					  </xsl:when>
-					  <xsl:when test="$sort='貴到便宜'">
+							<xsl:sort order="ascending" select="@price" data-type="number"/>			
+						</xsl:apply-templates>
+					</xsl:when>
+					<xsl:when test="$sort='貴到便宜'">
 						<xsl:apply-templates select="Waterball:restaurant">
-					<xsl:sort order="descending" select="@price" data-type="number"/>			
-				</xsl:apply-templates>
-					  </xsl:when>
+							<xsl:sort order="descending" select="@price" data-type="number"/>			
+						</xsl:apply-templates>
+					</xsl:when>
 					  <xsl:when test="$sort='評價低到高'">
 						<xsl:apply-templates select="Waterball:restaurant">
 					<xsl:sort order="ascending" select="sum(Waterball:comment/@rate) div count(Waterball:comment)" data-type="number"/>			
@@ -234,6 +248,7 @@
 						<xsl:apply-templates select="Waterball:restaurant"></xsl:apply-templates>
 					  </xsl:otherwise>
 					</xsl:choose>
+				
             </div>
             <div class="col-sm-3 sidenav">
 				<script>
@@ -245,7 +260,7 @@
 					gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
 					var s = document.getElementsByTagName('script')[0];
 					s.parentNode.insertBefore(gcse, s);
-				  })();
+				  })(); 
 				</script>
 				<div class="gcse-search"></div>
                 <div id="myCarousel" class="carousel slide" data-ride="carousel" style="margin-top:20px;margin-bottom:20px;">
@@ -262,7 +277,7 @@
 						</a>
 				</div>
                 <div class="well">
-                    <audio src="music2.mp3" controls="controls" autoplay="true" style="width:100%;"></audio>
+                    <audio src="music3.mp3" controls="controls" autoplay="true" style="width:100%;"></audio>
                 </div>
 				<div class="well">
 					<h2><kbd>2017/6/1 2:31</kbd></h2> 
@@ -296,7 +311,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </main>
 
     <footer class="container-fluid text-center">
         <p>WaterBall @Copy MingChang Homework-Purpose</p>
@@ -329,15 +344,15 @@
 	<div class="col-sm-3">
         <div class="media-left">
           <xsl:variable name="imageUrl" select="@imageUrl"/>
-          <img src="{$imageUrl}" class="media-object" />
+          <img src="{$imageUrl}" alt="{@name}" class="media-object" />
         </div>
 	</div>
 	<div class="col-sm-9">
-		<div class="media-body">
-		<button type="button" class="close" aria-label="Close" data-target="#myDeleteModal{$id}" data-toggle="modal">
+		<article class="media-body">
+		<button type="button" class="close" aria-label="Close" style="margin-left:15px" data-target="#myDeleteModal{$id}" data-toggle="modal">
 		  <span aria-hidden="true">Delete</span>
 		</button>
-       <h2 class="media-heading"> <xsl:value-of select="@name"/> </h2>
+       <header><h2 class="media-heading"> <xsl:value-of select="@name"/> </h2></header>
        <div class="item__stars-wrp">
          <!--計算該餐廳的評價 = 所有留言給予的評價之平均-->
          <xsl:variable name="rate" select="sum(Waterball:comment/@rate) div count(Waterball:comment)"/>
@@ -355,7 +370,7 @@
 		<input type="hidden" value="{$id}" name="id"/>
 	   </form>
       
-     </div>
+     </article>
 	 </div>
     </div>
 	
@@ -380,11 +395,6 @@
 				</div>
 			</div>
 		</div>
-		<script>
-			$('#myDeleteModal<xsl:value-of select="$id"/>').on('shown.bs.modal', function() {
-			$("input[name=delete_id]").val('<xsl:value-of select="$id"/>');
-			})
-		</script>
 	</xsl:template>
 
 </xsl:stylesheet>
