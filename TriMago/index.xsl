@@ -17,7 +17,7 @@
 				<meta name="author" content="潘冠辰"/>
 				<link rel="canonical" href="http://www.teampathy.tk:8080/TriMago" />
 				<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
-				<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+				<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 				<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 				<script src="https://apis.google.com/js/platform.js" async="true" defer="true">
 				  {lang: 'zh-TW'}
@@ -25,6 +25,8 @@
 				<link rel="stylesheet" href="triMago.css"/>
 				<link rel="stylesheet" href="detail.css"/>
         <script language = "JavaScript"  type="text/javascript" >
+			
+	
           $(function(){
           $(".modal-dropdown-menu-create").click(function(){
           $("#modal-select-btn:first-child").text($(this).text());
@@ -112,7 +114,15 @@
         </div>
 			</head>
 			<body>
+				<script>
+					$body = $("body");
+					$(document).on({
+						ajaxStart: function() { $body.addClass("loading");    },
+						 ajaxStop: function() { $body.removeClass("loading"); }    
+					});
+				</script>
 				<xsl:apply-templates select="Waterball:WebSite"/>
+				<div class="modal-ajax"></div> 
 			</body>
 		</html>
 
@@ -153,7 +163,6 @@
 					});
 					$('#searchPanelForm').on('submit', function(e){
 						e.preventDefault();
-						
 						var input = $('#searchInput').val();
 						var type = $('#type-menu-input').val();
 						var sort = $('#sort-menu-input').val();
@@ -174,7 +183,7 @@
 							 {
 								 $('#leftSelection').html($(text).find('#leftSelection').html());
 							 }
-						});detailsButton
+						});
 					});
 				});
 				
@@ -387,6 +396,7 @@
 							 success : function(text)
 							 {
 								 $('#leftSelection').html($(text).find('#leftSelection').html());
+								 window.scrollTo(0,0);
 							 }
 					});
 				}); 

@@ -10,7 +10,7 @@ input.gsc-search-button-v2 {
 }
 
 #nav{  /**解決nav affix透明問題**/
-  z-index:9999;
+  z-index:999;
 }
 
 .navbar {
@@ -30,7 +30,7 @@ input.gsc-search-button-v2 {
 }
 
 #leftSelection{
-    min-height: 1500px;
+    min-height: 3000px;
     padding-bottom: 15px;
 }
 
@@ -51,7 +51,7 @@ input.gsc-search-button-v2 {
 
 /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
 .row.content {
-    height:100%;
+    height:150%;
 }
 
 /* Set gray background color and 100% height */
@@ -113,15 +113,21 @@ footer {
     margin: 30px;
 }
 
-#mealTypeMenu{
-    margin-left: 30px;
-}
-
 .search-btn{
     width: 130px;
     height: 40px;
 	margin-right:15px;
 	margin-top:8px;
+}
+
+@media screen and (max-width: 767px) {
+    .search-btn{
+    width: 130px;
+    height: 40px;
+	margin-right:0px;
+	margin-left: 8px;
+	margin-top:8px;
+	}
 }
 
 
@@ -202,6 +208,33 @@ pre {
   text-align: justify;
 }
 
-.pager li{
-	width: 200px;
+/* Start by setting display:none to make this hidden.
+   Then we position it in relation to the viewport window
+   with position:fixed. Width, height, top and left speak
+   speak for themselves. Background we set to 80% white with
+   our animation centered, and no-repeating */
+.modal-ajax {
+    display:    none;
+    position:   fixed;
+    z-index:    1000;
+    top:        0;
+    left:       0;
+    height:     100%;
+    width:      100%;
+    background: rgba( 255, 255, 255, .8 ) 
+                url('http://sampsonresume.com/labs/pIkfp.gif') 
+                50% 50% 
+                no-repeat;
+}
+
+/* When the body has the loading class, we turn
+   the scrollbar off with overflow:hidden */
+body.loading {
+    overflow: hidden;   
+}
+
+/* Anytime the body has the loading class, our
+   modal element will be visible */
+body.loading .modal-ajax {
+    display: block;
 }
