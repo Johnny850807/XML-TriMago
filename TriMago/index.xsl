@@ -358,6 +358,11 @@
 					<h2><kbd>驚世語錄</kbd></h2>
                     <img src="adv2.png"/>
                 </div>
+				<div class="well">
+					<div class="alert alert-danger">
+						<p><strong>我是 七點 還是 九點 ?</strong></p>
+					</div>
+                </div>
             </div>
         </div>
     </main>
