@@ -282,6 +282,11 @@
 <Waterball:name>5</Waterball:name>
 <Waterball:content>狗你媽肉= =</Waterball:content>
 </Waterball:comment>
+<Waterball:comment rate="5">
+<Waterball:date>2017/06/17 - 03:22:18</Waterball:date>
+<Waterball:name>哈</Waterball:name>
+<Waterball:content>123</Waterball:content>
+</Waterball:comment>
 </Waterball:restaurant>  
   
 <Waterball:restaurant address="333台灣桃園市龜山區自強西路128號" id="r0" imageUrl="http://i.imgur.com/1ZpFoo8.jpg" latitude="24.9966" longitude="121.336" name="癮食上癮" price="80" typeOfMeal="早午餐店"> 
@@ -381,6 +386,11 @@
 <Waterball:name>貓屋刊版哥</Waterball:name>
 <Waterball:content>嘉偉94帥&#13;
 先虎一波~</Waterball:content>
+</Waterball:comment>
+<Waterball:comment rate="5">
+<Waterball:date>2017/06/16 - 02:13:57</Waterball:date>
+<Waterball:name>hi</Waterball:name>
+<Waterball:content>yes</Waterball:content>
 </Waterball:comment>
 </Waterball:restaurant>  
   <Waterball:restaurant address="桃園市蘆竹區中山路143號" id="r6" imageUrl="http://i.imgur.com/NP5paTS.jpg" latitude="25.0565938" longitude="121.2978322" name="無尾熊" price="3000" typeOfMeal="甜點、冰"> 
@@ -750,7 +760,18 @@
 </Waterball:comment>
 </Waterball:restaurant>
 <Waterball:restaurant address="桃園市龜山區明德路318號" id="r30" imageUrl="http://i.imgur.com/53UxhkO.jpg" latitude="24.9897449" longitude="121.3435085" name="小判 拉麵專門店" price="160" typeOfMeal="正餐、麵、飯"/>
-<Waterball:restaurant address="333桃園市龜山區大同路231 號" id="r31" imageUrl="http://i.imgur.com/D7max2k.png" latitude="24.9902932" longitude="121.3445887" name="雅加達漢堡店" price="120" typeOfMeal="速食店、漢堡店"/>
+<Waterball:restaurant address="333桃園市龜山區大同路231 號" id="r31" imageUrl="http://i.imgur.com/D7max2k.png" latitude="24.9902932" longitude="121.3445887" name="雅加達漢堡店" price="120" typeOfMeal="速食店、漢堡店">
+<Waterball:comment rate="3">
+<Waterball:date>2017/06/17 - 02:37:24</Waterball:date>
+<Waterball:name>..</Waterball:name>
+<Waterball:content>圖片呢?</Waterball:content>
+</Waterball:comment>
+<Waterball:comment rate="4">
+<Waterball:date>2017/06/17 - 02:37:43</Waterball:date>
+<Waterball:name>版主</Waterball:name>
+<Waterball:content>Imgur 把它弄丟了吧</Waterball:content>
+</Waterball:comment>
+</Waterball:restaurant>
 <Waterball:restaurant address="桃園市龜山區大同路236巷40號" id="r32" imageUrl="http://i.imgur.com/FWZ0bWm.jpg" latitude="24.9898522" longitude="121.3441518" name="京采日式飯館" price="100" typeOfMeal="正餐、麵、飯"/>
 <Waterball:restaurant address="桃園市龜山區大同路230號" id="r33" imageUrl="http://i.imgur.com/6yMCu8F.jpg" latitude="24.9901647" longitude="121.3443283" name="泰皇泰式料理" price="100" typeOfMeal="正餐、麵、飯">
 <Waterball:comment rate="4">
@@ -809,4 +830,7 @@
 <Waterball:content>樓上交澤宏?</Waterball:content>
 </Waterball:comment>
 </Waterball:restaurant>
+
+
+
 </Waterball:WebSite>

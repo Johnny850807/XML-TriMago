@@ -23,7 +23,7 @@
 				  {lang: 'zh-TW'}
 				</script>
 				<link rel="stylesheet" href="triMago.css"/>
-				<link rel="stylesheet" href="detail.css"/>
+				<link rel="stylesheet" href="detail.css"/>8
         <script language = "JavaScript"  type="text/javascript" >
 			
 	
