@@ -1,4 +1,5 @@
-# XML-Final-Project-Presentation
+# TriMago
+[TriMago Web Site](http:\\waterball.tk:8080/TriMago)
 TriMago is a webapp providing various restaurant options near MingChang university for every student, and here the github page contains an open source of it.
 
 TriMago is deployed on a Tomcat server for using Java servlet model and TriMago is a XML-based webapp which using XML,DTD,XPATH,XSL to fulfill web functions.
